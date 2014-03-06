@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -69,7 +70,7 @@ public class Utilidades {
 				return salida;
 			}
 			else{
-				if(in.get(1).getCe()<izq.getCe()||in.get(1).getIce()<min.getIce()){
+				if(in.get(1).getCe()<izq.getCe()){
 					salida.addAll(in);
 					return salida;
 				}else
@@ -104,16 +105,12 @@ public class Utilidades {
 		
 		//recorrer la segunda parte y eliminar todos los mayores que el minimo
 		// una vez se encuentre uno por debajo añadir el resto de la estructura y salir
-		for(int i =0; i<previoP2.size();i++){
-			if(previoP2.get(i).getCe()>minComb.getCe()){
-				previoP2.remove(i);
-			}else{
-				salida.addAll(previoP2);
-				break;
-			}
+		Iterator<Usuario> it = previoP2.iterator();
+		while(it.hasNext()){
+			if(it.next().getCe()>minComb.getCe()) it.remove();
+			else break;
 		}
-		
-		
+		salida.addAll(previoP2);
 		return salida;
 	}
 	
