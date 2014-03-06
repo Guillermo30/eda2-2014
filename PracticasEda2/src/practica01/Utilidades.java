@@ -132,8 +132,9 @@ public class Utilidades {
 		
 		for(int i =0 ; i< numDePuntos; i++){
 			linea = br.readLine();
+			linea = linea.replaceAll(" ", "");
 			sc = new Scanner (linea);
-			sc.useDelimiter(", ");
+			sc.useDelimiter(",");
 			
 			ice = sc.nextInt();
 			ce = sc.nextInt();
