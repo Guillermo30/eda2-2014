@@ -40,4 +40,10 @@ public class Usuario {
 		
 	}
 	
+	@Override
+	public boolean equals(Object o){
+		if(((Usuario) o).getId()==this.getId()) return true;
+		return false;
+	}
+	
 }
