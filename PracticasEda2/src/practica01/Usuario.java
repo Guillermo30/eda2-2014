@@ -4,7 +4,7 @@ package practica01;
  * @author 
  *
  */
-public class Usuario {
+public class Usuario implements Comparable<Usuario>{
 	private int id;
 	private int ce;
 	private int ice;
@@ -73,6 +73,10 @@ public class Usuario {
 	public boolean equals(Object o){
 		if(((Usuario) o).getId()==this.getId()) return true;
 		return false;
+	}
+	@Override
+	public int compareTo(Usuario arg0) {
+		return this.ice - arg0.ice;
 	}
 	
 }
