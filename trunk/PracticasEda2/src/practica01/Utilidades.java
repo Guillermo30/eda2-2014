@@ -115,22 +115,26 @@ public class Utilidades {
 		Scanner sc;
 		
 		for(int i =0 ; i< numDePuntos; i++){
-			linea = br.readLine();
-			linea = linea.replaceAll(" ", "");
-			sc = new Scanner (linea);
-			sc.useDelimiter(",");
+			try{
+				linea = br.readLine();
+				linea = linea.replaceAll(" ", "");
+				sc = new Scanner (linea);
+				sc.useDelimiter(",");
 			
-			ice = sc.nextInt();
-			ce = sc.nextInt();
+				ice = sc.nextInt();
+				ce = sc.nextInt();
 			
-			struc.add(new Usuario(i, ce, ice));
-			
+				struc.add(new Usuario(i, ce, ice));
+			}catch(Exception e){
+				
+			}
 		}
 		
 		System.out.println("estrcutura de la que partimos" +struc);
 		System.out.println("puntos del pareto" +pareto(struc));
 		return null;
 	}
+	
 	private static LinkedList<Usuario> casoBase(LinkedList<Usuario> in, LinkedList<Usuario> salida){
 		Usuario min, izq;
 		min= in.get(0);
@@ -173,4 +177,5 @@ public class Utilidades {
 		
 		return salida;
 	}
+	
 }
