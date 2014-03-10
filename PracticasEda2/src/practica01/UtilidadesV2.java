@@ -8,20 +8,22 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+import estructurasdedatos.BSTree;
 import estructurasdedatos.Iterator;
 
 public class UtilidadesV2 {
 
 	static AVLTree<Usuario> usuarios;
 	static LinkedList<String> datosCorruptos;
-	static AVLTree<Usuario> candidatos;
+	static BSTree<Usuario> candidatos;
 	
 	public static void calcularCandidatos(String file){
 		
 		usuarios = new AVLTree<Usuario>();
 		datosCorruptos = new LinkedList<String>();
-		candidatos = new AVLTree<Usuario>();
-		int minimoCandidatos, minimo;
+		candidatos = new BSTree<Usuario>();
+		int minimoCandidatos;
+		int minimo;
 		
 		try {
 			leerFichero(file);
@@ -34,8 +36,17 @@ public class UtilidadesV2 {
 		while(candidatos.size() < minimoCandidatos){
 			minimo = calcularMinimo();
 			ArrayList<Usuario> nubeI = new ArrayList<Usuario>(minimo);
-			ArrayList<Usuario> nubeD = new ArrayList<Usuario>(usuarios.size() - minimo);
-			
+			ArrayList<Usuario> nubeD = new ArrayList<Usuario>(usuarios.size() - (minimo-1));
+			Iterator<Usuario> itI = usuarios.inOrderIterator();
+			Iterator<Usuario> itD = usuarios.reverseInOrderIterator();
+			for(int i = 0; i != minimo; i++){
+				nubeI.add(itI.next());
+			}
+			for(int i = usuarios.size() - 1; i >= minimo; i--){
+				nubeD.add(itD.next());
+			}
+			//candidatos.addAll(pareto(nubeI));
+			//candidatos.addAll(nubeD);
 		}
 		
 	}
@@ -56,11 +67,19 @@ public class UtilidadesV2 {
 			try {
 				linea = br.readLine();
 				linea = linea.replaceAll(" ", "");
+				if(linea.equals("")){
+					i--;
+					continue;
+				}
 				sc = new Scanner(linea);
 				sc.useDelimiter(",");
 
 				ice = sc.nextInt();
 				ce = sc.nextInt();
+				if(ice < 0 || ce < 0){
+					datosCorruptos.add("Id: " + i + " Datos: " + linea);
+					continue;
+				}
 
 				usuarios.add(new Usuario(i, ce, ice));
 			} catch (Exception e) {
@@ -84,9 +103,8 @@ public class UtilidadesV2 {
 		return i;
 	}
 
-	private static void pareto() {
-		int min = calcularMinimo();
-		Usuario minimo;
+	private static BSTree<Usuario> pareto() {
+		return null;
 	}
 
 	

@@ -76,7 +76,9 @@ public class Usuario implements Comparable<Usuario>{
 	}
 	@Override
 	public int compareTo(Usuario arg0) {
-		return this.ice - arg0.ice;
+		int toReturn = this.ice - arg0.ice;
+		if(toReturn == 0) toReturn = this.ce - arg0.ce;
+		return toReturn;
 	}
 	
 }
