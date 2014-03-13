@@ -1,0 +1,13 @@
+Clientes sospechosos:
+
+
+[0 1850 232]
+[3 2101 212]
+[15 8900 726]
+[14 7700 444]
+[12 5340 245]
+[5 2784 232]
+
+Clientes con datos corruptos:
+
+
