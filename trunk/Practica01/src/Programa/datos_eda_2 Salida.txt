@@ -3,6 +3,7 @@ Clientes sospechosos:
 
 [0 1850 232]
 [3 2101 212]
+[3 2101 212]
 [15 8900 726]
 [14 7700 444]
 [12 5340 245]
@@ -11,3 +12,4 @@ Clientes sospechosos:
 Clientes con datos corruptos:
 
 
+Id: 2 Datos: hdbkdj

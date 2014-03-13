@@ -37,114 +37,148 @@ public class Programa {
 	private static Scanner scanner = new Scanner(System.in);
 	private static Pareto pareto;
 
-	final static String ERROR_ARCHIVO_INEXISTENTE = "El archivo seleccionado no existe";
-	final static String ERROR_ARCHIVO_VACIO = "El archivo seleccionado esta vacio";
+	final static String ERROR_ARCHIVO_INEXISTENTE = "El archivo seleccionado no existe.";
+	final static String ERROR_ARCHIVO_VACIO = "El archivo seleccionado esta vacio.";
+	final static String ERROR_FORMATO_CABECERA = "El archivo seleccionado no contiene una cabecera con un entero.";
+	final static String ERROR_CABECERA_NEGATIVA = "El archivo seleccionado contiene una cabecera negativa.";
+	final static String ERROR_MENOS_DATOS_QUE_EN_LA_CABECERA = "El archivo de texto tiene menos datos de los que indica la cabecera.";
 
 	public static void main(String[] args) {
-		//try {
-			
-			try {
-				datosCorruptos = new LinkedList<String>();
-				candidatos = new LinkedList<Cliente>();
-				clientes = leerArchivo();
-				int version;
-				System.out.println("Version? ");
-				version = scanner.nextInt();
-				switch(version){
-					case 1: pareto = new ParetoV1(clientes);
-					case 2: pareto = new ParetoV2(clientes);
-					//case 3: pareto = new ParetoV3(clientes);
-					//case 4: pareto = new ParetoV4(clientes);
-				}
-				
-				do{
-					long a = System.nanoTime();
-					candidatos.addAll(pareto.paretoSolucion());
-					System.out.println("Tiempo:" + (System.nanoTime() - a));
-					clientes.removeAll(candidatos);
-				}while (candidatos.size() < uPC);
-				imprimirInforme();
-			} catch (Exception e) {
-				e.printStackTrace();
+		// try {
+
+		try {
+			datosCorruptos = new LinkedList<String>();
+			candidatos = new LinkedList<Cliente>();
+			clientes = leerArchivo();
+			int version;
+			System.out.println("Version? ");
+			version = scanner.nextInt();
+			switch (version) {
+			case 1:
+				pareto = new ParetoV1(clientes);
+			case 2:
+				pareto = new ParetoV2(clientes);
+				// case 3: pareto = new ParetoV3(clientes);
+				// case 4: pareto = new ParetoV4(clientes);
 			}
-			
-		/*} catch (FileNotFoundException e) {
+
+			do {
+				long a = System.nanoTime();
+				candidatos.addAll(pareto.paretoSolucion());
+				System.out.println("Tiempo:" + (System.nanoTime() - a));
+				clientes.removeAll(candidatos);
+			} while (candidatos.size() < uPC);
+			imprimirInforme();
+
+		} catch (FileNotFoundException e) {
 			System.out.println(ERROR_ARCHIVO_INEXISTENTE);
 		} catch (EmptyFileException e) {
-			System.out.println(e.getMessage());
-		}*/
+			System.out.println(ERROR_ARCHIVO_VACIO);
+		} catch (NumberFormatException e) {
+			System.out.println(ERROR_FORMATO_CABECERA);
+		} catch (NegativeNumberException e) {
+			System.out.println(ERROR_CABECERA_NEGATIVA);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (LinesNotEqualsHeaderException e) {
+			System.out.println(ERROR_MENOS_DATOS_QUE_EN_LA_CABECERA);
+		}
 	}
 
 	private static void imprimirInforme() {
-		try{
+		try {
 			FileWriter fw = new FileWriter(SALIDA);
 			BufferedWriter bw = new BufferedWriter(fw);
 			PrintWriter pw = new PrintWriter(fw);
-			
+
 			pw.println("Clientes sospechosos:\n\n");
 			Iterator<Cliente> it = candidatos.iterator();
-			while(it.hasNext()) pw.println(it.next().toString());
+			while (it.hasNext())
+				pw.println(it.next().toString());
 			pw.println("\nClientes con datos corruptos:\n\n");
 			Iterator<String> it2 = datosCorruptos.iterator();
-			while(it2.hasNext()) pw.println(it2.next());
+			while (it2.hasNext())
+				pw.println(it2.next());
 			pw.close();
 			bw.close();
 			fw.close();
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	/*private static void leerArchivo() throws EmptyFileException,
-			FileNotFoundException {
-		try {
-			FileReader fr = new FileReader(ARCHIVO);
-			BufferedReader br = new BufferedReader(fr);
-			String linea = br.readLine();
-			if (linea.equals(null))
-				throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
-			do{
-				linea = linea.replaceAll(" ", "");
-			}while(linea.equals(""));
-			while(linea)
-			
-			br.close();
-			fr.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}*/
-	
-	private static LinkedList<Cliente> leerArchivo() throws NumberFormatException, IOException{
-		LinkedList<Cliente> struc= new LinkedList<Cliente>();
-		int numDePuntos=0;
-		FileReader fr = new FileReader (ARCHIVO);
+	private static LinkedList<Cliente> leerArchivo() throws EmptyFileException,
+			NumberFormatException, NegativeNumberException, IOException, LinesNotEqualsHeaderException {
+
+		LinkedList<Cliente> toReturn = new LinkedList<Cliente>();
+		FileReader fr = new FileReader(ARCHIVO);
 		BufferedReader br = new BufferedReader(fr);
-		numDePuntos = Integer.parseInt(br.readLine());
-		
-		int ce;
-		int ice;
-		String linea = "";
-		Scanner sc;
+		String linea;
+		do {
+			linea = br.readLine();
+			linea = linea.replaceAll(" ", "");
+		} while (linea.equals(""));
+		if (linea.equals(null))
+			throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
+		int nClientes = Integer.parseInt(linea);
+		if (nClientes <= 0)
+			throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
 		int i = 0;
-		
-		for(; i< numDePuntos; i++){
-			try{
-				linea = br.readLine();
+		int ice, ce;
+		Scanner sc;
+		linea = br.readLine();
+
+		while (linea != null) {
+			try {
 				linea = linea.replaceAll(" ", "");
-				sc = new Scanner (linea);
+				if(linea.equals("")){
+					i++;
+					linea = br.readLine();
+					continue;
+				}
+				sc = new Scanner(linea);
 				sc.useDelimiter(",");
-			
+
 				ice = sc.nextInt();
 				ce = sc.nextInt();
-			
-				struc.add(new Cliente(i, ce, ice));
-			}catch(Exception e){
+				if(ice <= 0 || ce <= 0) throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
+
+				toReturn.add(new Cliente(i, ce, ice));
+				i++;
+				linea = br.readLine();
+			} catch (Exception e) {
 				datosCorruptos.add("Id: " + i + " Datos: " + linea);
+				i++;
+				linea = br.readLine();
+				continue;
 			}
 		}
-		uPC = ((i+1)%100 == 0)? (i+1)/100 : ((i+1)/100) + 1;
-		return struc;
+		if(i != nClientes) throw new LinesNotEqualsHeaderException(ERROR_MENOS_DATOS_QUE_EN_LA_CABECERA);
+		uPC = ((nClientes) % 100 == 0) ? (nClientes) / 100
+				: ((nClientes) / 100) + 1;
+		br.close();
+		fr.close();
+		return toReturn;
 	}
+
+	/*
+	 * private static LinkedList<Cliente> leerArchivo() throws
+	 * NumberFormatException, IOException{ LinkedList<Cliente> struc= new
+	 * LinkedList<Cliente>(); int numDePuntos=0; FileReader fr = new FileReader
+	 * (ARCHIVO); BufferedReader br = new BufferedReader(fr); numDePuntos =
+	 * Integer.parseInt(br.readLine());
+	 * 
+	 * int ce; int ice; String linea = ""; Scanner sc; int i = 0;
+	 * 
+	 * for(; i< numDePuntos; i++){ try{ linea = br.readLine(); linea =
+	 * linea.replaceAll(" ", ""); sc = new Scanner (linea);
+	 * sc.useDelimiter(",");
+	 * 
+	 * ice = sc.nextInt(); ce = sc.nextInt();
+	 * 
+	 * struc.add(new Cliente(i, ce, ice)); }catch(Exception e){
+	 * datosCorruptos.add("Id: " + i + " Datos: " + linea); } } uPC = ((i+1)%100
+	 * == 0)? (i+1)/100 : ((i+1)/100) + 1; return struc; }
+	 */
 
 }
