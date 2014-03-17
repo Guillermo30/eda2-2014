@@ -13,7 +13,8 @@ public class ParetoV2 extends Pareto {
 
 	@Override
 	public LinkedList<Cliente> paretoSolucion() {
-		LinkedList<Cliente> in = (LinkedList<Cliente>) nube;
+		
+		LinkedList<Cliente> in=(LinkedList<Cliente>) nube;
 		LinkedList<Cliente> salida = new LinkedList<Cliente>();
 
 		// calculo del minimo
