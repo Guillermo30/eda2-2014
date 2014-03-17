@@ -71,6 +71,7 @@ public class ParetoV4 extends Pareto {
 				prob1.add(in.get(i));
 				if(i==(in.size()/2)-1){
 					for(int j=0; j< prob1.size(); j++){
+						if(j==0) min = prob1.get(0).getCe();
 						if(prob1.get(j).getCe()<min)
 							min = prob1.get(j).getCe();
 					}
