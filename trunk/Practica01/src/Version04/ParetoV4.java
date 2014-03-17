@@ -107,12 +107,14 @@ public class ParetoV4 extends Pareto {
 
 	private LinkedList<Cliente> casoBase(ArrayList<Cliente> in, LinkedList<Cliente> salida) {
 		int a,b,c;
+		a=Integer.MAX_VALUE;
+		b=Integer.MAX_VALUE;
 		c=Integer.MAX_VALUE;
-		a=in.get(0).getCe();
-		b=in.get(1).getCe();
+		if(in.size()>=1)a=in.get(0).getCe();
+		if(in.size()>=2)b=in.get(1).getCe();
 		if(in.size()==3) c=in.get(2).getCe();
 		
-		salida.add(in.get(0));
+		if(in.size()>=1)salida.add(in.get(0));
 		if(b<a) salida.add(in.get(1));
 		if(c<b&&c<a) salida.add(in.get(2));
 		
