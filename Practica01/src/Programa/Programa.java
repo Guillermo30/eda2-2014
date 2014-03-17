@@ -79,7 +79,7 @@ public class Programa {
 				while(it.hasNext()){
 					a.add(it.next());
 				}
-				pareto = new ParetoV4(clientes);
+				pareto = new ParetoV4(a);
 			}
 
 			do {
