@@ -69,12 +69,14 @@ public class ParetoV4 extends Pareto {
 		for(int i = 0; i< in.size(); i++){
 			if(i < in.size()/2){
 				prob1.add(in.get(i));
-				if(i==in.size()/2-1){
+				if(i==(in.size()/2)-1){
 					for(int j=0; j< prob1.size(); j++){
 						if(prob1.get(j).getCe()<min)
 							min = prob1.get(j).getCe();
 					}
 				}
+				
+				
 			}else{
 				if(in.get(i).getCe()<min) prob2.add(in.get(i));
 			}
@@ -110,8 +112,8 @@ public class ParetoV4 extends Pareto {
 		a=Integer.MAX_VALUE;
 		b=Integer.MAX_VALUE;
 		c=Integer.MAX_VALUE;
-		if(in.size()>=1)a=in.get(0).getCe();
-		if(in.size()>=2)b=in.get(1).getCe();
+		if(in.size()>=1) a=in.get(0).getCe();
+		if(in.size()>=2) b=in.get(1).getCe();
 		if(in.size()==3) c=in.get(2).getCe();
 		
 		if(in.size()>=1)salida.add(in.get(0));
