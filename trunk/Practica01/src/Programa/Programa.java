@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -60,14 +61,24 @@ public class Programa {
 			int version;
 			System.out.println("Version? ");
 			version = scanner.nextInt();
-			switch (version) {
-			case 1:
+			if(version == 1)
 				pareto = new ParetoV1(clientes);
-			case 2:
+			if(version == 2)
 				pareto = new ParetoV2(clientes);
-			case 3:
-				pareto = new ParetoV3(clientes);
-			case 4:
+			if(version == 3){
+				ArrayList<Cliente> a = new ArrayList<Cliente>(clientes.size());
+				Iterator<Cliente> it = clientes.iterator();
+				while(it.hasNext()){
+					a.add(it.next());
+				}
+				pareto = new ParetoV3(a);
+			}
+			if(version == 4){
+				ArrayList<Cliente> a = new ArrayList<Cliente>(clientes.size());
+				Iterator<Cliente> it = clientes.iterator();
+				while(it.hasNext()){
+					a.add(it.next());
+				}
 				pareto = new ParetoV4(clientes);
 			}
 
