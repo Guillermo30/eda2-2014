@@ -23,12 +23,12 @@ import Execptions.*;
 
 public class Programa {
 
-	final static File ARCHIVO = new File(System.getProperty("user.dir")
-			+ File.separator + "src" + File.separator + "Programa"
-			+ File.separator + "datos_eda_2.txt");
-	final static File SALIDA = new File(System.getProperty("user.dir")
-			+ File.separator + "src" + File.separator + "Programa"
-			+ File.separator + "datos_eda_2 Salida.txt");
+	final static String ENTRADA = System.getProperty("user.dir")
+			+ File.separator + "src" + File.separator + "Entradas"
+			+ File.separator;
+	final static String SALIDA = System.getProperty("user.dir")
+			+ File.separator + "src" + File.separator + "Salidas"
+			+ File.separator;
 
 	private static LinkedList<String> datosCorruptos;
 	private static LinkedList<Cliente> candidatos;
@@ -36,6 +36,7 @@ public class Programa {
 	private static int uPC;
 	private static Scanner scanner = new Scanner(System.in);
 	private static Pareto pareto;
+	private static File file;
 
 	final static String ERROR_ARCHIVO_INEXISTENTE = "El archivo seleccionado no existe.";
 	final static String ERROR_ARCHIVO_VACIO = "El archivo seleccionado esta vacio.";
@@ -47,6 +48,12 @@ public class Programa {
 		// try {
 
 		try {
+			System.out
+					.println("Nombre del fichero (no hace falta poner la extensión de archivo): ");
+			String fileName = scanner.nextLine();
+			file = new File(ENTRADA + fileName + ".txt");
+			if (!file.exists())
+				throw new FileNotFoundException();
 			datosCorruptos = new LinkedList<String>();
 			candidatos = new LinkedList<Cliente>();
 			clientes = leerArchivo();
@@ -58,15 +65,17 @@ public class Programa {
 				pareto = new ParetoV1(clientes);
 			case 2:
 				pareto = new ParetoV2(clientes);
-				// case 3: pareto = new ParetoV3(clientes);
-				// case 4: pareto = new ParetoV4(clientes);
+			case 3:
+				pareto = new ParetoV3(clientes);
+			case 4:
+				pareto = new ParetoV4(clientes);
 			}
 
 			do {
+				clientes.removeAll(candidatos);
 				long a = System.nanoTime();
 				candidatos.addAll(pareto.paretoSolucion());
 				System.out.println("Tiempo:" + (System.nanoTime() - a));
-				clientes.removeAll(candidatos);
 			} while (candidatos.size() < uPC);
 			imprimirInforme();
 
@@ -87,7 +96,8 @@ public class Programa {
 
 	private static void imprimirInforme() {
 		try {
-			FileWriter fw = new FileWriter(SALIDA);
+			FileWriter fw = new FileWriter(new File(SALIDA + "Salida-"
+					+ file.getName()));
 			BufferedWriter bw = new BufferedWriter(fw);
 			PrintWriter pw = new PrintWriter(fw);
 
@@ -108,10 +118,11 @@ public class Programa {
 	}
 
 	private static LinkedList<Cliente> leerArchivo() throws EmptyFileException,
-			NumberFormatException, NegativeNumberException, IOException, LinesNotEqualsHeaderException {
+			NumberFormatException, NegativeNumberException, IOException,
+			LinesNotEqualsHeaderException {
 
 		LinkedList<Cliente> toReturn = new LinkedList<Cliente>();
-		FileReader fr = new FileReader(ARCHIVO);
+		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
 		String linea;
 		do {
@@ -131,7 +142,7 @@ public class Programa {
 		while (linea != null) {
 			try {
 				linea = linea.replaceAll(" ", "");
-				if(linea.equals("")){
+				if (linea.equals("")) {
 					i++;
 					linea = br.readLine();
 					continue;
@@ -141,7 +152,8 @@ public class Programa {
 
 				ice = sc.nextInt();
 				ce = sc.nextInt();
-				if(ice <= 0 || ce <= 0) throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
+				if (ice <= 0 || ce <= 0)
+					throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
 
 				toReturn.add(new Cliente(i, ce, ice));
 				i++;
@@ -153,7 +165,9 @@ public class Programa {
 				continue;
 			}
 		}
-		if(i != nClientes) throw new LinesNotEqualsHeaderException(ERROR_MENOS_DATOS_QUE_EN_LA_CABECERA);
+		if (i != nClientes)
+			throw new LinesNotEqualsHeaderException(
+					ERROR_MENOS_DATOS_QUE_EN_LA_CABECERA);
 		uPC = ((nClientes) % 100 == 0) ? (nClientes) / 100
 				: ((nClientes) / 100) + 1;
 		br.close();
