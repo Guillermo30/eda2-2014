@@ -13,6 +13,7 @@ public class ParetoV1 extends Pareto {
 
 	@Override
 	public LinkedList<Cliente> paretoSolucion() {
+		
 		LinkedList<Cliente> in = (LinkedList<Cliente>) nube;
 		LinkedList<Cliente> salida = new LinkedList<Cliente>();
 
@@ -29,7 +30,7 @@ public class ParetoV1 extends Pareto {
 		LinkedList<Cliente> v2 = new LinkedList<Cliente>();
 
 		// adjunta el problema decreciente
-		for (int i = 0; i <= min.getId() - 1; i++) {
+		for (int i = 0; i < min.getId() - 1; i++) {
 			v1.add(in.get(i));
 		}
 
@@ -37,11 +38,6 @@ public class ParetoV1 extends Pareto {
 		for (int i = in.size() - 1; i > min.getId(); i--) {
 			v2.add(in.get(i));
 		}
-
-		// impresion del estado de los dos paretos
-		System.out.println("problema decreciente  " + v1);
-		System.out.println("problema creciente invertido  " + v2);
-		System.out.println("minimo " + min);
 
 		// adicion de la primera parte
 		salida.addAll(paretoRecur(v1));
@@ -58,12 +54,11 @@ public class ParetoV1 extends Pareto {
 	private LinkedList<Cliente> paretoRecur(LinkedList<Cliente> in) {
 		LinkedList<Cliente> salida = new  LinkedList<Cliente>();
 		//caso base
-		long r;
-		r= System.nanoTime();
+		
 		if(in.size()<=3){
 			return casoBase(in,salida);
 		}
-		System.out.println((System.nanoTime()-r));
+		
 	
 		
 		
