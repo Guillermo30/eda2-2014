@@ -73,7 +73,9 @@ public class Cliente implements Comparable<Cliente>{
 	}
 	@Override
 	public int compareTo(Cliente arg0) {
-		return this.ice - arg0.ice;
+		int toReturn = this.ice - arg0.ice;
+		if(toReturn == 0) return this.ce -arg0.ce;
+		return toReturn;
 	}
 	
 }
