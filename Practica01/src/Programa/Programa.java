@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -19,21 +20,26 @@ import Version01.ParetoV1;
 import Version02.ParetoV2;
 import Version03.ParetoV3;
 import Version04.ParetoV4;
+import Version05.ParetoV5;
 import estructurasdedatos.AVLTree;
 import Execptions.*;
 
 public class Programa {
 
-	final static String ENTRADA = System.getProperty("user.dir")
+	public final static String ENTRADA = System.getProperty("user.dir")
 			+ File.separator + "src" + File.separator + "Entradas"
 			+ File.separator;
-	final static String SALIDA = System.getProperty("user.dir")
+	public final static String SALIDA = System.getProperty("user.dir")
 			+ File.separator + "src" + File.separator + "Salidas"
 			+ File.separator;
 
 	private static LinkedList<String> datosCorruptos;
 	private static LinkedList<Cliente> candidatos;
-	private static LinkedList<Cliente> clientes;
+	private static Collection<Cliente> clientes;
+	public static LinkedList<String> getDatosCorruptos() {
+		return datosCorruptos;
+	}
+
 	private static int uPC;
 	private static Scanner scanner = new Scanner(System.in);
 	private static Pareto pareto;
@@ -57,37 +63,52 @@ public class Programa {
 				throw new FileNotFoundException();
 			datosCorruptos = new LinkedList<String>();
 			candidatos = new LinkedList<Cliente>();
-			clientes = leerArchivo();
 			int version;
 			System.out.println("Version? ");
 			version = scanner.nextInt();
-			if(version == 1)
+			if(version >5){
+				System.out.println("No existe esa version de algoritmo.");
+				System.exit(0);
+			}
+			if(version == 1){
+				clientes = new LinkedList<Cliente>();
+				leerArchivo();
 				pareto = new ParetoV1(clientes);
-			if(version == 2)
+			}	
+			if(version == 2){
+				clientes = new LinkedList<Cliente>();
+				leerArchivo();
 				pareto = new ParetoV2(clientes);
+			}
 			if(version == 3){
-				ArrayList<Cliente> a = new ArrayList<Cliente>(clientes.size());
-				Iterator<Cliente> it = clientes.iterator();
-				while(it.hasNext()){
-					a.add(it.next());
-				}
-				pareto = new ParetoV3(a);
+				clientes = new ArrayList<Cliente>();
+				leerArchivo();
+				pareto = new ParetoV3(clientes);
 			}
 			if(version == 4){
-				ArrayList<Cliente> a = new ArrayList<Cliente>(clientes.size());
-				Iterator<Cliente> it = clientes.iterator();
-				while(it.hasNext()){
-					a.add(it.next());
-				}
-				pareto = new ParetoV4(a);
+				clientes = new ArrayList<Cliente>();
+				leerArchivo();
+				pareto = new ParetoV4(clientes);
 			}
-
-			do {
-				clientes.removeAll(candidatos);
-				long a = System.nanoTime();
-				candidatos.addAll(pareto.paretoSolucion());
-				System.out.println("Tiempo:" + (System.nanoTime() - a));
-			} while (candidatos.size() < uPC);
+			if(version == 5){
+				clientes = new AVLTree<Cliente>();
+				leerArchivo();
+				pareto = new ParetoV5(clientes);
+			}
+			long a = System.nanoTime();
+			long b;
+			Collection<Cliente> paretoTemp = pareto.paretoSolucion();
+			candidatos.addAll(paretoTemp);
+			System.out.println("Tiempo:" + (System.nanoTime() - a));
+			while (candidatos.size() < uPC){
+				b = System.nanoTime();
+				pareto.removeAll(paretoTemp);
+				System.out.println("Tiempo eliminación:" + (System.nanoTime() - b));
+				a = System.nanoTime();
+				paretoTemp = pareto.paretoSolucion();
+				System.out.println("Tiempo pareto:" + (System.nanoTime() - a));
+				candidatos.addAll(paretoTemp);
+			}
 			imprimirInforme();
 
 		} catch (FileNotFoundException e) {
@@ -128,11 +149,10 @@ public class Programa {
 		}
 	}
 
-	private static LinkedList<Cliente> leerArchivo() throws EmptyFileException,
+	public static void leerArchivo() throws EmptyFileException,
 			NumberFormatException, NegativeNumberException, IOException,
 			LinesNotEqualsHeaderException {
 
-		LinkedList<Cliente> toReturn = new LinkedList<Cliente>();
 		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
 		String linea;
@@ -166,7 +186,7 @@ public class Programa {
 				if (ice <= 0 || ce <= 0)
 					throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
 
-				toReturn.add(new Cliente(i, ce, ice));
+				clientes.add(new Cliente(i, ce, ice));
 				i++;
 				linea = br.readLine();
 			} catch (Exception e) {
@@ -183,7 +203,26 @@ public class Programa {
 				: ((nClientes) / 100) + 1;
 		br.close();
 		fr.close();
-		return toReturn;
+	}
+	
+	public static void setDatosCorruptos(LinkedList<String> datosCorruptos) {
+		Programa.datosCorruptos = datosCorruptos;
+	}
+
+	public static LinkedList<Cliente> getCandidatos() {
+		return candidatos;
+	}
+
+	public static void setCandidatos(LinkedList<Cliente> candidatos) {
+		Programa.candidatos = candidatos;
+	}
+
+	public static Collection<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public static void setClientes(Collection<Cliente> clientes) {
+		Programa.clientes = clientes;
 	}
 
 	/*

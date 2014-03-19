@@ -365,6 +365,10 @@ public class AVLTree<T>
     {
       return new TreeIterator(root);
     }
+    
+    public Iterator<T> reverseInOrderIterator() {
+		return new TreeReverseInOrderIterator(root);
+	}
 
      /**
      * Returns the number of elements in this tree.
@@ -490,16 +494,12 @@ public class AVLTree<T>
 
 			lastReturned = curr;
 
-			if (!stack.isEmpty() && !curr.equals(stack.peek()))
-				// no right subtree there are other nodes
-				// to visit. pop the stack
-				curr = (AVLNode<T>) stack.peek();
-			else if (curr.right != null) { // have a right subtree
-				// stack nodes on left subtree
-				stack.pop();
+			if (!stack.isEmpty() && curr.right == null)
+				curr = (AVLNode<T>) stack.pop();
+			else if (curr.right != null) {
 				curr = goFarLeft(curr.right);
 			} else
-				curr = null; // end of tree; set curr to null
+				curr = null;
 
 			return returnValue;
 		}
@@ -516,6 +516,74 @@ public class AVLTree<T>
 		}
     }
     
+	private class TreeReverseInOrderIterator implements Iterator<T> {
+		private ALStack<AVLNode<T>> stack = null;
+		private AVLNode<T> curr = null;
+		private AVLNode<T> lastReturned = null;
+
+		// set expectedModCount to the number of list changes
+		// at the time of iterator creation
+		private int expectedModCount = modCount;
+
+		// go far left from t, pushing all the nodes with left
+		// children on stack
+		private AVLNode<T> goFarRight(AVLNode<T> t) {
+			if (t == null)
+				return null;
+			while (t.right != null) {
+				stack.push(t);
+				t = t.right;
+			}
+			return t;
+		}
+
+		public TreeReverseInOrderIterator(AVLNode<T> root) {
+			stack = new ALStack<AVLNode<T>>();
+			curr = goFarRight(root);
+		}
+
+		public boolean hasNext() {
+			return curr != null;
+		}
+
+		public T current() {
+			return lastReturned.nodeValue;
+		}
+
+		public T next() {
+			// check that the iterator is in a consistent state.
+			// throws ConcurrentModificationException if not
+			checkIteratorState();
+
+			if (curr == null)
+				throw new NoSuchElementException("No elements remaining");
+
+			// capture the value in the node
+			T returnValue = (T) curr.nodeValue;
+
+			lastReturned = curr;
+
+			if (!stack.isEmpty() && curr.left == null)
+				curr = (AVLNode<T>) stack.pop();
+			else if (curr.left != null) {
+				curr = goFarRight(curr.left);
+			} else
+				curr = null;
+
+			return returnValue;
+		}
+
+		public void remove() {
+			// no implementation
+		}
+
+		// protected so MiniListIteratorImpl class can use it also
+		private void checkIteratorState() {
+			if (expectedModCount != modCount)
+				throw new ConcurrentModificationException(
+						"Inconsistent iterator");
+		}
+	}
     
 	// declares a binary search tree node object
 	public static class AVLNode<T>
