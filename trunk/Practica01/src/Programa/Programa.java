@@ -145,64 +145,63 @@ public class Programa {
 	}
 
 	public static void leerArchivo() throws EmptyFileException,
-			NumberFormatException, NegativeNumberException, IOException,
-			LinesNotEqualsHeaderException {
+	   NumberFormatException, NegativeNumberException, IOException,
+	   LinesNotEqualsHeaderException {
 
-		FileReader fr = new FileReader(file);
-		BufferedReader br = new BufferedReader(fr);
-		String linea;
-		do {
-			linea = br.readLine();
-			linea = linea.replaceAll(" ", "");
-		} while (linea.equals(""));
-		if (linea.equals(null))
-			throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
-		int nClientes = Integer.parseInt(linea);
-		if (nClientes <= 0)
-			throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
-		int i = 0;
-		int ice, ce;
-		Scanner sc;
-		linea = br.readLine();
+	  FileReader fr = new FileReader(file);
+	  BufferedReader br = new BufferedReader(fr);
+	  String linea = br.readLine();
+	  if (linea == null)
+	   throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
+	  linea = linea.replaceAll(" ", "");
+	  while (linea.equals("")) {
+	   linea = linea.replaceAll(" ", "");
+	   linea = br.readLine();
+	  }
+	  if (linea == null)
+	   throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
+	  int nClientes = Integer.parseInt(linea);
+	  if (nClientes <= 0)
+	   throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
+	  int i = 0;
+	  int ice, ce;
+	  Scanner sc;
+	  linea = br.readLine();
 
-		while (linea != null) {
-			try {
-				linea = linea.replaceAll(" ", "");
-				if (linea.equals("")) {
-					i++;
-					linea = br.readLine();
-					continue;
-				}
-				sc = new Scanner(linea);
-				sc.useDelimiter(",");
+	  while (linea != null) {
+	   try {
+	    linea = linea.replaceAll(" ", "");
+	    if (linea.equals("")) {
+	     
+	     linea = br.readLine();
+	     continue;
+	    }
+	    sc = new Scanner(linea);
+	    sc.useDelimiter(",");
 
-				ice = sc.nextInt();
-				ce = sc.nextInt();
-				if (ice <= 0 || ce <= 0)
-					throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
+	    ice = sc.nextInt();
+	    ce = sc.nextInt();
+	    if (ice <= 0 || ce <= 0)
+	     throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
 
-				clientes.add(new Cliente(i, ce, ice));
-				i++;
-				linea = br.readLine();
-			} catch (Exception e) {
-				datosCorruptos.add("Id: " + i + " Datos: " + linea);
-				i++;
-				linea = br.readLine();
-				continue;
-			}
-		}
-		if (i != nClientes)
-			throw new LinesNotEqualsHeaderException(
-					ERROR_MENOS_DATOS_QUE_EN_LA_CABECERA);
-		uPC = ((nClientes) % 100 == 0) ? (nClientes) / 100
-				: ((nClientes) / 100) + 1;
-		br.close();
-		fr.close();
-	}
-	
-	public static void setDatosCorruptos(LinkedList<String> datosCorruptos) {
-		Programa.datosCorruptos = datosCorruptos;
-	}
+	    clientes.add(new Cliente(i, ce, ice));
+	    i++;
+	    linea = br.readLine();
+	   } catch (Exception e) {
+	    datosCorruptos.add("Id: " + i + " Datos: " + linea);
+	    i++;
+	    linea = br.readLine();
+	    continue;
+	   }
+	  }
+	  if (i != nClientes)
+	   throw new LinesNotEqualsHeaderException(
+	     ERROR_MENOS_DATOS_QUE_EN_LA_CABECERA);
+	  uPC = ((nClientes) % 100 == 0) ? (nClientes) / 100
+	    : ((nClientes) / 100) + 1;
+	  br.close();
+	  fr.close();
+	 }
 
 	public static LinkedList<Cliente> getCandidatos() {
 		return candidatos;
@@ -218,6 +217,9 @@ public class Programa {
 
 	public static void setClientes(Collection<Cliente> clientes) {
 		Programa.clientes = clientes;
+	}
+	public static void setFile(File entrada) {
+		Programa.file = entrada;
 	}
 
 	/*
