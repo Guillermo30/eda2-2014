@@ -96,6 +96,7 @@ public class Programa {
 				pareto = new ParetoV5(clientes);
 			}
 			long a = System.nanoTime();
+			long c = System.nanoTime();
 			long b;
 			Collection<Cliente> paretoTemp = pareto.paretoSolucion();
 			candidatos.addAll(paretoTemp);
@@ -109,6 +110,7 @@ public class Programa {
 				System.out.println("Tiempo pareto:" + (System.nanoTime() - a));
 				candidatos.addAll(paretoTemp);
 			}
+			System.out.println("Tiempo total: " + (System.nanoTime() -c));
 			imprimirInforme();
 
 		} catch (FileNotFoundException e) {
