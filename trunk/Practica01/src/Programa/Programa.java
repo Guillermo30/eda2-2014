@@ -99,7 +99,7 @@ public class Programa {
 			long b;
 			Collection<Cliente> paretoTemp = pareto.paretoSolucion();
 			candidatos.addAll(paretoTemp);
-			System.out.println("Tiempo: " + (System.nanoTime() - a));
+			System.out.println("Tiempo pareto: " + (System.nanoTime() - a));
 			while (candidatos.size() < uPC){
 				b = System.nanoTime();
 				pareto.removeAll(paretoTemp);
