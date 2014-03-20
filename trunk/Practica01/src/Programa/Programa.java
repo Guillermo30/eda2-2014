@@ -20,7 +20,6 @@ import Version01.ParetoV1;
 import Version02.ParetoV2;
 import Version03.ParetoV3;
 import Version04.ParetoV4;
-import Version05.ParetoV5;
 import estructurasdedatos.AVLTree;
 import Execptions.*;
 
@@ -66,7 +65,7 @@ public class Programa {
 			int version;
 			System.out.println("Version? ");
 			version = scanner.nextInt();
-			if(version >5){
+			if(version > 4){
 				System.out.println("No existe esa version de algoritmo.");
 				System.exit(0);
 			}
@@ -89,11 +88,6 @@ public class Programa {
 				clientes = new ArrayList<Cliente>();
 				leerArchivo();
 				pareto = new ParetoV4(clientes);
-			}
-			if(version == 5){
-				clientes = new AVLTree<Cliente>();
-				leerArchivo();
-				pareto = new ParetoV5(clientes);
 			}
 			long a = System.nanoTime();
 			long b;
