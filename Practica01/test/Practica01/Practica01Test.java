@@ -2,13 +2,17 @@ package Practica01;
 
 import org.junit.Before;
 import org.junit.Test;
+
 import Execptions.EmptyFileException;
 import Execptions.LinesNotEqualsHeaderException;
 import Execptions.NegativeNumberException;
 import Programa.Programa;
+import Utilidades.Cliente;
 import static org.junit.Assert.*;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Practica01Test {
 	String directorioEntrada;
@@ -89,6 +93,7 @@ public class Practica01Test {
 	@Test(expected=LinesNotEqualsHeaderException.class)
 	public void testExcepcionArchivoMenosDatosQueCabecera() throws NumberFormatException, EmptyFileException, NegativeNumberException, IOException, LinesNotEqualsHeaderException{
 		
+		Programa.setClientes(new ArrayList<Cliente>());
 		directorioEntrada1 = System.getProperty("user.dir");
 		
 		directorioEntrada1 = directorioEntrada1 
@@ -104,6 +109,8 @@ public class Practica01Test {
 	@Test
 	public void testExcepcionArchivoDatosNegativos() throws NumberFormatException, EmptyFileException, NegativeNumberException, IOException, LinesNotEqualsHeaderException{
 		
+		Programa.setClientes(new ArrayList<Cliente>());
+		Programa.setDatosCorruptos(new LinkedList<String>());
 		directorioEntrada1 = System.getProperty("user.dir");
 		
 		directorioEntrada1 = directorioEntrada1 
