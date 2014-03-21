@@ -35,6 +35,7 @@ public class Programa {
 	private static LinkedList<String> datosCorruptos;
 	private static LinkedList<Cliente> candidatos;
 	private static Collection<Cliente> clientes;
+
 	public static LinkedList<String> getDatosCorruptos() {
 		return datosCorruptos;
 	}
@@ -65,26 +66,26 @@ public class Programa {
 			int version;
 			System.out.println("Version? ");
 			version = scanner.nextInt();
-			if(version > 4){
+			if (version > 4) {
 				System.out.println("No existe esa version de algoritmo.");
 				System.exit(0);
 			}
-			if(version == 1){
+			if (version == 1) {
 				clientes = new LinkedList<Cliente>();
 				leerArchivo();
 				pareto = new ParetoV1(clientes);
-			}	
-			if(version == 2){
+			}
+			if (version == 2) {
 				clientes = new LinkedList<Cliente>();
 				leerArchivo();
 				pareto = new ParetoV2(clientes);
 			}
-			if(version == 3){
+			if (version == 3) {
 				clientes = new ArrayList<Cliente>();
 				leerArchivo();
 				pareto = new ParetoV3(clientes);
 			}
-			if(version == 4){
+			if (version == 4) {
 				clientes = new ArrayList<Cliente>();
 				leerArchivo();
 				pareto = new ParetoV4(clientes);
@@ -94,16 +95,17 @@ public class Programa {
 			Collection<Cliente> paretoTemp = pareto.paretoSolucion();
 			candidatos.addAll(paretoTemp);
 			System.out.println("Tiempo pareto: " + (System.nanoTime() - a));
-			while (candidatos.size() < uPC){
+			while (candidatos.size() < uPC) {
 				b = System.nanoTime();
 				pareto.removeAll(paretoTemp);
-				System.out.println("Tiempo eliminación: " + (System.nanoTime() - b));
+				System.out.println("Tiempo eliminación: "
+						+ (System.nanoTime() - b));
 				b = System.nanoTime();
 				paretoTemp = pareto.paretoSolucion();
 				System.out.println("Tiempo pareto: " + (System.nanoTime() - b));
 				candidatos.addAll(paretoTemp);
 			}
-			System.out.println("Tiempo total: " + (System.nanoTime() -a));
+			System.out.println("Tiempo total: " + (System.nanoTime() - a));
 			imprimirInforme();
 
 		} catch (FileNotFoundException e) {
@@ -145,63 +147,62 @@ public class Programa {
 	}
 
 	public static void leerArchivo() throws EmptyFileException,
-	   NumberFormatException, NegativeNumberException, IOException,
-	   LinesNotEqualsHeaderException {
+			NumberFormatException, NegativeNumberException, IOException,
+			LinesNotEqualsHeaderException {
 
-	  FileReader fr = new FileReader(file);
-	  BufferedReader br = new BufferedReader(fr);
-	  String linea = br.readLine();
-	  if (linea == null)
-	   throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
-	  linea = linea.replaceAll(" ", "");
-	  while (linea.equals("")) {
-	   linea = linea.replaceAll(" ", "");
-	   linea = br.readLine();
-	  }
-	  if (linea == null)
-	   throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
-	  int nClientes = Integer.parseInt(linea);
-	  if (nClientes <= 0)
-	   throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
-	  int i = 0;
-	  int ice, ce;
-	  Scanner sc;
-	  linea = br.readLine();
+		FileReader fr = new FileReader(file);
+		BufferedReader br = new BufferedReader(fr);
+		String linea = br.readLine();
+		if (linea == null)
+			throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
+		linea = linea.replaceAll(" ", "");
+		while (linea.equals("")) {
+			linea = linea.replaceAll(" ", "");
+			linea = br.readLine();
+		}
+		if (linea == null)
+			throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
+		int nClientes = Integer.parseInt(linea);
+		if (nClientes <= 0)
+			throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
+		int i = 0;
+		int ice, ce;
+		Scanner sc;
+		linea = br.readLine();
 
-	  while (linea != null) {
-	   try {
-	    linea = linea.replaceAll(" ", "");
-	    if (linea.equals("")) {
-	     
-	     linea = br.readLine();
-	     continue;
-	    }
-	    sc = new Scanner(linea);
-	    sc.useDelimiter(",");
+		while (linea != null) {
+			try {
+				linea = linea.replaceAll(" ", "");
+				if (linea.equals("")) {
+					linea = br.readLine();
+					continue;
+				}
+				sc = new Scanner(linea);
+				sc.useDelimiter(",");
 
-	    ice = sc.nextInt();
-	    ce = sc.nextInt();
-	    if (ice <= 0 || ce <= 0)
-	     throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
+				ice = sc.nextInt();
+				ce = sc.nextInt();
+				if (ice <= 0 || ce <= 0)
+					throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
 
-	    clientes.add(new Cliente(i, ce, ice));
-	    i++;
-	    linea = br.readLine();
-	   } catch (Exception e) {
-	    datosCorruptos.add("Id: " + i + " Datos: " + linea);
-	    i++;
-	    linea = br.readLine();
-	    continue;
-	   }
-	  }
-	  if (i != nClientes)
-	   throw new LinesNotEqualsHeaderException(
-	     ERROR_MENOS_DATOS_QUE_EN_LA_CABECERA);
-	  uPC = ((nClientes) % 100 == 0) ? (nClientes) / 100
-	    : ((nClientes) / 100) + 1;
-	  br.close();
-	  fr.close();
-	 }
+				clientes.add(new Cliente(i, ce, ice));
+				i++;
+				linea = br.readLine();
+			} catch (Exception e) {
+				datosCorruptos.add("Id: " + i + " Datos: " + linea);
+				i++;
+				linea = br.readLine();
+				continue;
+			}
+		}
+		if (i != nClientes)
+			throw new LinesNotEqualsHeaderException(
+					ERROR_MENOS_DATOS_QUE_EN_LA_CABECERA);
+		uPC = ((nClientes) % 100 == 0) ? (nClientes) / 100
+				: ((nClientes) / 100) + 1;
+		br.close();
+		fr.close();
+	}
 
 	public static LinkedList<Cliente> getCandidatos() {
 		return candidatos;
@@ -218,8 +219,13 @@ public class Programa {
 	public static void setClientes(Collection<Cliente> clientes) {
 		Programa.clientes = clientes;
 	}
+
 	public static void setFile(File entrada) {
 		Programa.file = entrada;
+	}
+
+	public static void setDatosCorruptos(LinkedList<String> datosCorruptos) {
+		Programa.datosCorruptos = datosCorruptos;
 	}
 
 	/*
