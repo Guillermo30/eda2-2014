@@ -64,23 +64,16 @@ public LinkedList<Cliente> paretoSolucion() {
 		//division del problema
 		ArrayList<Cliente> prob1 = new ArrayList<Cliente>();
 		ArrayList<Cliente> prob2 = new ArrayList<Cliente>();
-		int min=0;
+		int min=Integer.MAX_VALUE;
 		
-		for(int i = 0; i< in.size(); i++){
-			if(i < in.size()/2){
-				prob1.add(in.get(i));
-				if(i==(in.size()/2)-1){
-					for(int j=0; j< prob1.size(); j++){
-						if(j==0) min = prob1.get(0).getCe();
-						else if(prob1.get(j).getCe()<min)
-							min = prob1.get(j).getCe();
-					}
-				}
-				
-				
-			}else{
-				if(in.get(i).getCe()<min) prob2.add(in.get(i));
-			}
+		int i = 0;
+		for(; i< in.size()/2; i++){
+			prob1.add(in.get(i));
+			if(min > in.get(i).getIce()) min = in.get(i).getCe();
+		}
+		
+		for(; i< in.size(); i++){
+			if(in.get(i).getCe() <= min) prob2.add(in.get(i));
 		}
 		
 		
