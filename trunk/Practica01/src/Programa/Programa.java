@@ -49,7 +49,7 @@ public class Programa {
 	final static String ERROR_ARCHIVO_VACIO = "El archivo seleccionado esta vacio.";
 	final static String ERROR_FORMATO_CABECERA = "El archivo seleccionado no contiene una cabecera con un entero.";
 	final static String ERROR_CABECERA_NEGATIVA = "El archivo seleccionado contiene una cabecera negativa.";
-	final static String ERROR_MENOS_DATOS_QUE_EN_LA_CABECERA = "El archivo de texto tiene menos datos de los que indica la cabecera.";
+	final static String ERROR_DATOS_NO_COINCIDEN_CON_CABECERA = "El numero de clientes del archivo no coincide con el de la cabecera.";
 
 	public static void main(String[] args) {
 		// try {
@@ -119,7 +119,7 @@ public class Programa {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (LinesNotEqualsHeaderException e) {
-			System.out.println(ERROR_MENOS_DATOS_QUE_EN_LA_CABECERA);
+			System.out.println(ERROR_DATOS_NO_COINCIDEN_CON_CABECERA);
 		}
 	}
 
@@ -197,7 +197,7 @@ public class Programa {
 		}
 		if (i != nClientes)
 			throw new LinesNotEqualsHeaderException(
-					ERROR_MENOS_DATOS_QUE_EN_LA_CABECERA);
+					ERROR_DATOS_NO_COINCIDEN_CON_CABECERA);
 		uPC = ((nClientes) % 100 == 0) ? (nClientes) / 100
 				: ((nClientes) / 100) + 1;
 		br.close();
