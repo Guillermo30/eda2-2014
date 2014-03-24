@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Execptions.EmptyFileException;
+import Execptions.HeaderOutOfRangeException;
 import Execptions.LinesNotEqualsHeaderException;
 import Execptions.NegativeNumberException;
 import Programa.Programa;
@@ -35,7 +36,7 @@ public class Practica01Test {
 	@Test(expected = EmptyFileException.class)
 	public void testExcepcionArchivoVacio() throws NumberFormatException,
 			EmptyFileException, NegativeNumberException, IOException,
-			LinesNotEqualsHeaderException {
+			LinesNotEqualsHeaderException, HeaderOutOfRangeException {
 
 		directorioEntrada1 = System.getProperty("user.dir");
 
@@ -51,7 +52,7 @@ public class Practica01Test {
 	@Test(expected = NegativeNumberException.class)
 	public void testExcepcionArchivoCaberceraNegativa()
 			throws NumberFormatException, EmptyFileException,
-			NegativeNumberException, IOException, LinesNotEqualsHeaderException {
+			NegativeNumberException, IOException, LinesNotEqualsHeaderException, HeaderOutOfRangeException {
 
 		directorioEntrada1 = System.getProperty("user.dir");
 
@@ -67,7 +68,7 @@ public class Practica01Test {
 	@Test(expected = FileNotFoundException.class)
 	public void testExcepcionArchivoNoEncontrado()
 			throws NumberFormatException, EmptyFileException,
-			NegativeNumberException, IOException, LinesNotEqualsHeaderException {
+			NegativeNumberException, IOException, LinesNotEqualsHeaderException, HeaderOutOfRangeException {
 
 		directorioEntrada1 = System.getProperty("user.dir");
 
@@ -82,7 +83,7 @@ public class Practica01Test {
 	@Test(expected = NumberFormatException.class)
 	public void testExcepcionArchivoCaberceraIcorrecta()
 			throws NumberFormatException, EmptyFileException,
-			NegativeNumberException, IOException, LinesNotEqualsHeaderException {
+			NegativeNumberException, IOException, LinesNotEqualsHeaderException, HeaderOutOfRangeException {
 
 		directorioEntrada1 = System.getProperty("user.dir");
 
@@ -98,7 +99,7 @@ public class Practica01Test {
 	@Test(expected = LinesNotEqualsHeaderException.class)
 	public void testExcepcionArchivoMenosDatosQueCabecera()
 			throws NumberFormatException, EmptyFileException,
-			NegativeNumberException, IOException, LinesNotEqualsHeaderException {
+			NegativeNumberException, IOException, LinesNotEqualsHeaderException, HeaderOutOfRangeException {
 
 		Programa.setClientes(new ArrayList<Cliente>());
 		directorioEntrada1 = System.getProperty("user.dir");
@@ -115,7 +116,7 @@ public class Practica01Test {
 	@Test(expected = LinesNotEqualsHeaderException.class)
 	public void testExcepcionArchivoMasDatosQueCabecera()
 			throws NumberFormatException, EmptyFileException,
-			NegativeNumberException, IOException, LinesNotEqualsHeaderException {
+			NegativeNumberException, IOException, LinesNotEqualsHeaderException, HeaderOutOfRangeException {
 
 		Programa.setClientes(new ArrayList<Cliente>());
 		directorioEntrada1 = System.getProperty("user.dir");
@@ -132,7 +133,7 @@ public class Practica01Test {
 	@Test
 	public void testDatosCorruptos() throws NumberFormatException,
 			EmptyFileException, NegativeNumberException, IOException,
-			LinesNotEqualsHeaderException {
+			LinesNotEqualsHeaderException, HeaderOutOfRangeException {
 
 		Programa.setClientes(new ArrayList<Cliente>());
 		Programa.setDatosCorruptos(new LinkedList<String>());
@@ -159,7 +160,7 @@ public class Practica01Test {
 	@Test
 	public void testLineasEnBlanco() throws NumberFormatException,
 			EmptyFileException, NegativeNumberException, IOException,
-			LinesNotEqualsHeaderException {
+			LinesNotEqualsHeaderException, HeaderOutOfRangeException {
 		
 		Programa.setClientes(new ArrayList<Cliente>());
 		Programa.setDatosCorruptos(new LinkedList<String>());

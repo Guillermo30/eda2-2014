@@ -11,4 +11,5 @@ Clientes sospechosos:
 Clientes con datos corruptos:
 
 
-Id: 2 Datos: hdbkdj
+Id: 2 Datos: hdbkdj (No ha sido posible parsear los datos a enteros)
+Id: 11 Datos: 4245,512 (El archivo de texto no está ordenado por ICE ascendente.)
