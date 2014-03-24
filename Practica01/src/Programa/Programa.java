@@ -48,8 +48,11 @@ public class Programa {
 	final static String ERROR_ARCHIVO_INEXISTENTE = "El archivo seleccionado no existe.";
 	final static String ERROR_ARCHIVO_VACIO = "El archivo seleccionado esta vacio.";
 	final static String ERROR_FORMATO_CABECERA = "El archivo seleccionado no contiene una cabecera con un entero.";
-	final static String ERROR_CABECERA_NEGATIVA = "El archivo seleccionado contiene una cabecera negativa.";
 	final static String ERROR_DATOS_NO_COINCIDEN_CON_CABECERA = "El numero de clientes del archivo no coincide con el de la cabecera.";
+	final static String ERROR_DATO_NO_ORDENADO = "El dato no sigue un orden por ICE ascendente con respecto al dato anterior.";
+	final static String ERROR_DATO_NEGATIVO = "Algun dato es un entero negativo.";
+	final static String ERROR_CABECERA_FUERA_DE_RANGO = "El numero de datos se encuentra fuera de rango.";
+	final static String ERROR_ICE_FUERA_DE_RANGO = "El ICE del dato es demasiado alto.";
 
 	public static void main(String[] args) {
 		// try {
@@ -66,10 +69,6 @@ public class Programa {
 			int version;
 			System.out.println("Version? ");
 			version = scanner.nextInt();
-			if (version > 4) {
-				System.out.println("No existe esa version de algoritmo.");
-				System.exit(0);
-			}
 			if (version == 1) {
 				clientes = new LinkedList<Cliente>();
 				leerArchivo();
@@ -89,6 +88,10 @@ public class Programa {
 				clientes = new ArrayList<Cliente>();
 				leerArchivo();
 				pareto = new ParetoV4(clientes);
+			}
+			if (version != 4) {
+				System.out.println("No existe esa version de algoritmo.");
+				System.exit(0);
 			}
 			long a = System.nanoTime();
 			long b;
@@ -114,8 +117,8 @@ public class Programa {
 			System.out.println(ERROR_ARCHIVO_VACIO);
 		} catch (NumberFormatException e) {
 			System.out.println(ERROR_FORMATO_CABECERA);
-		} catch (NegativeNumberException e) {
-			System.out.println(ERROR_CABECERA_NEGATIVA);
+		} catch (HeaderOutOfRangeException e) {
+			System.out.println(ERROR_CABECERA_FUERA_DE_RANGO);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (LinesNotEqualsHeaderException e) {
@@ -147,8 +150,8 @@ public class Programa {
 	}
 
 	public static void leerArchivo() throws EmptyFileException,
-			NumberFormatException, NegativeNumberException, IOException,
-			LinesNotEqualsHeaderException {
+			NumberFormatException, IOException,
+			LinesNotEqualsHeaderException, HeaderOutOfRangeException {
 
 		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
@@ -163,10 +166,11 @@ public class Programa {
 		if (linea == null)
 			throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
 		int nClientes = Integer.parseInt(linea);
-		if (nClientes <= 0)
-			throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
+		if (nClientes <= 0 || nClientes > 10000)
+			throw new HeaderOutOfRangeException(ERROR_CABECERA_FUERA_DE_RANGO);
+		
 		int i = 0;
-		int ice, ce;
+		int ice, prevIce = Integer.MIN_VALUE, ce;
 		Scanner sc;
 		linea = br.readLine();
 
@@ -181,15 +185,25 @@ public class Programa {
 				sc.useDelimiter(",");
 
 				ice = sc.nextInt();
+				if(ice < prevIce) throw new NotSortException(ERROR_DATO_NO_ORDENADO);
 				ce = sc.nextInt();
 				if (ice <= 0 || ce <= 0)
-					throw new NegativeNumberException(ERROR_CABECERA_NEGATIVA);
+					throw new NegativeNumberException(ERROR_DATO_NEGATIVO);
+				if(ice > 10000)
+					throw new IceOutOfRangeException(ERROR_ICE_FUERA_DE_RANGO);
 
 				clientes.add(new Cliente(i, ce, ice));
 				i++;
+				prevIce = ice;
 				linea = br.readLine();
+				
 			} catch (Exception e) {
-				datosCorruptos.add("Id: " + i + " Datos: " + linea);
+				if(e.getMessage() == null)
+					datosCorruptos.add("Id: " + i + " Datos: " + linea
+							+ " (No ha sido posible parsear los datos a enteros.)");
+				else
+					datosCorruptos.add("Id: " + i + " Datos: " + linea
+						+ " (" + e.getMessage() + ")");
 				i++;
 				linea = br.readLine();
 				continue;
