@@ -49,8 +49,8 @@ public class Practica01Test {
 
 	}
 
-	@Test(expected = NegativeNumberException.class)
-	public void testExcepcionArchivoCaberceraNegativa()
+	@Test(expected = HeaderOutOfRangeException.class)
+	public void testExcepcionArchivoCaberceraFueraDeRangoPorDebajo()
 			throws NumberFormatException, EmptyFileException,
 			NegativeNumberException, IOException, LinesNotEqualsHeaderException, HeaderOutOfRangeException {
 
@@ -59,6 +59,22 @@ public class Practica01Test {
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
 				+ File.separator + "TestFiles" + File.separator
 				+ "datosCabeceraNegativa.txt";
+
+		Programa.setFile(new File(directorioEntrada1));
+		Programa.leerArchivo();
+
+	}
+	
+	@Test(expected = HeaderOutOfRangeException.class)
+	public void testExcepcionArchivoCaberceraFueraDeRangoPorArriba()
+			throws NumberFormatException, EmptyFileException,
+			NegativeNumberException, IOException, LinesNotEqualsHeaderException, HeaderOutOfRangeException {
+
+		directorioEntrada1 = System.getProperty("user.dir");
+
+		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
+				+ File.separator + "TestFiles" + File.separator
+				+ "datosCabecera10001.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
 		Programa.leerArchivo();
@@ -131,7 +147,7 @@ public class Practica01Test {
 	}
 
 	@Test
-	public void testDatosCorruptos() throws NumberFormatException,
+	public void testDatosNOPudueronSerParsedos() throws NumberFormatException,
 			EmptyFileException, NegativeNumberException, IOException,
 			LinesNotEqualsHeaderException, HeaderOutOfRangeException {
 
@@ -148,12 +164,112 @@ public class Practica01Test {
 
 		LinkedList<String> datosCorruptos = Programa.getDatosCorruptos();
 		Iterator<String> it = datosCorruptos.iterator();
-		assertEquals(5, datosCorruptos.size());
-		assertEquals("Id: 2 Datos: 2000,-200", it.next());
-		assertEquals("Id: 5 Datos: hola", it.next());
-		assertEquals("Id: 6 Datos: -2990,434", it.next());
-		assertEquals("Id: 9 Datos: 4030,-354", it.next());
-		assertEquals("Id: 11 Datos: -5245,512", it.next());
+		assertEquals(2, datosCorruptos.size());
+		assertEquals("Id: 5 Datos: hola (No ha sido posible parsear los datos a enteros.)", it.next());
+		assertEquals("Id: 11 Datos: adios (No ha sido posible parsear los datos a enteros.)", it.next());
+
+	}
+	
+	@Test
+	public void testDatosEntradasNegativas() throws NumberFormatException,
+			EmptyFileException, NegativeNumberException, IOException,
+			LinesNotEqualsHeaderException, HeaderOutOfRangeException {
+
+		Programa.setClientes(new ArrayList<Cliente>());
+		Programa.setDatosCorruptos(new LinkedList<String>());
+		directorioEntrada1 = System.getProperty("user.dir");
+
+		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
+				+ File.separator + "TestFiles" + File.separator
+				+ "datosEntradasNegativas.txt";
+
+		Programa.setFile(new File(directorioEntrada1));
+		Programa.leerArchivo();
+
+		LinkedList<String> datosCorruptos = Programa.getDatosCorruptos();
+		Iterator<String> it = datosCorruptos.iterator();
+		assertEquals(3, datosCorruptos.size());
+		assertEquals("Id: 2 Datos: 2000,-654 (" + Programa.ERROR_DATO_NEGATIVO + ")", it.next());
+		assertEquals("Id: 6 Datos: 2990,-434 (" + Programa.ERROR_DATO_NEGATIVO + ")", it.next());
+		assertEquals("Id: 12 Datos: 5340,-245 (" + Programa.ERROR_DATO_NEGATIVO + ")", it.next());
+
+	}
+	
+	@Test
+	public void testDatosIceNoOrdenado() throws NumberFormatException,
+			EmptyFileException, NegativeNumberException, IOException,
+			LinesNotEqualsHeaderException, HeaderOutOfRangeException {
+
+		Programa.setClientes(new ArrayList<Cliente>());
+		Programa.setDatosCorruptos(new LinkedList<String>());
+		directorioEntrada1 = System.getProperty("user.dir");
+
+		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
+				+ File.separator + "TestFiles" + File.separator
+				+ "datosIceNoOrdenado.txt";
+
+		Programa.setFile(new File(directorioEntrada1));
+		Programa.leerArchivo();
+
+		LinkedList<String> datosCorruptos = Programa.getDatosCorruptos();
+		Iterator<String> it = datosCorruptos.iterator();
+		assertEquals(3, datosCorruptos.size());
+		assertEquals("Id: 1 Datos: 189,321 (" + Programa.ERROR_DATO_NO_ORDENADO + ")", it.next());
+		assertEquals("Id: 3 Datos: -2101,212 (" + Programa.ERROR_DATO_NO_ORDENADO + ")", it.next());
+		assertEquals("Id: 5 Datos: 784,232 (" + Programa.ERROR_DATO_NO_ORDENADO + ")", it.next());
+
+	}
+	
+	@Test
+	public void testDatosIceFueraDeRango() throws NumberFormatException,
+			EmptyFileException, NegativeNumberException, IOException,
+			LinesNotEqualsHeaderException, HeaderOutOfRangeException {
+
+		Programa.setClientes(new ArrayList<Cliente>());
+		Programa.setDatosCorruptos(new LinkedList<String>());
+		directorioEntrada1 = System.getProperty("user.dir");
+
+		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
+				+ File.separator + "TestFiles" + File.separator
+				+ "datosIceFueraDeRango.txt";
+
+		Programa.setFile(new File(directorioEntrada1));
+		Programa.leerArchivo();
+
+		LinkedList<String> datosCorruptos = Programa.getDatosCorruptos();
+		Iterator<String> it = datosCorruptos.iterator();
+		assertEquals(2, datosCorruptos.size());
+		assertEquals("Id: 3 Datos: 12101,212 (" + Programa.ERROR_ICE_FUERA_DE_RANGO + ")", it.next());
+		assertEquals("Id: 8 Datos: 13890,450 (" + Programa.ERROR_ICE_FUERA_DE_RANGO + ")", it.next());
+
+	}
+	
+	@Test
+	public void testDatosCorruptosGeneral() throws NumberFormatException,
+			EmptyFileException, NegativeNumberException, IOException,
+			LinesNotEqualsHeaderException, HeaderOutOfRangeException {
+
+		Programa.setClientes(new ArrayList<Cliente>());
+		Programa.setDatosCorruptos(new LinkedList<String>());
+		directorioEntrada1 = System.getProperty("user.dir");
+
+		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
+				+ File.separator + "TestFiles" + File.separator
+				+ "datosCorruptosGenerales.txt";
+
+		Programa.setFile(new File(directorioEntrada1));
+		Programa.leerArchivo();
+
+		LinkedList<String> datosCorruptos = Programa.getDatosCorruptos();
+		Iterator<String> it = datosCorruptos.iterator();
+		assertEquals(7, datosCorruptos.size());
+		assertEquals("Id: 0 Datos: -1850,232 (" + Programa.ERROR_DATO_NEGATIVO + ")", it.next());
+		assertEquals("Id: 2 Datos: 2000,-654 (" + Programa.ERROR_DATO_NEGATIVO + ")", it.next());
+		assertEquals("Id: 3 Datos: 12101,212 (" + Programa.ERROR_ICE_FUERA_DE_RANGO + ")", it.next());
+		assertEquals("Id: 5 Datos: Efectivamente,noestoybienescrito (No ha sido posible parsear los datos a enteros.)", it.next());
+		assertEquals("Id: 8 Datos: 13890,450 (" + Programa.ERROR_ICE_FUERA_DE_RANGO + ")", it.next());
+		assertEquals("Id: 11 Datos: 4245,512 (" + Programa.ERROR_DATO_NO_ORDENADO + ")", it.next());
+		assertEquals("Id: 13 Datos: 3340,536 (" + Programa.ERROR_DATO_NO_ORDENADO + ")", it.next());
 
 	}
 	

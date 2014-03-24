@@ -45,14 +45,14 @@ public class Programa {
 	private static Pareto pareto;
 	private static File file;
 
-	final static String ERROR_ARCHIVO_INEXISTENTE = "El archivo seleccionado no existe.";
-	final static String ERROR_ARCHIVO_VACIO = "El archivo seleccionado esta vacio.";
-	final static String ERROR_FORMATO_CABECERA = "El archivo seleccionado no contiene una cabecera con un entero.";
-	final static String ERROR_DATOS_NO_COINCIDEN_CON_CABECERA = "El numero de clientes del archivo no coincide con el de la cabecera.";
-	final static String ERROR_DATO_NO_ORDENADO = "El dato no sigue un orden por ICE ascendente con respecto al dato anterior.";
-	final static String ERROR_DATO_NEGATIVO = "Algun dato es un entero negativo.";
-	final static String ERROR_CABECERA_FUERA_DE_RANGO = "El numero de datos se encuentra fuera de rango.";
-	final static String ERROR_ICE_FUERA_DE_RANGO = "El ICE del dato es demasiado alto.";
+	public final static String ERROR_ARCHIVO_INEXISTENTE = "El archivo seleccionado no existe.";
+	public final static String ERROR_ARCHIVO_VACIO = "El archivo seleccionado esta vacio.";
+	public final static String ERROR_FORMATO_CABECERA = "El archivo seleccionado no contiene una cabecera con un entero.";
+	public final static String ERROR_DATOS_NO_COINCIDEN_CON_CABECERA = "El numero de clientes del archivo no coincide con el de la cabecera.";
+	public final static String ERROR_DATO_NO_ORDENADO = "El dato no sigue un orden por ICE ascendente con respecto al dato anterior.";
+	public final static String ERROR_DATO_NEGATIVO = "Algun dato es un entero negativo.";
+	public final static String ERROR_CABECERA_FUERA_DE_RANGO = "El numero de datos se encuentra fuera de rango.";
+	public final static String ERROR_ICE_FUERA_DE_RANGO = "El ICE del dato es demasiado alto.";
 
 	public static void main(String[] args) {
 		// try {
