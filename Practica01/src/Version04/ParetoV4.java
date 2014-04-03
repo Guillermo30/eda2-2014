@@ -95,6 +95,7 @@ public LinkedList<Cliente> paretoSolucion() {
 			if(it.next().getCe()>minComb.getCe()) it.remove();
 			else break;
 		}
+		if(!previoP2.isEmpty() && (salida.getLast().getIce() == previoP2.getFirst().getIce())) salida.removeLast();
 		salida.addAll(previoP2);
 		
 		//devuelve la solucion completa
@@ -104,7 +105,12 @@ public LinkedList<Cliente> paretoSolucion() {
 	private LinkedList<Cliente> casoBase(ArrayList<Cliente> in, LinkedList<Cliente> salida) {
 		if(in.size() == 0) return salida;
 		salida.add(in.get(0));
-		if(in.size() == 2 && in.get(0).getCe() >= in.get(1).getCe()) salida.add(in.get(1));
+		if(in.size() == 2){
+			if(in.get(0).getCe() >= in.get(1).getCe()){
+				if ((in.get(0).getIce() == in.get(1).getIce()) && !(in.get(0).getCe() == in.get(1).getCe())) salida.clear();
+				salida.add(in.get(1));
+			}
+		}
 		
 		return salida;
 	}
