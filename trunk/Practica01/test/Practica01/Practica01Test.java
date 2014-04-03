@@ -357,40 +357,6 @@ public class Practica01Test {
 	}
 
 	@Test
-	public void testPuntosMismoICE() {
-
-		ArrayList<Cliente> clientes = new ArrayList<Cliente>(13);
-		clientes.add(new Cliente(0, 10, 1));
-		clientes.add(new Cliente(1, 5, 1));
-		clientes.add(new Cliente(2, 4, 3));
-		clientes.add(new Cliente(3, 10, 4));
-		clientes.add(new Cliente(4, 3, 5));
-		clientes.add(new Cliente(5, 10, 6));
-		clientes.add(new Cliente(6, 2, 7));
-		clientes.add(new Cliente(7, 10, 8));
-		clientes.add(new Cliente(8, 3, 9));
-		clientes.add(new Cliente(9, 10, 10));
-		clientes.add(new Cliente(10, 4, 11));
-		clientes.add(new Cliente(11, 10, 13));
-		clientes.add(new Cliente(12, 5, 13));
-
-		Pareto pareto = new ParetoV4(clientes);
-		LinkedList<Cliente> resultados = (LinkedList<Cliente>) pareto
-				.paretoSolucion();
-
-		assertEquals(8, resultados.size());
-		assertTrue(resultados.contains(clientes.get(0)));
-		assertTrue(resultados.contains(clientes.get(1)));
-		assertTrue(resultados.contains(clientes.get(2)));
-		assertTrue(resultados.contains(clientes.get(4)));
-		assertTrue(resultados.contains(clientes.get(6)));
-		assertTrue(resultados.contains(clientes.get(8)));
-		assertTrue(resultados.contains(clientes.get(10)));
-		assertTrue(resultados.contains(clientes.get(12)));
-
-	}
-
-	@Test
 	public void testCombinacion1() {
 
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>(13);
@@ -530,7 +496,8 @@ public class Practica01Test {
 		LinkedList<Cliente> resultados = (LinkedList<Cliente>) pareto
 				.paretoSolucion();
 
-		assertEquals(3, resultados.size());
+		assertEquals(2, resultados.size());
+		assertTrue(!resultados.contains(clientes.get(2)));
 
 	}
 	
