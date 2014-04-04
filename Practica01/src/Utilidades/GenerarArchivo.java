@@ -27,7 +27,7 @@ public class GenerarArchivo {
 			FileWriter  fw = new FileWriter(archivo);
 			BufferedWriter bw = new BufferedWriter(fw);
 			PrintWriter pw = new PrintWriter(fw);
-			double toAdd = 10000/tamano;
+			double toAdd = 10000.0/tamano;
 			
 			pw.println(tamano);
 			double ice = toAdd;
