@@ -1,0 +1,15 @@
+Clientes sospechosos:
+
+
+[3 2101 212]
+[5 2784 232]
+[0 1850 232]
+[12 5340 245]
+[13 6340 536]
+[14 7700 444]
+[15 8900 726]
+
+Clientes con datos corruptos:
+
+
+Id: 2 Datos: hdbkdj (No ha sido posible parsear los datos a enteros.)
