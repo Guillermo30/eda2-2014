@@ -1,18 +1,26 @@
-package Version04;
+package version04;
 
 import java.util.*;
 
-import Utilidades.Pareto;
-import Utilidades.Cliente;
+import utilidades.Cliente;
+import utilidades.Pareto;
 
+/**
+ * Clase que implementa la cuarta versión del algoritmo.
+ *
+ */
 public class ParetoV4 extends Pareto {
 
+	/**
+	 * Método constructor.
+	 * @param nube
+	 */
 	public ParetoV4(Collection<Cliente> nube) {
 		super(nube);
 	}
 
 	@Override
-public LinkedList<Cliente> paretoSolucion() {
+	public LinkedList<Cliente> paretoSolucion() {
 		
 		ArrayList<Cliente> in = (ArrayList<Cliente>) nube;
 		LinkedList<Cliente> salida = new LinkedList<Cliente>();
@@ -51,6 +59,11 @@ public LinkedList<Cliente> paretoSolucion() {
 
 	}
 
+	/**
+	 * Implementación del algoritmo divide y vencerás.
+	 * @param in Entrada
+	 * @return Salida
+	 */
 	private LinkedList<Cliente> paretoRecur(ArrayList<Cliente> in) {
 		LinkedList<Cliente> salida = new  LinkedList<Cliente>();
 		
@@ -58,8 +71,6 @@ public LinkedList<Cliente> paretoSolucion() {
 		if(in.size()<=2){
 			return casoBase(in,salida);
 		}
-	
-		
 		
 		//division del problema
 		ArrayList<Cliente> prob1 = new ArrayList<Cliente>();
@@ -102,6 +113,12 @@ public LinkedList<Cliente> paretoSolucion() {
 		return salida;
 	}
 
+	/**
+	 * Implementación del caso base.
+	 * @param in Entrada
+	 * @param salida
+	 * @return Salida
+	 */
 	private LinkedList<Cliente> casoBase(ArrayList<Cliente> in, LinkedList<Cliente> salida) {
 		if(in.size() == 0) return salida;
 		salida.add(in.get(0));

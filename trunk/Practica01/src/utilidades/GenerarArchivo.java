@@ -1,17 +1,32 @@
-package Utilidades;
+package utilidades;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
-import Programa.Programa;
 
+import programa.Programa;
+
+/**
+ * Clase pensada para crear archivos de texto para ejecutar las pruebas de rendimiento.
+ *
+ */
 public class GenerarArchivo {
 
+	/**
+	 * Tamaño del archivo.
+	 */
 	static int tamano;
+	/**
+	 * Scanner para leer entradas por teclado.
+	 */
 	static Scanner scanner;
 
+	/**
+	 * Método principal del programa para generar un archivo.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		boolean correcto = false;
 		try {
@@ -48,6 +63,10 @@ public class GenerarArchivo {
 		}
 	}
 	
+	/**
+	 * Método que genera un CE aleatorio.
+	 * @return
+	 */
 	private static int generarCE(){
 		return (int) Math.ceil(Math.random()*800);
 	}

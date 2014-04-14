@@ -1,16 +1,16 @@
-package Practica01;
+package practica01;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import Execptions.EmptyFileException;
-import Execptions.HeaderOutOfRangeException;
-import Execptions.LinesNotEqualsHeaderException;
-import Execptions.NegativeNumberException;
-import Programa.Programa;
-import Utilidades.Cliente;
-import Utilidades.Pareto;
-import Version04.ParetoV4;
+import programa.Programa;
+import utilidades.Cliente;
+import utilidades.Pareto;
+import version04.ParetoV4;
+import exceptions.EmptyFileException;
+import exceptions.HeaderOutOfRangeException;
+import exceptions.LinesNotEqualsHeaderException;
+import exceptions.NegativeNumberException;
 import static org.junit.Assert.*;
 
 import java.io.*;
@@ -29,7 +29,7 @@ public class Practica01Test {
 		directorioEntrada = System.getProperty("user.dir");
 
 		directorioEntrada = directorioEntrada + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datos_eda_2.txt";
 	}
 
@@ -41,7 +41,7 @@ public class Practica01Test {
 		directorioEntrada1 = System.getProperty("user.dir");
 
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datos_eda.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
@@ -57,7 +57,7 @@ public class Practica01Test {
 		directorioEntrada1 = System.getProperty("user.dir");
 
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datosCabeceraNegativa.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
@@ -73,7 +73,7 @@ public class Practica01Test {
 		directorioEntrada1 = System.getProperty("user.dir");
 
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datosCabecera10001.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
@@ -89,7 +89,7 @@ public class Practica01Test {
 		directorioEntrada1 = System.getProperty("user.dir");
 
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datosCabeceraXXX.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
@@ -104,7 +104,7 @@ public class Practica01Test {
 		directorioEntrada1 = System.getProperty("user.dir");
 
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datosCabeceraIncorrecta.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
@@ -121,7 +121,7 @@ public class Practica01Test {
 		directorioEntrada1 = System.getProperty("user.dir");
 
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datosMenosDatosQueCabecera.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
@@ -138,7 +138,7 @@ public class Practica01Test {
 		directorioEntrada1 = System.getProperty("user.dir");
 
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datosMasDatosQueCabecera.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
@@ -147,7 +147,7 @@ public class Practica01Test {
 	}
 
 	@Test
-	public void testDatosNOPudueronSerParsedos() throws NumberFormatException,
+	public void testDatosNoPudueronSerParsedos() throws NumberFormatException,
 			EmptyFileException, NegativeNumberException, IOException,
 			LinesNotEqualsHeaderException, HeaderOutOfRangeException {
 
@@ -156,7 +156,7 @@ public class Practica01Test {
 		directorioEntrada1 = System.getProperty("user.dir");
 
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datosEntradasCorruptas.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
@@ -180,7 +180,7 @@ public class Practica01Test {
 		directorioEntrada1 = System.getProperty("user.dir");
 
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datosEntradasNegativas.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
@@ -205,7 +205,7 @@ public class Practica01Test {
 		directorioEntrada1 = System.getProperty("user.dir");
 
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datosIceNoOrdenado.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
@@ -230,7 +230,7 @@ public class Practica01Test {
 		directorioEntrada1 = System.getProperty("user.dir");
 
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datosIceFueraDeRango.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
@@ -254,7 +254,7 @@ public class Practica01Test {
 		directorioEntrada1 = System.getProperty("user.dir");
 
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datosCorruptosGenerales.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
@@ -283,7 +283,7 @@ public class Practica01Test {
 		directorioEntrada1 = System.getProperty("user.dir");
 
 		directorioEntrada1 = directorioEntrada1 + File.separator + "test"
-				+ File.separator + "TestFiles" + File.separator
+				+ File.separator + "testFiles" + File.separator
 				+ "datosLineasEnBlanco.txt";
 
 		Programa.setFile(new File(directorioEntrada1));
@@ -412,25 +412,51 @@ public class Practica01Test {
 	public void testCombinacion3() {
 
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>(13);
-		clientes.add(new Cliente(0, 7, 1));
+		clientes.add(new Cliente(0, 1, 1));
 		clientes.add(new Cliente(1, 8, 2));
 		clientes.add(new Cliente(2, 9, 3));
 		clientes.add(new Cliente(3, 10, 4));
 		clientes.add(new Cliente(4, 11, 5));
 		clientes.add(new Cliente(5, 12, 6));
 		clientes.add(new Cliente(6, 13, 7));
-		clientes.add(new Cliente(7, 1, 8));
-		clientes.add(new Cliente(8, 2, 9));
-		clientes.add(new Cliente(9, 3, 10));
-		clientes.add(new Cliente(10, 4, 11));
-		clientes.add(new Cliente(11, 5, 12));
-		clientes.add(new Cliente(12, 6, 13));
+		clientes.add(new Cliente(7, 3, 8));
+		clientes.add(new Cliente(8, 4, 9));
+		clientes.add(new Cliente(9, 5, 10));
+		clientes.add(new Cliente(10, 6, 11));
+		clientes.add(new Cliente(11, 7, 12));
+		clientes.add(new Cliente(12, 8, 13));
 
 		Pareto pareto = new ParetoV4(clientes);
 		LinkedList<Cliente> resultados = (LinkedList<Cliente>) pareto
 				.paretoSolucion();
 
 		assertEquals(7, resultados.size());
+
+	}
+	
+	@Test
+	public void testCombinacion4MismoICE() {
+
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>(13);
+		clientes.add(new Cliente(0, 1, 1));
+		clientes.add(new Cliente(1, 8, 2));
+		clientes.add(new Cliente(2, 9, 3));
+		clientes.add(new Cliente(3, 10, 4));
+		clientes.add(new Cliente(4, 11, 5));
+		clientes.add(new Cliente(5, 12, 6));
+		clientes.add(new Cliente(6, 13, 7));
+		clientes.add(new Cliente(7, 14, 7));
+		clientes.add(new Cliente(8, 15, 9));
+		clientes.add(new Cliente(9, 16, 10));
+		clientes.add(new Cliente(10, 17, 11));
+		clientes.add(new Cliente(11, 18, 12));
+		clientes.add(new Cliente(12, 19, 13));
+
+		Pareto pareto = new ParetoV4(clientes);
+		LinkedList<Cliente> resultados = (LinkedList<Cliente>) pareto
+				.paretoSolucion();
+
+		assertEquals(12, resultados.size());
 
 	}
 	

@@ -1,18 +1,26 @@
-package Version02;
+package version02;
 
 import java.util.*;
 
-import Utilidades.Pareto;
-import Utilidades.Cliente;
+import utilidades.Cliente;
+import utilidades.Pareto;
 
+/**
+ * Clase que implementa la segunda versión del algoritmo.
+ *
+ */
 public class ParetoV2 extends Pareto {
 
+	/**
+	 * Método constructor.
+	 * @param nube
+	 */
 	public ParetoV2(Collection<Cliente> nube) {
 		super(nube);
 	}
 
 	@Override
-public LinkedList<Cliente> paretoSolucion() {
+	public LinkedList<Cliente> paretoSolucion() {
 		
 		LinkedList<Cliente> in = (LinkedList<Cliente>) nube;
 		LinkedList<Cliente> salida = new LinkedList<Cliente>();
@@ -51,6 +59,11 @@ public LinkedList<Cliente> paretoSolucion() {
 
 	}
 
+	/**
+	 * Implementación del algoritmo divide y vencerás (El tratamiento especial si se encuentran 2 ICE iguales solo se implementa en la versión final(4ª)).
+	 * @param in Entrada
+	 * @return Salida
+	 */
 	private LinkedList<Cliente> paretoRecur(LinkedList<Cliente> in) {
 		LinkedList<Cliente> salida = new  LinkedList<Cliente>();
 		//caso base
@@ -58,9 +71,6 @@ public LinkedList<Cliente> paretoSolucion() {
 		if(in.size()<=2){
 			return casoBase(in,salida);
 		}
-		
-	
-		
 		
 		//division del problema
 		LinkedList<Cliente> prob1 = new LinkedList<Cliente>();
@@ -73,8 +83,7 @@ public LinkedList<Cliente> paretoSolucion() {
 				prob2.add(in.get(i));
 			}
 		}
-		
-		
+			
 		//combinacion
 		//añadir la parte de la izquierda completa
 		LinkedList<Cliente> previoP1 = new LinkedList<Cliente>();
@@ -99,6 +108,12 @@ public LinkedList<Cliente> paretoSolucion() {
 		return salida;
 	}
 
+	/**
+	 * Implementación del caso base.
+	 * @param in Entrada
+	 * @param salida
+	 * @return Salida
+	 */
 	private LinkedList<Cliente> casoBase(LinkedList<Cliente> in, LinkedList<Cliente> salida) {
 		if(in.size() == 0) return salida;
 		salida.add(in.get(0));
