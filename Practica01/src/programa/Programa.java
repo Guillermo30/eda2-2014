@@ -1,4 +1,4 @@
-package Programa;
+package programa;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,37 +14,59 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import Utilidades.Cliente;
-import Utilidades.Pareto;
-import Version01.ParetoV1;
-import Version02.ParetoV2;
-import Version03.ParetoV3;
-import Version04.ParetoV4;
-import estructurasdedatos.AVLTree;
-import Execptions.*;
+import utilidades.Cliente;
+import utilidades.Pareto;
+import version01.ParetoV1;
+import version02.ParetoV2;
+import version03.ParetoV3;
+import version04.ParetoV4;
+import exceptions.*;
 
+/**
+ * Clase usada para cargar y leer los datos de un archivo y procesarlos mediante el algoritmo.
+ */
 public class Programa {
 
+	
+	//Directorios de entrada y de salida de los ficheros.
 	public final static String ENTRADA = System.getProperty("user.dir")
-			+ File.separator + "src" + File.separator + "Entradas"
+			+ File.separator + "src" + File.separator + "entradas"
 			+ File.separator;
 	public final static String SALIDA = System.getProperty("user.dir")
-			+ File.separator + "src" + File.separator + "Salidas"
+			+ File.separator + "src" + File.separator + "salidas"
 			+ File.separator;
 
+	/**
+	 * Estructura de datos con el informe de clientes cuyos datos estan corruptos.
+	 */
 	private static LinkedList<String> datosCorruptos;
+	/**
+	 * Estructura de datos con el informe de clientes sospechosos.
+	 */
 	private static LinkedList<Cliente> candidatos;
+	/**
+	 * Estructura de datos con el informe de clientes de entrada.
+	 */
 	private static Collection<Cliente> clientes;
 
-	public static LinkedList<String> getDatosCorruptos() {
-		return datosCorruptos;
-	}
-
+	/**
+	 * Cantidad correspondiente al 1% de los datos.
+	 */
 	private static int uPC;
+	/**
+	 * Scanner para leer entradas por teclado.
+	 */
 	private static Scanner scanner = new Scanner(System.in);
+	/**
+	 * Objeto que incluye los métodos de ejecución del algoritmo principal.
+	 */
 	private static Pareto pareto;
+	/**
+	 * Archivo de entrada
+	 */
 	private static File file;
 
+	//Mensajes de error
 	public final static String ERROR_ARCHIVO_INEXISTENTE = "El archivo seleccionado no existe.";
 	public final static String ERROR_ARCHIVO_VACIO = "El archivo seleccionado esta vacio.";
 	public final static String ERROR_FORMATO_CABECERA = "El archivo seleccionado no contiene una cabecera con un entero.";
@@ -54,8 +76,11 @@ public class Programa {
 	public final static String ERROR_CABECERA_FUERA_DE_RANGO = "El numero de datos se encuentra fuera de rango.";
 	public final static String ERROR_ICE_FUERA_DE_RANGO = "El ICE del dato es demasiado alto.";
 
+	/**
+	 * Metodo de ejecución principal.
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		// try {
 
 		try {
 			System.out
@@ -126,6 +151,10 @@ public class Programa {
 		}
 	}
 
+	
+	/**
+	 * Método que genera un archivo con las salidas del programa.
+	 */
 	private static void imprimirInforme() {
 		try {
 			FileWriter fw = new FileWriter(new File(SALIDA + "Salida-"
@@ -149,6 +178,15 @@ public class Programa {
 		}
 	}
 
+	/**
+	 * Método encargado de leer los datos del archivo de entrada.
+	 * @throws EmptyFileException
+	 * @throws NumberFormatException
+	 * @throws IOException
+	 * @throws LinesNotEqualsHeaderException
+	 * @throws HeaderOutOfRangeException
+	 */
+	@SuppressWarnings({ "resource", "unused" })
 	public static void leerArchivo() throws EmptyFileException,
 			NumberFormatException, IOException,
 			LinesNotEqualsHeaderException, HeaderOutOfRangeException {
@@ -166,7 +204,7 @@ public class Programa {
 		if (linea == null)
 			throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
 		int nClientes = Integer.parseInt(linea);
-		if (nClientes <= 0 || nClientes > 10000)
+		if (nClientes <= 0 || nClientes > 150000)
 			throw new HeaderOutOfRangeException(ERROR_CABECERA_FUERA_DE_RANGO);
 		
 		int i = 0;
@@ -218,6 +256,8 @@ public class Programa {
 		fr.close();
 	}
 
+	//Getters y setters
+	
 	public static LinkedList<Cliente> getCandidatos() {
 		return candidatos;
 	}
@@ -241,25 +281,9 @@ public class Programa {
 	public static void setDatosCorruptos(LinkedList<String> datosCorruptos) {
 		Programa.datosCorruptos = datosCorruptos;
 	}
-
-	/*
-	 * private static LinkedList<Cliente> leerArchivo() throws
-	 * NumberFormatException, IOException{ LinkedList<Cliente> struc= new
-	 * LinkedList<Cliente>(); int numDePuntos=0; FileReader fr = new FileReader
-	 * (ARCHIVO); BufferedReader br = new BufferedReader(fr); numDePuntos =
-	 * Integer.parseInt(br.readLine());
-	 * 
-	 * int ce; int ice; String linea = ""; Scanner sc; int i = 0;
-	 * 
-	 * for(; i< numDePuntos; i++){ try{ linea = br.readLine(); linea =
-	 * linea.replaceAll(" ", ""); sc = new Scanner (linea);
-	 * sc.useDelimiter(",");
-	 * 
-	 * ice = sc.nextInt(); ce = sc.nextInt();
-	 * 
-	 * struc.add(new Cliente(i, ce, ice)); }catch(Exception e){
-	 * datosCorruptos.add("Id: " + i + " Datos: " + linea); } } uPC = ((i+1)%100
-	 * == 0)? (i+1)/100 : ((i+1)/100) + 1; return struc; }
-	 */
+	
+	public static LinkedList<String> getDatosCorruptos() {
+		return datosCorruptos;
+	}
 
 }

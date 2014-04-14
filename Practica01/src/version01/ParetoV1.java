@@ -1,20 +1,28 @@
-package Version03;
+package version01;
 
 import java.util.*;
 
-import Utilidades.Pareto;
-import Utilidades.Cliente;
+import utilidades.Cliente;
+import utilidades.Pareto;
 
-public class ParetoV3 extends Pareto {
+/**
+ * Clase que implementa la primera versión del algoritmo.
+ *
+ */
+public class ParetoV1 extends Pareto {
 
-	public ParetoV3(Collection<Cliente> nube) {
+	/**
+	 * Método constructor.
+	 * @param nube
+	 */
+	public ParetoV1(Collection<Cliente> nube) {
 		super(nube);
 	}
 
 	@Override
-public LinkedList<Cliente> paretoSolucion() {
+	public LinkedList<Cliente> paretoSolucion() {
 		
-		ArrayList<Cliente> in = (ArrayList<Cliente>) nube;
+		LinkedList<Cliente> in = (LinkedList<Cliente>) nube;
 		LinkedList<Cliente> salida = new LinkedList<Cliente>();
 
 		// calculo del minimo
@@ -26,8 +34,8 @@ public LinkedList<Cliente> paretoSolucion() {
 		}
 
 		// dos problemas separados, decreciente y creciente
-		ArrayList<Cliente> v1 = new ArrayList<Cliente>();
-		ArrayList<Cliente> v2 = new ArrayList<Cliente>();
+		LinkedList<Cliente> v1 = new LinkedList<Cliente>();
+		LinkedList<Cliente> v2 = new LinkedList<Cliente>();
 
 		// adjunta el problema decreciente
 		for (int i = 0; i < min.getId() - 1; i++) {
@@ -51,19 +59,22 @@ public LinkedList<Cliente> paretoSolucion() {
 
 	}
 
-	private LinkedList<Cliente> paretoRecur(ArrayList<Cliente> in) {
+	/**
+	 * Implementación del algoritmo divide y vencerás (El tratamiento especial si se encuentran 2 ICE iguales solo se implementa en la versión final(4ª)).
+	 * @param in Entrada
+	 * @return Salida
+	 */
+	private LinkedList<Cliente> paretoRecur(LinkedList<Cliente> in) {
 		LinkedList<Cliente> salida = new  LinkedList<Cliente>();
-		
 		//caso base
-		if(in.size()<=2){
-			return casoBase(in,salida);
-		}
-	
 		
+		if(in.size()<=3){
+			return casoBase(in,salida);
+		}	
 		
 		//division del problema
-		ArrayList<Cliente> prob1 = new ArrayList<Cliente>();
-		ArrayList<Cliente> prob2 = new ArrayList<Cliente>();
+		LinkedList<Cliente> prob1 = new LinkedList<Cliente>();
+		LinkedList<Cliente> prob2 = new LinkedList<Cliente>();
 		
 		for(int i = 0; i< in.size(); i++){
 			if(i < in.size()/2){
@@ -71,8 +82,7 @@ public LinkedList<Cliente> paretoSolucion() {
 			}else{
 				prob2.add(in.get(i));
 			}
-		}
-		
+		}	
 		
 		//combinacion
 		//añadir la parte de la izquierda completa
@@ -98,13 +108,39 @@ public LinkedList<Cliente> paretoSolucion() {
 		return salida;
 	}
 
-	private LinkedList<Cliente> casoBase(ArrayList<Cliente> in, LinkedList<Cliente> salida) {
-		if(in.size() == 0) return salida;
-		salida.add(in.get(0));
-		if(in.size() == 2 && in.get(0).getCe() >= in.get(1).getCe()) salida.add(in.get(1));
-		
-		return salida;
+	/**
+	 * Implementación del caso base.
+	 * @param in Entrada
+	 * @param salida
+	 * @return Salida
+	 */
+	private LinkedList<Cliente> casoBase(LinkedList<Cliente> in, LinkedList<Cliente> salida) {
+		Cliente min, izq;
+		min= in.get(0);
+		izq=in.get(0);
+		for(int i =0;i<in.size();i++){
+			if(in.get(i).getCe()<min.getCe()){
+				min=in.get(i);
+			}
+		}
+		if(izq.getId()==min.getId()){
+			salida.add(min);
+			return salida;
+		}
+		else if(in.get(1).equals(min)){
+			salida.add(izq);
+			salida.add(min);
+			return salida;
+		}
+		else{
+			if(in.get(1).getCe()<izq.getCe()){
+				salida.addAll(in);
+				return salida;
+			}else
+				salida.add(izq);
+				salida.add(min);
+				return salida;
+		}
 	}
 
 }
-

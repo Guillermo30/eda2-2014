@@ -1,18 +1,28 @@
-package Utilidades;
+package utilidades;
 
 
 
 /**
- * Clase que representa el tipo de objeto con el que vamos a trabajar, en este caso Usuarios de la compañia electrica
- * @author 
+ * Clase que representa el tipo de objeto con el que vamos a trabajar, en este caso clientes de la compañia electrica. 
  *
  */
 public class Cliente implements Comparable<Cliente>{
-	private int id;
-	private int ce;
-	private int ice;
+	
 	/**
-	 * Crear un nuevo usuario dada su ID, su CE y su ICe
+	 * Numero por el que se identifica el cliente.
+	 */
+	private int id;
+	/**
+	 * CE del cliente.
+	 */
+	private int ce;
+	/**
+	 * ICE del cliente.
+	 */
+	private int ice;
+	
+	/**
+	 * Crear un nuevo cliente dada su ID, su CE y su ICe.
 	 * @param id 
 	 * @param ce
 	 * @param ice
@@ -22,9 +32,10 @@ public class Cliente implements Comparable<Cliente>{
 		this.ce=ce;
 		this.ice=ice;
 	}
+	
 	/**
 	 * 
-	 * @return ID del usuario.
+	 * @return ID del cliente.
 	 */
 	public int getId() {
 		return id;
@@ -32,34 +43,38 @@ public class Cliente implements Comparable<Cliente>{
 	
 	/**
 	 * 
-	 * @return CE del usuario.
+	 * @return CE del cliente.
 	 */
 	public int getCe() {
 		return ce;
 	}
+	
 	/**
-	 * Da al usuario un nuevo CE.
+	 * Da al cliente un nuevo CE.
 	 * @param ce
 	 */
 	public void setCe(int ce) {
 		this.ce = ce;
 	}
+	
 	/**
 	 * 
-	 * @return ICE del usuario.
+	 * @return ICE del cliente.
 	 */
 	public int getIce() {
 		return ice;
 	}
+	
 	/**
-	 * Da al usuario un nuevo ICE
+	 * Da al cliente un nuevo ICE
 	 * @param ice
 	 */
 	public void setIce(int ice) {
 		this.ice = ice;
 	}
+	
 	/**
-	 * Formatea un string que representa el usuario con sus tres atributos.
+	 * Formatea un string que representa el cliente con sus tres atributos.
 	 */
 	public String toString(){
 		return "["+id+" "+ice+" "+ce+"]";
