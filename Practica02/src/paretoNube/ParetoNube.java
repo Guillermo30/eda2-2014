@@ -20,7 +20,7 @@ public class ParetoNube extends Pareto{
 	private PriorityQueue<Cliente> eAuxiliar;
 	
 	/**
-	 * Método constructor
+	 * Método constructor.
 	 */
 	public ParetoNube(ArrayList<Cliente> nube){
 		super(nube);
