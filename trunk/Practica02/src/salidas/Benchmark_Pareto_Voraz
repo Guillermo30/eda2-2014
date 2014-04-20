@@ -1,0 +1,130 @@
+Datos: 1000
+	Nube:
+
+		Iteración: 2012870
+
+		Tiempo total: 2050990
+
+	División:
+
+		Iteración: 623731
+
+		Tiempo total: 630335
+
+Datos: 2000
+	Nube:
+
+		Iteración: 5419380
+
+		Tiempo total: 5437989
+
+	División:
+
+		Iteración: 1113291
+
+		Tiempo total: 1119895
+
+Datos: 3000
+	Nube:
+
+		Iteración: 4199832
+
+		Tiempo total: 4217241
+
+	División:
+
+		Iteración: 1663784
+
+		Tiempo total: 1672788
+
+Datos: 4000
+	Nube:
+
+		Iteración: 2418085
+
+		Tiempo total: 2441797
+
+	División:
+
+		Iteración: 1026245
+
+		Tiempo total: 1033749
+
+Datos: 5000
+	Nube:
+
+		Iteración: 2544752
+
+		Tiempo total: 2562161
+
+	División:
+
+		Iteración: 640240
+
+		Tiempo total: 648044
+
+Datos: 6000
+	Nube:
+
+		Iteración: 1685395
+
+		Tiempo total: 1702805
+
+	División:
+
+		Iteración: 695169
+
+		Tiempo total: 702073
+
+Datos: 7000
+	Nube:
+
+		Iteración: 1681193
+
+		Tiempo total: 1704605
+
+	División:
+
+		Iteración: 133271
+
+		Tiempo total: 140174
+
+Datos: 8000
+	Nube:
+
+		Iteración: 2556459
+
+		Tiempo total: 2575069
+
+	División:
+
+		Iteración: 295958
+
+		Tiempo total: 303462
+
+Datos: 9000
+	Nube:
+
+		Iteración: 1051459
+
+		Tiempo total: 1069768
+
+	División:
+
+		Iteración: 155782
+
+		Tiempo total: 162686
+
+Datos: 10000
+	Nube:
+
+		Iteración: 3157978
+
+		Tiempo total: 3176888
+
+	División:
+
+		Iteración: 346083
+
+		Tiempo total: 352987
+

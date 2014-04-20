@@ -15,6 +15,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 import exceptions.*;
+import paretoDivision.ParetoDivision;
 import paretoNube.ParetoNube;
 import utilidades.Cliente;
 import utilidades.Pareto;
@@ -48,10 +49,6 @@ public class Programa {
 	/**
 	 * Cantidad correspondiente al 1% de los datos.
 	 */
-
-	/**
-	 * Cantidad correspondiente al 1% de los datos.
-	 */
 	private static int uPC;
 	/**
 	 * Scanner para leer entradas por teclado.
@@ -80,7 +77,6 @@ public class Programa {
 	 * Metodo de ejecución principal.
 	 * @param args
 	 */
-	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 
 		try {
@@ -97,7 +93,8 @@ public class Programa {
 			System.out.println("Version? ");
 			version = scanner.nextInt();
 			leerArchivo();
-			pareto = new ParetoNube(clientes);
+			if(version == 1) pareto = new ParetoNube(clientes);
+			if(version == 2) pareto = new ParetoDivision(clientes);
 			long a = System.nanoTime();
 			long b;
 			Collection<Cliente> paretoTemp = pareto.paretoSolucion();
@@ -245,7 +242,7 @@ public class Programa {
 		Programa.candidatos = candidatos;
 	}
 
-	public static Collection<Cliente> getClientes() {
+	public static ArrayList<Cliente> getClientes() {
 		return clientes;
 	}
 
@@ -263,6 +260,10 @@ public class Programa {
 	
 	public static LinkedList<String> getDatosCorruptos() {
 		return datosCorruptos;
+	}
+
+	public static int getuPC() {
+		return uPC;
 	}
 
 }

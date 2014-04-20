@@ -2,7 +2,6 @@ package paretoNube;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 
@@ -24,28 +23,26 @@ public class ParetoNube extends Pareto{
 	 */
 	public ParetoNube(ArrayList<Cliente> nube){
 		super(nube);
-		eAuxiliar = new PriorityQueue<Cliente>();
-		
-		Iterator<Cliente> it = nube.iterator();
-		while(it.hasNext()) eAuxiliar.add(it.next());
 	}
 	
 	@Override
 	public  Collection<Cliente> paretoSolucion(){	
 		
 		//Inicialización
+		eAuxiliar = new PriorityQueue<Cliente>();
+		eAuxiliar.addAll(nube);
 		LinkedList<Cliente> toReturn = new LinkedList<Cliente>();
+		if(eAuxiliar.isEmpty()) return toReturn;
+		Cliente cur = eAuxiliar.poll();
 		int iceIzLimit = nube.get(0).getIce();
 		int iceDerLimit = nube.get(nube.size() - 1).getIce();
-		int iceIzMin = eAuxiliar.peek().getIce();
-		int iceDerMin = eAuxiliar.peek().getIce();
-		Cliente cur;
+		int iceIzMin = cur.getIce();
+		int iceDerMin = cur.getIce();
 		
 		//Selección
-		Iterator<Cliente> it = eAuxiliar.iterator();
-		if(it.hasNext()) toReturn.add(it.next());
-		while(it.hasNext() && (!(iceIzLimit == iceIzMin) || !(iceDerLimit == iceDerMin))){
-			cur = it.next();
+		toReturn.add(cur);
+		while(!eAuxiliar.isEmpty() && (!(iceIzLimit == iceIzMin) || !(iceDerLimit == iceDerMin))){
+			cur = eAuxiliar.poll();
 			if(cur.getIce() < iceIzMin){
 				toReturn.add(cur);
 				iceIzMin = cur.getIce();
@@ -58,12 +55,6 @@ public class ParetoNube extends Pareto{
 		}
 		
 		return toReturn;
-	}
-	
-	@Override
-	public void removeAll(Collection<Cliente> c){
-		eAuxiliar.removeAll(c);
-		nube.removeAll(c);
 	}
 
 }
