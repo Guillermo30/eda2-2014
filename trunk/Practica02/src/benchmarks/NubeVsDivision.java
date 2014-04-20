@@ -38,7 +38,7 @@ public class NubeVsDivision {
 		try {
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(out)));
 			do{
-				pw.println("Datos: " + numDatos +"\n\tNube:\n");
+				pw.println("Datos: " + numDatos +"\n\n\tNube:\n");
 				Programa.setClientes(new ArrayList<Cliente>());
 				Programa.setCandidatos(new LinkedList<Cliente>());
 				Programa.setFile(new File(ENTRADA + numDatos + "Usuarios.txt"));
@@ -49,6 +49,8 @@ public class NubeVsDivision {
 				}
 				paretoNube = new ParetoNube(Programa.getClientes());
 				paretoDivision = new ParetoDivision(Programa.getClientes());
+				
+				resultado.clear();
 				
 				long a = System.nanoTime();
 				long b, c;
@@ -67,6 +69,7 @@ public class NubeVsDivision {
 				b = System.nanoTime();
 				pw.println("\t\tTiempo total: " + (b - a) + "\n");
 				
+				resultado.clear();
 				pw.println("\tDivisión:\n");
 				
 				a = System.nanoTime();

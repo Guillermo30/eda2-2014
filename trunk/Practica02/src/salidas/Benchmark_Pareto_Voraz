@@ -1,130 +1,192 @@
 Datos: 1000
+
 	Nube:
 
-		Iteración: 2012870
+		Iteración: 2017972
 
-		Tiempo total: 2050990
+		Tiempo total: 2055192
 
 	División:
 
-		Iteración: 623731
+		Iteración: 608424
 
-		Tiempo total: 630335
+		Tiempo total: 615027
 
 Datos: 2000
+
 	Nube:
 
-		Iteración: 5419380
+		Iteración: 3983117
 
-		Tiempo total: 5437989
+		Iteración: 1906613
+
+		Tiempo total: 9299842
 
 	División:
 
-		Iteración: 1113291
+		Iteración: 1109389
 
-		Tiempo total: 1119895
+		Tiempo total: 1117193
 
 Datos: 3000
+
 	Nube:
 
-		Iteración: 4199832
+		Iteración: 2097215
 
-		Tiempo total: 4217241
+		Iteración: 2083407
+
+		Tiempo total: 4551019
 
 	División:
 
-		Iteración: 1663784
+		Iteración: 1658382
 
-		Tiempo total: 1672788
+		Iteración: 1644574
+
+		Tiempo total: 3684158
 
 Datos: 4000
+
 	Nube:
 
-		Iteración: 2418085
+		Iteración: 1165219
 
-		Tiempo total: 2441797
+		Iteración: 1497496
+
+		Tiempo total: 3124660
 
 	División:
 
-		Iteración: 1026245
+		Iteración: 492261
 
-		Tiempo total: 1033749
+		Iteración: 498565
+
+		Tiempo total: 1502598
 
 Datos: 5000
+
 	Nube:
 
-		Iteración: 2544752
+		Iteración: 760304
 
-		Tiempo total: 2562161
+		Iteración: 607223
+
+		Iteración: 610524
+
+		Tiempo total: 2391071
 
 	División:
 
-		Iteración: 640240
+		Iteración: 594015
 
-		Tiempo total: 648044
+		Iteración: 108058
+
+		Tiempo total: 977319
 
 Datos: 6000
+
 	Nube:
 
-		Iteración: 1685395
+		Iteración: 1436263
 
-		Tiempo total: 1702805
+		Iteración: 1383135
+
+		Iteración: 1416153
+
+		Tiempo total: 4708002
 
 	División:
 
-		Iteración: 695169
+		Iteración: 211012
 
-		Tiempo total: 702073
+		Iteración: 215214
+
+		Tiempo total: 759403
 
 Datos: 7000
+
 	Nube:
 
-		Iteración: 1681193
+		Iteración: 1954638
 
-		Tiempo total: 1704605
+		Iteración: 1646374
+
+		Iteración: 1503499
+
+		Tiempo total: 5742351
 
 	División:
 
-		Iteración: 133271
+		Iteración: 233824
 
-		Tiempo total: 140174
+		Iteración: 233825
+
+		Tiempo total: 1026546
 
 Datos: 8000
+
 	Nube:
 
-		Iteración: 2556459
+		Iteración: 2182460
 
-		Tiempo total: 2575069
+		Iteración: 1719614
+
+		Iteración: 1714511
+
+		Iteración: 1606454
+
+		Tiempo total: 8438684
 
 	División:
 
-		Iteración: 295958
+		Iteración: 270444
 
-		Tiempo total: 303462
+		Iteración: 257537
+
+		Tiempo total: 1383435
 
 Datos: 9000
+
 	Nube:
 
-		Iteración: 1051459
+		Iteración: 1094382
 
-		Tiempo total: 1069768
+		Iteración: 1338711
+
+		Iteración: 1460276
+
+		Iteración: 1230654
+
+		Tiempo total: 6684552
 
 	División:
 
-		Iteración: 155782
+		Iteración: 181296
 
-		Tiempo total: 162686
+		Iteración: 198105
+
+		Tiempo total: 1368127
 
 Datos: 10000
+
 	Nube:
 
-		Iteración: 3157978
+		Iteración: 1626264
 
-		Tiempo total: 3176888
+		Iteración: 828740
+
+		Iteración: 1245662
+
+		Iteración: 1249564
+
+		Tiempo total: 6741883
 
 	División:
 
-		Iteración: 346083
+		Iteración: 145277
 
-		Tiempo total: 352987
+		Iteración: 143176
+
+		Tiempo total: 1523909
 
