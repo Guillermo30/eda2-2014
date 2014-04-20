@@ -74,9 +74,9 @@ public class ParetoDivision extends Pareto{
 			
 			candidato = in.get(i);
 			
-			if(candidato.getCe() < anterior.getCe()){
+			if(candidato.getCe() <= anterior.getCe()){
 				
-				if(candidato.getIce() == anterior.getIce()) resultado.removeLast();
+				if((candidato.getIce() == anterior.getIce()) && !(candidato.getCe() == anterior.getCe())) resultado.removeLast();
 				resultado.add(candidato);
 				anterior = candidato;
 				
