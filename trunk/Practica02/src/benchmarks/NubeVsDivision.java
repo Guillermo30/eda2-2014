@@ -29,6 +29,10 @@ public class NubeVsDivision {
 			+ File.separator + "src" + File.separator + "salidas"
 			+ File.separator + "Benchmark_Pareto_Voraz.txt";
 
+	/**
+	 * Método que ejecuta este benchmark
+	 * @param args
+	 */
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		int numDatos = 10000;
@@ -82,6 +86,11 @@ public class NubeVsDivision {
 		}
 	}
 	
+	/**
+	 * Método que calcula la media deshechando los 2 dos mejores y peores tiempos.
+	 * @param times
+	 * @return
+	 */
 	private static long media(PriorityQueue<Long> times) {
 		long media = 0;
 		
@@ -93,11 +102,15 @@ public class NubeVsDivision {
 		media += times.poll();
 		media += times.poll();
 		media += times.poll();
-		media += times.poll();
-		media += times.poll();
-		return media/8;
+		return media/6;
 	}
 
+	/**
+	 * Método que calcula el tiempo en cada iteración.
+	 * @param pw
+	 * @param pareto
+	 * @return
+	 */
 	private static long iteracion(PrintWriter pw, Pareto pareto){
 		Collection<Cliente> resultadoParcial = new LinkedList<Cliente>();
 		LinkedList<Cliente> resultado = new LinkedList<Cliente>();
