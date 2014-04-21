@@ -2,3099 +2,3059 @@ Datos: 10000
 
 	Nube:
 
-		Iteración: 47256701
+		Iteración: 6194037
 
-		Iteración: 2973655
+		Iteración: 2642882
 
-		Iteración: 2536926
+		Iteración: 2736531
 
-		Tiempo total: 57073632
-
---------------------------------------------------------
-		Iteración: 3594079
-
-		Iteración: 1898492
-
-		Iteración: 1314688
-
-		Tiempo total: 7968566
+		Tiempo total: 55781757
 
 --------------------------------------------------------
-		Iteración: 1749614
+		Iteración: 3807790
 
-		Iteración: 940091
+		Iteración: 121864
 
-		Iteración: 1272665
+		Iteración: 100853
 
-		Tiempo total: 5121276
-
---------------------------------------------------------
-		Iteración: 1729203
-
-		Iteración: 925684
-
-		Iteración: 1265462
-
-		Tiempo total: 5082856
+		Tiempo total: 5274657
 
 --------------------------------------------------------
-		Iteración: 1745413
+		Iteración: 147077
 
-		Iteración: 1074262
+		Iteración: 88547
 
-		Iteración: 1301480
+		Iteración: 108656
 
-		Tiempo total: 5352098
-
---------------------------------------------------------
-		Iteración: 2048270
-
-		Iteración: 969507
-
-		Iteración: 1282870
-
-		Tiempo total: 5453250
+		Tiempo total: 1603738
 
 --------------------------------------------------------
-		Iteración: 2594557
+		Iteración: 132669
 
-		Iteración: 1728904
+		Iteración: 85245
 
-		Iteración: 1858872
+		Iteración: 102954
 
-		Tiempo total: 7365851
-
---------------------------------------------------------
-		Iteración: 2001146
-
-		Iteración: 963504
-
-		Iteración: 1315288
-
-		Tiempo total: 5434040
+		Tiempo total: 1599236
 
 --------------------------------------------------------
-		Iteración: 1781431
+		Iteración: 136572
 
-		Iteración: 976710
+		Iteración: 83144
 
-		Iteración: 1276267
+		Iteración: 100853
 
-		Tiempo total: 5196916
-
---------------------------------------------------------
-		Iteración: 1749015
-
-		Iteración: 961103
-
-		Iteración: 1282871
-
-		Tiempo total: 5138086
+		Tiempo total: 1612443
 
 --------------------------------------------------------
-	  Media: 12372804
+		Iteración: 129668
+
+		Iteración: 85245
+
+		Iteración: 102954
+
+		Tiempo total: 1635255
+
+--------------------------------------------------------
+		Iteración: 133570
+
+		Iteración: 84945
+
+		Iteración: 103854
+
+		Tiempo total: 1615144
+
+--------------------------------------------------------
+		Iteración: 132969
+
+		Iteración: 84945
+
+		Iteración: 103254
+
+		Tiempo total: 1601036
+
+--------------------------------------------------------
+		Iteración: 129368
+
+		Iteración: 82844
+
+		Iteración: 100853
+
+		Tiempo total: 1591132
+
+--------------------------------------------------------
+		Iteración: 128767
+
+		Iteración: 83143
+
+		Iteración: 100553
+
+		Tiempo total: 1610942
+
+--------------------------------------------------------
+	  Media: 8841871
 
 	Division:
 
-		Iteración: 3452705
+		Iteración: 3149247
 
-		Iteración: 2628474
+		Iteración: 2533925
 
-		Iteración: 2132014
+		Iteración: 1969630
 
-		Tiempo total: 9389208
-
---------------------------------------------------------
-		Iteración: 1616345
-
-		Iteración: 1596835
-
-		Iteración: 1599836
-
-		Tiempo total: 5948209
+		Tiempo total: 8872038
 
 --------------------------------------------------------
-		Iteración: 1663770
+		Iteración: 1692585
 
-		Iteración: 141374
+		Iteración: 1625950
 
-		Iteración: 111058
+		Iteración: 1627150
 
-		Tiempo total: 3062501
-
---------------------------------------------------------
-		Iteración: 111358
-
-		Iteración: 114360
-
-		Iteración: 108957
-
-		Tiempo total: 1597135
+		Tiempo total: 6403547
 
 --------------------------------------------------------
-		Iteración: 125466
+		Iteración: 1634054
 
-		Iteración: 120963
+		Iteración: 199605
 
-		Iteración: 108657
+		Iteración: 161185
 
-		Tiempo total: 1510090
-
---------------------------------------------------------
-		Iteración: 119762
-
-		Iteración: 108957
-
-		Iteración: 107156
-
-		Tiempo total: 1472870
+		Tiempo total: 3258503
 
 --------------------------------------------------------
-		Iteración: 108057
+		Iteración: 158483
 
-		Iteración: 119762
+		Iteración: 162384
 
-		Iteración: 104754
+		Iteración: 158183
 
-		Tiempo total: 1459063
-
---------------------------------------------------------
-		Iteración: 108657
-
-		Iteración: 109557
-
-		Iteración: 105055
-
-		Tiempo total: 1455160
+		Tiempo total: 1694686
 
 --------------------------------------------------------
-		Iteración: 109257
+		Iteración: 168388
 
-		Iteración: 109258
+		Iteración: 157282
 
-		Iteración: 105656
+		Iteración: 187298
 
-		Tiempo total: 1437751
-
---------------------------------------------------------
-		Iteración: 108957
-
-		Iteración: 108657
-
-		Iteración: 106856
-
-		Tiempo total: 1462364
+		Tiempo total: 1808445
 
 --------------------------------------------------------
-	  Media: 3237680
+		Iteración: 161485
+
+		Iteración: 156682
+
+		Iteración: 156682
+
+		Tiempo total: 1690784
+
+--------------------------------------------------------
+		Iteración: 155181
+
+		Iteración: 156081
+
+		Iteración: 155782
+
+		Tiempo total: 1643960
+
+--------------------------------------------------------
+		Iteración: 153981
+
+		Iteración: 179194
+
+		Iteración: 150679
+
+		Tiempo total: 1635855
+
+--------------------------------------------------------
+		Iteración: 151579
+
+		Iteración: 155482
+
+		Iteración: 151279
+
+		Tiempo total: 1626550
+
+--------------------------------------------------------
+		Iteración: 150379
+
+		Iteración: 153080
+
+		Iteración: 159684
+
+		Tiempo total: 1613044
+
+--------------------------------------------------------
+	  Media: 3375977
 
 Datos: 20000
 
 	Nube:
 
-		Iteración: 1420042
+		Iteración: 114360
 
-		Iteración: 2947241
+		Iteración: 187898
 
-		Iteración: 3881629
+		Iteración: 197203
 
-		Iteración: 4380790
-
-		Iteración: 4700757
-
-		Tiempo total: 24418664
-
---------------------------------------------------------
-		Iteración: 1336898
-
-		Iteración: 3003370
-
-		Iteración: 3859118
-
-		Iteración: 4472037
-
-		Iteración: 4676145
-
-		Tiempo total: 24522518
-
---------------------------------------------------------
-		Iteración: 1326693
-
-		Iteración: 2973654
-
-		Iteración: 3867822
-
-		Iteración: 4411406
-
-		Iteración: 4741278
-
-		Tiempo total: 24428869
-
---------------------------------------------------------
-		Iteración: 1346804
-
-		Iteración: 2990163
-
-		Iteración: 3782277
-
-		Iteración: 4431216
-
-		Iteración: 4636224
-
-		Tiempo total: 24304604
-
---------------------------------------------------------
-		Iteración: 1418542
-
-		Iteración: 2961648
-
-		Iteración: 3915847
-
-		Iteración: 4424913
-
-		Iteración: 4621515
-
-		Tiempo total: 24460086
-
---------------------------------------------------------
-		Iteración: 1317088
-
-		Iteración: 2951743
-
-		Iteración: 3871724
-
-		Iteración: 4417709
-
-		Iteración: 4674343
-
-		Tiempo total: 24384145
-
---------------------------------------------------------
-		Iteración: 1404734
-
-		Iteración: 3118630
-
-		Iteración: 3823999
-
-		Iteración: 4697155
-
-		Iteración: 4636523
-
-		Tiempo total: 24798962
-
---------------------------------------------------------
-		Iteración: 1311085
-
-		Iteración: 3130936
-
-		Iteración: 3856716
-
-		Iteración: 4392797
-
-		Iteración: 4640425
-
-		Tiempo total: 24489200
-
---------------------------------------------------------
-		Iteración: 1320390
-
-		Iteración: 3012374
-
-		Iteración: 3853414
-
-		Iteración: 4529968
-
-		Iteración: 4582195
-
-		Tiempo total: 24494604
-
---------------------------------------------------------
-		Iteración: 1331196
-
-		Iteración: 2974555
-
-		Iteración: 3889733
-
-		Iteración: 4444123
-
-		Iteración: 4630220
-
-		Tiempo total: 24362234
-
---------------------------------------------------------
-	  Media: 24499631
-
-	Division:
-
-		Iteración: 266840
-
-		Iteración: 230521
-
-		Iteración: 228719
-
-		Iteración: 229620
-
-		Iteración: 219115
-
-		Tiempo total: 8403793
-
---------------------------------------------------------
-		Iteración: 221816
-
-		Iteración: 237124
-
-		Iteración: 223017
-
-		Iteración: 223617
-
-		Iteración: 219715
-
-		Tiempo total: 8229402
-
---------------------------------------------------------
-		Iteración: 237124
-
-		Iteración: 223317
-
-		Iteración: 220616
-
-		Iteración: 222116
-
-		Iteración: 243728
-
-		Tiempo total: 8185879
-
---------------------------------------------------------
-		Iteración: 238325
-
-		Iteración: 230820
-
-		Iteración: 224218
-
-		Iteración: 224217
-
-		Iteración: 219715
-
-		Tiempo total: 8362071
-
---------------------------------------------------------
-		Iteración: 220916
-
-		Iteración: 244028
-
-		Iteración: 227819
-
-		Iteración: 242827
-
-		Iteración: 228419
-
-		Tiempo total: 8332356
-
---------------------------------------------------------
 		Iteración: 237424
 
-		Iteración: 230521
+		Iteración: 231421
 
-		Iteración: 222417
-
-		Iteración: 227218
-
-		Iteración: 238925
-
-		Tiempo total: 8318248
+		Tiempo total: 8351866
 
 --------------------------------------------------------
-		Iteración: 223917
+		Iteración: 112859
 
-		Iteración: 227219
+		Iteración: 170789
 
-		Iteración: 224817
+		Iteración: 197503
+
+		Iteración: 221215
+
+		Iteración: 232321
+
+		Tiempo total: 8323351
+
+--------------------------------------------------------
+		Iteración: 106556
+
+		Iteración: 186397
+
+		Iteración: 214612
+
+		Iteración: 254833
+
+		Iteración: 231421
+
+		Tiempo total: 8193082
+
+--------------------------------------------------------
+		Iteración: 108957
+
+		Iteración: 165686
+
+		Iteración: 197203
+
+		Iteración: 214913
+
+		Iteración: 232322
+
+		Tiempo total: 8204489
+
+--------------------------------------------------------
+		Iteración: 109257
+
+		Iteración: 165987
+
+		Iteración: 197503
+
+		Iteración: 221215
+
+		Iteración: 231421
+
+		Tiempo total: 8295736
+
+--------------------------------------------------------
+		Iteración: 111059
+
+		Iteración: 197804
+
+		Iteración: 223016
+
+		Iteración: 228119
+
+		Iteración: 232321
+
+		Tiempo total: 8330255
+
+--------------------------------------------------------
+		Iteración: 109558
+
+		Iteración: 165687
+
+		Iteración: 198103
 
 		Iteración: 226919
 
-		Iteración: 231721
+		Iteración: 238325
 
-		Tiempo total: 8255816
+		Tiempo total: 8271124
 
 --------------------------------------------------------
-		Iteración: 225418
+		Iteración: 112859
 
-		Iteración: 233522
+		Iteración: 171390
 
-		Iteración: 229320
+		Iteración: 203206
 
-		Iteración: 227519
+		Iteración: 222417
+
+		Iteración: 232021
+
+		Tiempo total: 8450917
+
+--------------------------------------------------------
+		Iteración: 109557
+
+		Iteración: 165987
+
+		Iteración: 198104
 
 		Iteración: 221216
 
-		Tiempo total: 8246510
+		Iteración: 226618
+
+		Tiempo total: 8222798
 
 --------------------------------------------------------
+		Iteración: 110758
+
+		Iteración: 175592
+
+		Iteración: 203507
+
 		Iteración: 227219
 
-		Iteración: 222716
+		Iteración: 238024
 
-		Iteración: 224517
-
-		Iteración: 227219
-
-		Iteración: 251532
-
-		Tiempo total: 8182878
+		Tiempo total: 8371076
 
 --------------------------------------------------------
+	  Media: 8327140
+
+	Division:
+
+		Iteración: 302558
+
+		Iteración: 269541
+
+		Iteración: 267440
+
+		Iteración: 261437
+
+		Iteración: 292353
+
+		Tiempo total: 8637315
+
+--------------------------------------------------------
+		Iteración: 258736
+
+		Iteración: 277345
+
+		Iteración: 276744
+
+		Iteración: 275544
+
+		Iteración: 257235
+
+		Tiempo total: 8556273
+
+--------------------------------------------------------
+		Iteración: 271342
+
+		Iteración: 259035
+
+		Iteración: 258735
+
+		Iteración: 267740
+
+		Iteración: 265038
+
+		Tiempo total: 8833017
+
+--------------------------------------------------------
+		Iteración: 268040
+
+		Iteración: 260536
+
 		Iteración: 261136
 
-		Iteración: 235923
+		Iteración: 262037
 
-		Iteración: 222116
+		Iteración: 260236
 
-		Iteración: 223017
-
-		Iteración: 217614
-
-		Tiempo total: 8370475
+		Tiempo total: 8632513
 
 --------------------------------------------------------
-	  Media: 8314833
+		Iteración: 258135
+
+		Iteración: 264438
+
+		Iteración: 253032
+
+		Iteración: 264138
+
+		Iteración: 332574
+
+		Tiempo total: 8634013
+
+--------------------------------------------------------
+		Iteración: 266840
+
+		Iteración: 264738
+
+		Iteración: 278245
+
+		Iteración: 289951
+
+		Iteración: 264739
+
+		Tiempo total: 8619306
+
+--------------------------------------------------------
+		Iteración: 262337
+
+		Iteración: 267740
+
+		Iteración: 271642
+
+		Iteración: 273143
+
+		Iteración: 328972
+
+		Tiempo total: 8695245
+
+--------------------------------------------------------
+		Iteración: 263838
+
+		Iteración: 283948
+
+		Iteración: 265339
+
+		Iteración: 268941
+
+		Iteración: 292053
+
+		Tiempo total: 8639416
+
+--------------------------------------------------------
+		Iteración: 264438
+
+		Iteración: 275544
+
+		Iteración: 275244
+
+		Iteración: 276144
+
+		Iteración: 372195
+
+		Tiempo total: 8822212
+
+--------------------------------------------------------
+		Iteración: 306761
+
+		Iteración: 271041
+
+		Iteración: 287250
+
+		Iteración: 296255
+
+		Iteración: 267140
+
+		Tiempo total: 8902654
+
+--------------------------------------------------------
+	  Media: 8724548
 
 Datos: 30000
 
 	Nube:
 
-		Iteración: 3068804
+		Iteración: 143775
 
-		Iteración: 7685217
+		Iteración: 280646
 
-		Iteración: 7908534
+		Iteración: 289051
 
-		Iteración: 8179576
+		Iteración: 302258
 
-		Iteración: 6652677
+		Iteración: 250030
 
-		Iteración: 7355645
+		Iteración: 272842
 
-		Tiempo total: 58394623
-
---------------------------------------------------------
-		Iteración: 2753339
-
-		Iteración: 7701126
-
-		Iteración: 7927744
-
-		Iteración: 8398090
-
-		Iteración: 6648775
-
-		Iteración: 7551348
-
-		Tiempo total: 58654858
+		Tiempo total: 18991827
 
 --------------------------------------------------------
-		Iteración: 2684303
+		Iteración: 140774
 
-		Iteración: 7840998
+		Iteración: 314264
 
-		Iteración: 7952057
+		Iteración: 288151
 
-		Iteración: 8233304
+		Iteración: 304059
 
-		Iteración: 6776342
+		Iteración: 256935
 
-		Iteración: 7378757
+		Iteración: 273143
 
-		Tiempo total: 58510783
-
---------------------------------------------------------
-		Iteración: 2759942
-
-		Iteración: 7671110
-
-		Iteración: 7903731
-
-		Iteración: 8186479
-
-		Iteración: 6630465
-
-		Iteración: 7525833
-
-		Tiempo total: 58225934
+		Tiempo total: 19072269
 
 --------------------------------------------------------
-		Iteración: 2852391
+		Iteración: 141074
 
-		Iteración: 8341661
+		Iteración: 281247
 
-		Iteración: 7883021
+		Iteración: 306160
 
-		Iteración: 8229101
+		Iteración: 325971
 
-		Iteración: 6675790
+		Iteración: 260536
 
-		Iteración: 7422880
+		Iteración: 291152
 
-		Tiempo total: 58876975
-
---------------------------------------------------------
-		Iteración: 2754240
-
-		Iteración: 7659703
-
-		Iteración: 7923541
-
-		Iteración: 8258217
-
-		Iteración: 6641872
-
-		Iteración: 7352043
-
-		Tiempo total: 58107973
+		Tiempo total: 19051258
 
 --------------------------------------------------------
-		Iteración: 2739232
+		Iteración: 141074
 
-		Iteración: 7756654
+		Iteración: 282147
 
-		Iteración: 8162767
+		Iteración: 311263
 
-		Iteración: 8219197
+		Iteración: 305260
 
-		Iteración: 7121223
+		Iteración: 275243
 
-		Iteración: 7795374
+		Iteración: 289952
 
-		Tiempo total: 59253972
-
---------------------------------------------------------
-		Iteración: 2693908
-
-		Iteración: 7694222
-
-		Iteración: 8286731
-
-		Iteración: 8178075
-
-		Iteración: 6712108
-
-		Iteración: 7586466
-
-		Tiempo total: 58902489
+		Tiempo total: 18942601
 
 --------------------------------------------------------
-		Iteración: 2856593
+		Iteración: 142274
 
-		Iteración: 7876117
+		Iteración: 289951
 
-		Iteración: 8009087
+		Iteración: 289051
 
-		Iteración: 8728563
+		Iteración: 302558
 
-		Iteración: 6696500
+		Iteración: 250631
 
-		Iteración: 7676512
+		Iteración: 273143
 
-		Tiempo total: 59504002
-
---------------------------------------------------------
-		Iteración: 2778552
-
-		Iteración: 7794174
-
-		Iteración: 7902831
-
-		Iteración: 8340760
-
-		Iteración: 6765236
-
-		Iteración: 7722737
-
-		Tiempo total: 58880276
+		Tiempo total: 19207640
 
 --------------------------------------------------------
-	  Media: 58872247
+		Iteración: 145576
+
+		Iteración: 282147
+
+		Iteración: 288751
+
+		Iteración: 303158
+
+		Iteración: 278845
+
+		Iteración: 273142
+
+		Tiempo total: 19484985
+
+--------------------------------------------------------
+		Iteración: 145576
+
+		Iteración: 289651
+
+		Iteración: 289351
+
+		Iteración: 302558
+
+		Iteración: 250631
+
+		Iteración: 273443
+
+		Tiempo total: 18943202
+
+--------------------------------------------------------
+		Iteración: 145577
+
+		Iteración: 281247
+
+		Iteración: 289051
+
+		Iteración: 302258
+
+		Iteración: 250931
+
+		Iteración: 272842
+
+		Tiempo total: 18879869
+
+--------------------------------------------------------
+		Iteración: 141374
+
+		Iteración: 274043
+
+		Iteración: 329273
+
+		Iteración: 315465
+
+		Iteración: 244628
+
+		Iteración: 267440
+
+		Tiempo total: 18923991
+
+--------------------------------------------------------
+		Iteración: 141374
+
+		Iteración: 278245
+
+		Iteración: 301057
+
+		Iteración: 306160
+
+		Iteración: 253033
+
+		Iteración: 267740
+
+		Tiempo total: 19120894
+
+--------------------------------------------------------
+	  Media: 19101834
 
 	Division:
 
-		Iteración: 442131
+		Iteración: 339478
 
-		Iteración: 435228
+		Iteración: 350884
 
-		Iteración: 447834
+		Iteración: 332574
 
-		Iteración: 435828
+		Iteración: 329572
 
-		Iteración: 450535
+		Iteración: 326571
 
-		Iteración: 432526
+		Iteración: 333474
 
-		Tiempo total: 20227273
-
---------------------------------------------------------
-		Iteración: 441831
-
-		Iteración: 439130
-
-		Iteración: 437929
-
-		Iteración: 421720
-
-		Iteración: 425022
-
-		Iteración: 438829
-
-		Tiempo total: 20372249
+		Tiempo total: 19427655
 
 --------------------------------------------------------
-		Iteración: 426523
+		Iteración: 342179
 
-		Iteración: 438530
+		Iteración: 340077
 
-		Iteración: 439130
+		Iteración: 343379
 
-		Iteración: 458940
+		Iteración: 343379
 
-		Iteración: 424722
+		Iteración: 325370
 
-		Iteración: 436128
+		Iteración: 341878
 
-		Tiempo total: 20319421
-
---------------------------------------------------------
-		Iteración: 452636
-
-		Iteración: 445133
-
-		Iteración: 446934
-
-		Iteración: 446934
-
-		Iteración: 447234
-
-		Iteración: 428324
-
-		Tiempo total: 20123118
+		Tiempo total: 19241558
 
 --------------------------------------------------------
-		Iteración: 455939
+		Iteración: 334375
 
-		Iteración: 441531
+		Iteración: 339478
 
-		Iteración: 430725
+		Iteración: 327471
 
-		Iteración: 443932
+		Iteración: 326270
 
-		Iteración: 444833
+		Iteración: 329272
 
-		Iteración: 433427
+		Iteración: 339778
 
-		Tiempo total: 20098206
-
---------------------------------------------------------
-		Iteración: 467644
-
-		Iteración: 445132
-
-		Iteración: 439430
-
-		Iteración: 434627
-
-		Iteración: 431325
-
-		Iteración: 429224
-
-		Tiempo total: 20175946
+		Tiempo total: 19496391
 
 --------------------------------------------------------
-		Iteración: 437028
+		Iteración: 346081
 
-		Iteración: 447234
+		Iteración: 331974
 
-		Iteración: 434927
+		Iteración: 346081
 
-		Iteración: 456838
+		Iteración: 345180
 
-		Iteración: 430425
+		Iteración: 328672
 
-		Iteración: 458340
+		Iteración: 343680
 
-		Tiempo total: 20338631
-
---------------------------------------------------------
-		Iteración: 456539
-
-		Iteración: 446634
-
-		Iteración: 441231
-
-		Iteración: 459840
-
-		Iteración: 443332
-
-		Iteración: 425622
-
-		Tiempo total: 20415172
+		Tiempo total: 19482283
 
 --------------------------------------------------------
-		Iteración: 449635
+		Iteración: 337677
 
-		Iteración: 428324
+		Iteración: 337676
 
-		Iteración: 425622
+		Iteración: 331374
 
-		Iteración: 427123
+		Iteración: 332574
 
-		Iteración: 425022
+		Iteración: 340078
 
-		Iteración: 434027
+		Iteración: 328972
 
-		Tiempo total: 20039675
-
---------------------------------------------------------
-		Iteración: 466444
-
-		Iteración: 430425
-
-		Iteración: 429525
-
-		Iteración: 428023
-
-		Iteración: 426823
-
-		Iteración: 442131
-
-		Tiempo total: 20320622
+		Tiempo total: 19413247
 
 --------------------------------------------------------
-	  Media: 20286554
+		Iteración: 383300
+
+		Iteración: 342779
+
+		Iteración: 349082
+
+		Iteración: 340978
+
+		Iteración: 351483
+
+		Iteración: 348182
+
+		Tiempo total: 19572931
+
+--------------------------------------------------------
+		Iteración: 336776
+
+		Iteración: 345781
+
+		Iteración: 334375
+
+		Iteración: 342179
+
+		Iteración: 331373
+
+		Iteración: 330773
+
+		Tiempo total: 19548318
+
+--------------------------------------------------------
+		Iteración: 354486
+
+		Iteración: 558292
+
+		Iteración: 344881
+
+		Iteración: 340078
+
+		Iteración: 338877
+
+		Iteración: 328972
+
+		Tiempo total: 19715506
+
+--------------------------------------------------------
+		Iteración: 352684
+
+		Iteración: 337076
+
+		Iteración: 367992
+
+		Iteración: 346381
+
+		Iteración: 332874
+
+		Iteración: 352985
+
+		Tiempo total: 19475980
+
+--------------------------------------------------------
+		Iteración: 334075
+
+		Iteración: 348182
+
+		Iteración: 328972
+
+		Iteración: 336176
+
+		Iteración: 327471
+
+		Iteración: 334075
+
+		Tiempo total: 19458571
+
+--------------------------------------------------------
+	  Media: 19522204
 
 Datos: 40000
 
 	Nube:
 
-		Iteración: 4061123
+		Iteración: 194501
 
-		Iteración: 5395020
+		Iteración: 236224
 
-		Iteración: 8591390
+		Iteración: 318767
 
-		Iteración: 11435378
+		Iteración: 399509
 
-		Iteración: 9744294
+		Iteración: 371894
 
-		Tiempo total: 63300387
-
---------------------------------------------------------
-		Iteración: 3430493
-
-		Iteración: 5133883
-
-		Iteración: 8305341
-
-		Iteración: 11346531
-
-		Iteración: 9641039
-
-		Tiempo total: 61646823
+		Tiempo total: 25872023
 
 --------------------------------------------------------
-		Iteración: 3547254
+		Iteración: 203506
 
-		Iteración: 5246442
+		Iteración: 262037
 
-		Iteración: 8258517
+		Iteración: 335275
 
-		Iteración: 11442281
+		Iteración: 426223
 
-		Iteración: 9706174
+		Iteración: 361089
 
-		Tiempo total: 62500169
-
---------------------------------------------------------
-		Iteración: 3576969
-
-		Iteración: 5340992
-
-		Iteración: 8413097
-
-		Iteración: 11236674
-
-		Iteración: 9774909
-
-		Tiempo total: 62436535
+		Tiempo total: 25618691
 
 --------------------------------------------------------
-		Iteración: 3516638
+		Iteración: 192701
 
-		Iteración: 5265653
+		Iteración: 236524
 
-		Iteración: 8525056
+		Iteración: 318767
 
-		Iteración: 11562944
+		Iteración: 421420
 
-		Iteración: 9983218
+		Iteración: 384801
 
-		Tiempo total: 62981920
-
---------------------------------------------------------
-		Iteración: 3630097
-
-		Iteración: 5180708
-
-		Iteración: 8373777
-
-		Iteración: 11481601
-
-		Iteración: 9974214
-
-		Tiempo total: 62816234
+		Tiempo total: 25962971
 
 --------------------------------------------------------
-		Iteración: 3560161
+		Iteración: 192700
 
-		Iteración: 5293567
+		Iteración: 262337
 
-		Iteración: 8435309
+		Iteración: 334975
 
-		Iteración: 11229470
+		Iteración: 426523
 
-		Iteración: 9725683
+		Iteración: 360788
 
-		Tiempo total: 62272350
-
---------------------------------------------------------
-		Iteración: 3614189
-
-		Iteración: 5223331
-
-		Iteración: 8337458
-
-		Iteración: 11272692
-
-		Iteración: 9927689
-
-		Tiempo total: 62929993
+		Tiempo total: 25501029
 
 --------------------------------------------------------
-		Iteración: 3503431
+		Iteración: 192100
 
-		Iteración: 5219128
+		Iteración: 235923
 
-		Iteración: 8334456
+		Iteración: 318166
 
-		Iteración: 11524524
+		Iteración: 409414
 
-		Iteración: 9706773
+		Iteración: 360788
 
-		Tiempo total: 62314371
-
---------------------------------------------------------
-		Iteración: 3494427
-
-		Iteración: 5180708
-
-		Iteración: 8338359
-
-		Iteración: 11359438
-
-		Iteración: 11272692
-
-		Tiempo total: 64663400
+		Tiempo total: 25641503
 
 --------------------------------------------------------
-	  Media: 62992876
+		Iteración: 197803
+
+		Iteración: 260536
+
+		Iteración: 334976
+
+		Iteración: 425623
+
+		Iteración: 360789
+
+		Tiempo total: 25804788
+
+--------------------------------------------------------
+		Iteración: 191800
+
+		Iteración: 253033
+
+		Iteración: 334674
+
+		Iteración: 421420
+
+		Iteración: 460141
+
+		Tiempo total: 26611610
+
+--------------------------------------------------------
+		Iteración: 221516
+
+		Iteración: 271342
+
+		Iteración: 330172
+
+		Iteración: 448134
+
+		Iteración: 371895
+
+		Tiempo total: 26160774
+
+--------------------------------------------------------
+		Iteración: 198704
+
+		Iteración: 245828
+
+		Iteración: 336476
+
+		Iteración: 411515
+
+		Iteración: 371895
+
+		Tiempo total: 25872623
+
+--------------------------------------------------------
+		Iteración: 193301
+
+		Iteración: 236824
+
+		Iteración: 319967
+
+		Iteración: 449935
+
+		Iteración: 359288
+
+		Tiempo total: 25635500
+
+--------------------------------------------------------
+	  Media: 25945224
 
 	Division:
 
-		Iteración: 575401
+		Iteración: 478150
 
-		Iteración: 541483
+		Iteración: 448735
 
-		Iteración: 557692
+		Iteración: 445733
 
-		Iteración: 557992
+		Iteración: 446333
 
-		Iteración: 574800
+		Iteración: 487755
 
-		Tiempo total: 26967296
-
---------------------------------------------------------
-		Iteración: 573600
-
-		Iteración: 564895
-
-		Iteración: 567896
-
-		Iteración: 568498
-
-		Iteración: 594611
-
-		Tiempo total: 27058843
+		Tiempo total: 26684548
 
 --------------------------------------------------------
-		Iteración: 576001
+		Iteración: 460741
 
-		Iteración: 563695
+		Iteración: 466144
 
-		Iteración: 579003
+		Iteración: 467044
 
-		Iteración: 575401
+		Iteración: 469145
 
-		Iteración: 606016
+		Iteración: 477550
 
-		Tiempo total: 27100265
-
---------------------------------------------------------
-		Iteración: 579903
-
-		Iteración: 582604
-
-		Iteración: 568197
-
-		Iteración: 582304
-
-		Iteración: 609919
-
-		Tiempo total: 27236836
+		Tiempo total: 26235513
 
 --------------------------------------------------------
-		Iteración: 571799
+		Iteración: 491057
 
-		Iteración: 585606
+		Iteración: 457439
 
-		Iteración: 569098
+		Iteración: 469145
 
-		Iteración: 565496
+		Iteración: 446633
 
-		Iteración: 613821
+		Iteración: 490156
 
-		Tiempo total: 27421734
-
---------------------------------------------------------
-		Iteración: 583806
-
-		Iteración: 597613
-
-		Iteración: 575101
-
-		Iteración: 573299
-
-		Iteración: 581403
-
-		Tiempo total: 27032730
+		Tiempo total: 26150869
 
 --------------------------------------------------------
-		Iteración: 576602
+		Iteración: 466444
 
-		Iteración: 574501
+		Iteración: 473948
 
-		Iteración: 574200
+		Iteración: 499461
 
-		Iteración: 578402
+		Iteración: 474248
 
-		Iteración: 590708
+		Iteración: 489857
 
-		Tiempo total: 26970898
-
---------------------------------------------------------
-		Iteración: 587407
-
-		Iteración: 579603
-
-		Iteración: 582304
-
-		Iteración: 581404
-
-		Iteración: 616522
-
-		Tiempo total: 27313677
+		Tiempo total: 26686049
 
 --------------------------------------------------------
-		Iteración: 568498
+		Iteración: 501262
 
-		Iteración: 585606
+		Iteración: 454437
 
-		Iteración: 569398
+		Iteración: 488955
 
-		Iteración: 566997
+		Iteración: 506364
 
-		Iteración: 617423
+		Iteración: 492258
 
-		Tiempo total: 27106569
-
---------------------------------------------------------
-		Iteración: 586506
-
-		Iteración: 567897
-
-		Iteración: 581704
-
-		Iteración: 584706
-
-		Iteración: 609919
-
-		Tiempo total: 27287863
+		Tiempo total: 27049239
 
 --------------------------------------------------------
-	  Media: 27194814
+		Iteración: 460741
+
+		Iteración: 460140
+
+		Iteración: 473647
+
+		Iteración: 463443
+
+		Iteración: 472747
+
+		Tiempo total: 26556681
+
+--------------------------------------------------------
+		Iteración: 468245
+
+		Iteración: 466744
+
+		Iteración: 440930
+
+		Iteración: 459541
+
+		Iteración: 502462
+
+		Tiempo total: 26520362
+
+--------------------------------------------------------
+		Iteración: 481152
+
+		Iteración: 462842
+
+		Iteración: 472747
+
+		Iteración: 478450
+
+		Iteración: 473647
+
+		Tiempo total: 26647929
+
+--------------------------------------------------------
+		Iteración: 474248
+
+		Iteración: 476949
+
+		Iteración: 462542
+
+		Iteración: 476349
+
+		Iteración: 505164
+
+		Tiempo total: 26403301
+
+--------------------------------------------------------
+		Iteración: 465243
+
+		Iteración: 492257
+
+		Iteración: 464043
+
+		Iteración: 465543
+
+		Iteración: 506065
+
+		Tiempo total: 26767692
+
+--------------------------------------------------------
+	  Media: 26664475
 
 Datos: 50000
 
 	Nube:
 
-		Iteración: 3764568
+		Iteración: 186397
 
-		Iteración: 6159519
+		Iteración: 250031
 
-		Iteración: 9723282
+		Iteración: 343080
 
-		Iteración: 12294426
+		Iteración: 406112
 
-		Iteración: 14119380
+		Iteración: 467344
 
-		Iteración: 12069308
+		Iteración: 545385
 
-		Tiempo total: 99316513
-
---------------------------------------------------------
-		Iteración: 3266607
-
-		Iteración: 6144812
-
-		Iteración: 9665652
-
-		Iteración: 12411788
-
-		Iteración: 13657738
-
-		Iteración: 12070209
-
-		Tiempo total: 97651242
+		Tiempo total: 43318042
 
 --------------------------------------------------------
-		Iteración: 3241094
+		Iteración: 178293
 
-		Iteración: 6113896
+		Iteración: 252732
 
-		Iteración: 9507169
+		Iteración: 364991
 
-		Iteración: 13725574
+		Iteración: 419019
 
-		Iteración: 13480046
+		Iteración: 460741
 
-		Iteración: 12186970
+		Iteración: 402811
 
-		Tiempo total: 98846467
-
---------------------------------------------------------
-		Iteración: 3159752
-
-		Iteración: 6112095
-
-		Iteración: 9644341
-
-		Iteración: 12463114
-
-		Iteración: 13523568
-
-		Iteración: 12061805
-
-		Tiempo total: 98377022
+		Tiempo total: 42564948
 
 --------------------------------------------------------
-		Iteración: 3216482
+		Iteración: 180394
 
-		Iteración: 6154116
+		Iteración: 256334
 
-		Iteración: 9487359
+		Iteración: 333174
 
-		Iteración: 12251804
+		Iteración: 419019
 
-		Iteración: 13666743
+		Iteración: 741688
 
-		Iteración: 11841189
+		Iteración: 501262
 
-		Tiempo total: 97245130
-
---------------------------------------------------------
-		Iteración: 3157050
-
-		Iteración: 6136407
-
-		Iteración: 9743693
-
-		Iteración: 12479623
-
-		Iteración: 13659540
-
-		Iteración: 12157254
-
-		Tiempo total: 97858651
+		Tiempo total: 43232497
 
 --------------------------------------------------------
-		Iteración: 3251900
+		Iteración: 211910
 
-		Iteración: 6085081
+		Iteración: 251531
 
-		Iteración: 9590013
+		Iteración: 370394
 
-		Iteración: 12210683
+		Iteración: 425923
 
-		Iteración: 13635527
+		Iteración: 435227
 
-		Iteración: 12058503
+		Iteración: 423822
 
-		Tiempo total: 97076442
-
---------------------------------------------------------
-		Iteración: 3211979
-
-		Iteración: 6115697
-
-		Iteración: 9513172
-
-		Iteración: 12219087
-
-		Iteración: 13403206
-
-		Iteración: 12067208
-
-		Tiempo total: 97003804
+		Tiempo total: 42439783
 
 --------------------------------------------------------
-		Iteración: 3211979
+		Iteración: 184897
 
-		Iteración: 6017246
+		Iteración: 248530
 
-		Iteración: 9585510
+		Iteración: 334375
 
-		Iteración: 12375768
+		Iteración: 445133
 
-		Iteración: 13630425
+		Iteración: 442131
 
-		Iteración: 12053700
+		Iteración: 417518
 
-		Tiempo total: 97357689
-
---------------------------------------------------------
-		Iteración: 3280415
-
-		Iteración: 6143311
-
-		Iteración: 9496064
-
-		Iteración: 12316938
-
-		Iteración: 13702162
-
-		Iteración: 11959151
-
-		Tiempo total: 97613123
+		Tiempo total: 43649416
 
 --------------------------------------------------------
-	  Media: 98033229
+		Iteración: 184896
+
+		Iteración: 248230
+
+		Iteración: 333174
+
+		Iteración: 457139
+
+		Iteración: 455638
+
+		Iteración: 413916
+
+		Tiempo total: 43237600
+
+--------------------------------------------------------
+		Iteración: 180094
+
+		Iteración: 256334
+
+		Iteración: 333775
+
+		Iteración: 417518
+
+		Iteración: 442131
+
+		Iteración: 415417
+
+		Tiempo total: 42448788
+
+--------------------------------------------------------
+		Iteración: 175291
+
+		Iteración: 258435
+
+		Iteración: 364991
+
+		Iteración: 432226
+
+		Iteración: 615022
+
+		Iteración: 391704
+
+		Tiempo total: 42797870
+
+--------------------------------------------------------
+		Iteración: 179794
+
+		Iteración: 249130
+
+		Iteración: 324469
+
+		Iteración: 406112
+
+		Iteración: 561893
+
+		Iteración: 408214
+
+		Tiempo total: 42697918
+
+--------------------------------------------------------
+		Iteración: 272842
+
+		Iteración: 252732
+
+		Iteración: 337977
+
+		Iteración: 411515
+
+		Iteración: 461041
+
+		Iteración: 398309
+
+		Tiempo total: 41994650
+
+--------------------------------------------------------
+	  Media: 42993384
 
 	Division:
 
-		Iteración: 649539
+		Iteración: 538782
 
-		Iteración: 642336
+		Iteración: 606617
 
-		Iteración: 625227
+		Iteración: 506064
 
-		Iteración: 679855
+		Iteración: 514769
 
-		Iteración: 658244
+		Iteración: 512968
 
-		Iteración: 662747
+		Iteración: 528576
 
-		Tiempo total: 44650138
-
---------------------------------------------------------
-		Iteración: 638134
-
-		Iteración: 694563
-
-		Iteración: 639335
-
-		Iteración: 653742
-
-		Iteración: 680756
-
-		Iteración: 648639
-
-		Tiempo total: 44765399
+		Tiempo total: 43528152
 
 --------------------------------------------------------
-		Iteración: 658244
+		Iteración: 524674
 
-		Iteración: 668149
+		Iteración: 538781
 
-		Iteración: 664247
+		Iteración: 539982
 
-		Iteración: 659144
+		Iteración: 598213
 
-		Iteración: 642036
+		Iteración: 556791
 
-		Iteración: 659144
+		Iteración: 524674
 
-		Tiempo total: 44480550
-
---------------------------------------------------------
-		Iteración: 666348
-
-		Iteración: 660045
-
-		Iteración: 669650
-
-		Iteración: 660646
-
-		Iteración: 663347
-
-		Iteración: 663947
-
-		Tiempo total: 44812824
+		Tiempo total: 43834312
 
 --------------------------------------------------------
-		Iteración: 680456
+		Iteración: 531278
 
-		Iteración: 648039
+		Iteración: 548086
 
-		Iteración: 642936
+		Iteración: 543584
 
-		Iteración: 644737
+		Iteración: 541183
 
-		Iteración: 692462
+		Iteración: 519872
 
-		Iteración: 661846
+		Iteración: 545385
 
-		Tiempo total: 44784309
-
---------------------------------------------------------
-		Iteración: 660045
-
-		Iteración: 653141
-
-		Iteración: 641736
-
-		Iteración: 659145
-
-		Iteración: 654942
-
-		Iteración: 639335
-
-		Tiempo total: 44474847
+		Tiempo total: 43312340
 
 --------------------------------------------------------
-		Iteración: 659144
+		Iteración: 545085
 
-		Iteración: 663646
+		Iteración: 592510
 
-		Iteración: 662446
+		Iteración: 543284
 
-		Iteración: 646538
+		Iteración: 548086
 
-		Iteración: 643536
+		Iteración: 539682
 
-		Iteración: 658544
+		Iteración: 535180
 
-		Tiempo total: 44507864
-
---------------------------------------------------------
-		Iteración: 685258
-
-		Iteración: 666648
-
-		Iteración: 670551
-
-		Iteración: 663347
-
-		Iteración: 648639
-
-		Iteración: 646237
-
-		Tiempo total: 45061053
+		Tiempo total: 44102953
 
 --------------------------------------------------------
-		Iteración: 665147
+		Iteración: 541183
 
-		Iteración: 660945
+		Iteración: 528876
 
-		Iteración: 665448
+		Iteración: 522273
 
-		Iteración: 642936
+		Iteración: 548387
 
-		Iteración: 649240
+		Iteración: 518672
 
-		Iteración: 636032
+		Iteración: 534279
 
-		Tiempo total: 44605115
-
---------------------------------------------------------
-		Iteración: 661846
-
-		Iteración: 691862
-
-		Iteración: 645338
-
-		Iteración: 659145
-
-		Iteración: 655243
-
-		Iteración: 656143
-
-		Tiempo total: 44487454
+		Tiempo total: 43476526
 
 --------------------------------------------------------
-	  Media: 44709269
+		Iteración: 519872
+
+		Iteración: 548987
+
+		Iteración: 595211
+
+		Iteración: 527376
+
+		Iteración: 563695
+
+		Iteración: 540282
+
+		Tiempo total: 43834913
+
+--------------------------------------------------------
+		Iteración: 533078
+
+		Iteración: 546885
+
+		Iteración: 536080
+
+		Iteración: 527676
+
+		Iteración: 529477
+
+		Iteración: 538782
+
+		Tiempo total: 43734059
+
+--------------------------------------------------------
+		Iteración: 542984
+
+		Iteración: 534279
+
+		Iteración: 526775
+
+		Iteración: 552889
+
+		Iteración: 593110
+
+		Iteración: 517470
+
+		Tiempo total: 44107155
+
+--------------------------------------------------------
+		Iteración: 527676
+
+		Iteración: 524374
+
+		Iteración: 532178
+
+		Iteración: 513869
+
+		Iteración: 563995
+
+		Iteración: 580203
+
+		Tiempo total: 44912176
+
+--------------------------------------------------------
+		Iteración: 516270
+
+		Iteración: 538482
+
+		Iteración: 519572
+
+		Iteración: 513869
+
+		Iteración: 527976
+
+		Iteración: 549287
+
+		Tiempo total: 43756271
+
+--------------------------------------------------------
+	  Media: 43976248
 
 Datos: 60000
 
 	Nube:
 
-		Iteración: 8428106
+		Iteración: 361689
 
-		Iteración: 9695068
+		Iteración: 409414
 
-		Iteración: 9981417
+		Iteración: 402211
 
-		Iteración: 10456566
+		Iteración: 404011
 
-		Iteración: 12653714
+		Iteración: 486855
 
-		Iteración: 16466006
+		Iteración: 573900
 
-		Iteración: 14423139
+		Iteración: 535180
 
-		Tiempo total: 152514520
-
---------------------------------------------------------
-		Iteración: 7681315
-
-		Iteración: 9683062
-
-		Iteración: 10010833
-
-		Iteración: 10032744
-
-		Iteración: 12731455
-
-		Iteración: 16126529
-
-		Iteración: 14498178
-
-		Tiempo total: 151004730
+		Tiempo total: 74504943
 
 --------------------------------------------------------
-		Iteración: 7993778
+		Iteración: 345181
 
-		Iteración: 9584910
+		Iteración: 381800
 
-		Iteración: 9920185
+		Iteración: 401910
 
-		Iteración: 10072065
+		Iteración: 442131
 
-		Iteración: 12768374
+		Iteración: 504564
 
-		Iteración: 16497823
+		Iteración: 590709
 
-		Iteración: 14256252
+		Iteración: 528276
 
-		Tiempo total: 151623653
-
---------------------------------------------------------
-		Iteración: 7680715
-
-		Iteración: 10110485
-
-		Iteración: 9963709
-
-		Iteración: 10023439
-
-		Iteración: 12714045
-
-		Iteración: 16383464
-
-		Iteración: 14454956
-
-		Tiempo total: 151303987
+		Tiempo total: 74023492
 
 --------------------------------------------------------
-		Iteración: 7689119
+		Iteración: 353885
 
-		Iteración: 9663551
+		Iteración: 409414
 
-		Iteración: 9900375
+		Iteración: 400409
 
-		Iteración: 10153107
+		Iteración: 405212
 
-		Iteración: 13061928
+		Iteración: 505464
 
-		Iteración: 16773067
+		Iteración: 591009
 
-		Iteración: 14396125
+		Iteración: 534279
 
-		Tiempo total: 152621075
-
---------------------------------------------------------
-		Iteración: 7709830
-
-		Iteración: 9727484
-
-		Iteración: 9917784
-
-		Iteración: 10068763
-
-		Iteración: 12691234
-
-		Iteración: 16462105
-
-		Iteración: 14516488
-
-		Tiempo total: 150791019
+		Tiempo total: 74087426
 
 --------------------------------------------------------
-		Iteración: 7740146
+		Iteración: 360489
 
-		Iteración: 9858953
+		Iteración: 404912
 
-		Iteración: 10424750
+		Iteración: 427724
 
-		Iteración: 10293881
+		Iteración: 432526
 
-		Iteración: 12780380
+		Iteración: 488055
 
-		Iteración: 16483116
+		Iteración: 574200
 
-		Iteración: 14645856
+		Iteración: 535781
 
-		Tiempo total: 152181945
-
---------------------------------------------------------
-		Iteración: 7875817
-
-		Iteración: 9653645
-
-		Iteración: 9981717
-
-		Iteración: 10048953
-
-		Iteración: 12716747
-
-		Iteración: 16453700
-
-		Iteración: 14457357
-
-		Tiempo total: 151492185
+		Tiempo total: 74382780
 
 --------------------------------------------------------
-		Iteración: 7653700
+		Iteración: 343979
 
-		Iteración: 9711276
+		Iteración: 420220
 
-		Iteración: 10138399
+		Iteración: 401310
 
-		Iteración: 10131496
+		Iteración: 404612
 
-		Iteración: 12787284
+		Iteración: 496759
 
-		Iteración: 16445596
+		Iteración: 631830
 
-		Iteración: 14627246
+		Iteración: 517770
 
-		Tiempo total: 151831662
-
---------------------------------------------------------
-		Iteración: 7689720
-
-		Iteración: 9529981
-
-		Iteración: 10038147
-
-		Iteración: 11027464
-
-		Iteración: 13282843
-
-		Iteración: 17685244
-
-		Iteración: 14603233
-
-		Tiempo total: 154750388
+		Tiempo total: 74611799
 
 --------------------------------------------------------
-	  Media: 152289926
+		Iteración: 354785
+
+		Iteración: 392305
+
+		Iteración: 422321
+
+		Iteración: 437028
+
+		Iteración: 471246
+
+		Iteración: 590408
+
+		Iteración: 555590
+
+		Tiempo total: 74107236
+
+--------------------------------------------------------
+		Iteración: 343379
+
+		Iteración: 862350
+
+		Iteración: 663047
+
+		Iteración: 422621
+
+		Iteración: 470947
+
+		Iteración: 592810
+
+		Iteración: 534279
+
+		Tiempo total: 78333745
+
+--------------------------------------------------------
+		Iteración: 353585
+
+		Iteración: 407013
+
+		Iteración: 400409
+
+		Iteración: 427123
+
+		Iteración: 489556
+
+		Iteración: 591609
+
+		Iteración: 519271
+
+		Tiempo total: 74312844
+
+--------------------------------------------------------
+		Iteración: 352984
+
+		Iteración: 392605
+
+		Iteración: 411215
+
+		Iteración: 403711
+
+		Iteración: 514769
+
+		Iteración: 592810
+
+		Iteración: 541183
+
+		Tiempo total: 74583585
+
+--------------------------------------------------------
+		Iteración: 374296
+
+		Iteración: 557992
+
+		Iteración: 417219
+
+		Iteración: 417819
+
+		Iteración: 470946
+
+		Iteración: 598813
+
+		Iteración: 547487
+
+		Tiempo total: 75258938
+
+--------------------------------------------------------
+	  Media: 75011983
 
 	Division:
 
-		Iteración: 790914
+		Iteración: 680756
 
-		Iteración: 813126
+		Iteración: 691862
 
-		Iteración: 781909
+		Iteración: 654642
 
-		Iteración: 804420
+		Iteración: 717975
 
-		Iteración: 805321
+		Iteración: 689161
 
-		Iteración: 824531
+		Iteración: 702067
 
-		Iteración: 823030
+		Iteración: 682556
 
-		Tiempo total: 76841665
-
---------------------------------------------------------
-		Iteración: 823030
-
-		Iteración: 849444
-
-		Iteración: 825432
-
-		Iteración: 890265
-
-		Iteración: 809823
-
-		Iteración: 839539
-
-		Iteración: 819128
-
-		Tiempo total: 77324317
+		Tiempo total: 76266864
 
 --------------------------------------------------------
-		Iteración: 827233
+		Iteración: 708370
 
-		Iteración: 846442
+		Iteración: 692462
 
-		Iteración: 874657
+		Iteración: 753093
 
-		Iteración: 825731
+		Iteración: 741387
 
-		Iteración: 827532
+		Iteración: 671751
 
-		Iteración: 818227
+		Iteración: 684658
 
-		Iteración: 818227
+		Iteración: 660646
 
-		Tiempo total: 77146625
-
---------------------------------------------------------
-		Iteración: 872856
-
-		Iteración: 868954
-
-		Iteración: 795716
-
-		Iteración: 841340
-
-		Iteración: 836537
-
-		Iteración: 842841
-
-		Iteración: 813726
-
-		Tiempo total: 77575549
+		Tiempo total: 77237272
 
 --------------------------------------------------------
-		Iteración: 831434
+		Iteración: 662746
 
-		Iteración: 822130
+		Iteración: 683457
 
-		Iteración: 824531
+		Iteración: 700866
 
-		Iteración: 868354
+		Iteración: 756696
 
-		Iteración: 801119
+		Iteración: 735384
 
-		Iteración: 804120
+		Iteración: 702367
 
-		Iteración: 802920
+		Iteración: 690661
 
-		Tiempo total: 77220163
-
---------------------------------------------------------
-		Iteración: 852146
-
-		Iteración: 817027
-
-		Iteración: 794816
-
-		Iteración: 822429
-
-		Iteración: 814926
-
-		Iteración: 812225
-
-		Iteración: 824831
-
-		Tiempo total: 77267288
+		Tiempo total: 78186968
 
 --------------------------------------------------------
-		Iteración: 819428
+		Iteración: 686759
 
-		Iteración: 834436
+		Iteración: 690061
 
-		Iteración: 832935
+		Iteración: 698465
 
-		Iteración: 816427
+		Iteración: 688559
 
-		Iteración: 815526
+		Iteración: 682256
 
-		Iteración: 822429
+		Iteración: 684958
 
-		Iteración: 880961
+		Iteración: 702667
 
-		Tiempo total: 77079989
-
---------------------------------------------------------
-		Iteración: 935289
-
-		Iteración: 854546
-
-		Iteración: 823031
-
-		Iteración: 817027
-
-		Iteración: 820929
-
-		Iteración: 812825
-
-		Iteración: 829634
-
-		Tiempo total: 76849169
+		Tiempo total: 77064681
 
 --------------------------------------------------------
-		Iteración: 836538
+		Iteración: 697564
 
-		Iteración: 827233
+		Iteración: 682256
 
-		Iteración: 813125
+		Iteración: 682256
 
-		Iteración: 827233
+		Iteración: 681956
 
-		Iteración: 807122
+		Iteración: 672651
 
-		Iteración: 814326
+		Iteración: 721577
 
-		Iteración: 804421
+		Iteración: 707770
 
-		Tiempo total: 76927811
-
---------------------------------------------------------
-		Iteración: 818228
-
-		Iteración: 848243
-
-		Iteración: 848543
-
-		Iteración: 826933
-
-		Iteración: 2584051
-
-		Iteración: 577802
-
-		Iteración: 552289
-
-		Tiempo total: 78085215
+		Tiempo total: 75832537
 
 --------------------------------------------------------
-	  Media: 77328369
+		Iteración: 678055
+
+		Iteración: 694563
+
+		Iteración: 689160
+
+		Iteración: 657944
+
+		Iteración: 691562
+
+		Iteración: 753694
+
+		Iteración: 677454
+
+		Tiempo total: 75749995
+
+--------------------------------------------------------
+		Iteración: 669650
+
+		Iteración: 674153
+
+		Iteración: 694864
+
+		Iteración: 705668
+
+		Iteración: 700266
+
+		Iteración: 661846
+
+		Iteración: 713172
+
+		Tiempo total: 76261762
+
+--------------------------------------------------------
+		Iteración: 691562
+
+		Iteración: 683158
+
+		Iteración: 666949
+
+		Iteración: 672352
+
+		Iteración: 676854
+
+		Iteración: 713473
+
+		Iteración: 705669
+
+		Tiempo total: 76664272
+
+--------------------------------------------------------
+		Iteración: 699966
+
+		Iteración: 704169
+
+		Iteración: 673552
+
+		Iteración: 677755
+
+		Iteración: 679856
+
+		Iteración: 682556
+
+		Iteración: 783409
+
+		Tiempo total: 75916282
+
+--------------------------------------------------------
+		Iteración: 688260
+
+		Iteración: 687959
+
+		Iteración: 668150
+
+		Iteración: 696064
+
+		Iteración: 671451
+
+		Iteración: 698465
+
+		Iteración: 696964
+
+		Tiempo total: 76556516
+
+--------------------------------------------------------
+	  Media: 76769327
 
 Datos: 70000
 
 	Nube:
 
-		Iteración: 3462910
+		Iteración: 296555
 
-		Iteración: 7345440
+		Iteración: 400109
 
-		Iteración: 12909748
+		Iteración: 584405
 
-		Iteración: 13656838
+		Iteración: 571498
 
-		Iteración: 14856265
+		Iteración: 627028
 
-		Iteración: 17293839
+		Iteración: 690361
 
-		Iteración: 19955030
-
-		Tiempo total: 185812124
+		Tiempo total: 81553228
 
 --------------------------------------------------------
-		Iteración: 3195170
+		Iteración: 296255
 
-		Iteración: 7258694
+		Iteración: 404312
 
-		Iteración: 12946367
+		Iteración: 573900
 
-		Iteración: 13519066
+		Iteración: 646237
 
-		Iteración: 14883279
+		Iteración: 608418
 
-		Iteración: 17518657
+		Iteración: 668450
 
-		Iteración: 20508519
-
-		Tiempo total: 186398331
+		Tiempo total: 81688298
 
 --------------------------------------------------------
-		Iteración: 3201473
+		Iteración: 299257
 
-		Iteración: 7331032
+		Iteración: 398608
 
-		Iteración: 12663619
+		Iteración: 548386
 
-		Iteración: 13455733
+		Iteración: 580203
 
-		Iteración: 14892884
+		Iteración: 618323
 
-		Iteración: 17120649
+		Iteración: 678054
 
-		Iteración: 20263892
-
-		Tiempo total: 185460340
+		Tiempo total: 81386341
 
 --------------------------------------------------------
-		Iteración: 3245897
+		Iteración: 300757
 
-		Iteración: 7253892
+		Iteración: 405212
 
-		Iteración: 13073933
+		Iteración: 542984
 
-		Iteración: 13655037
+		Iteración: 588908
 
-		Iteración: 15247070
+		Iteración: 644437
 
-		Iteración: 17174077
+		Iteración: 659745
 
-		Iteración: 20307115
-
-		Tiempo total: 186276167
+		Tiempo total: 80873972
 
 --------------------------------------------------------
-		Iteración: 3342848
+		Iteración: 283649
 
-		Iteración: 7553148
+		Iteración: 440631
 
-		Iteración: 13139968
+		Iteración: 542683
 
-		Iteración: 14081560
+		Iteración: 580804
 
-		Iteración: 14976028
+		Iteración: 619524
 
-		Iteración: 17405198
+		Iteración: 686159
 
-		Iteración: 20359642
-
-		Tiempo total: 186982736
+		Tiempo total: 81736924
 
 --------------------------------------------------------
-		Iteración: 3307429
+		Iteración: 283048
 
-		Iteración: 7310321
+		Iteración: 394706
 
-		Iteración: 12935861
+		Iteración: 579303
 
-		Iteración: 13705164
+		Iteración: 548087
 
-		Iteración: 14619742
+		Iteración: 603016
 
-		Iteración: 17152766
+		Iteración: 951498
 
-		Iteración: 20175045
-
-		Tiempo total: 185810623
+		Tiempo total: 81582943
 
 --------------------------------------------------------
-		Iteración: 3169657
+		Iteración: 283949
 
-		Iteración: 7295614
+		Iteración: 382400
 
-		Iteración: 12570570
+		Iteración: 560393
 
-		Iteración: 13216508
+		Iteración: 586206
 
-		Iteración: 14991036
+		Iteración: 617423
 
-		Iteración: 17250617
+		Iteración: 661846
 
-		Iteración: 20473401
-
-		Tiempo total: 184576679
+		Tiempo total: 81261476
 
 --------------------------------------------------------
-		Iteración: 3146845
+		Iteración: 298956
 
-		Iteración: 7297414
+		Iteración: 497661
 
-		Iteración: 13001896
+		Iteración: 619223
 
-		Iteración: 13407408
+		Iteración: 663046
 
-		Iteración: 15071778
+		Iteración: 729381
 
-		Iteración: 17018595
+		Iteración: 781608
 
-		Iteración: 20238979
-
-		Tiempo total: 185452236
+		Tiempo total: 82424584
 
 --------------------------------------------------------
-		Iteración: 3121932
+		Iteración: 300457
 
-		Iteración: 7440889
+		Iteración: 416918
 
-		Iteración: 12961375
+		Iteración: 559492
 
-		Iteración: 13544580
+		Iteración: 579003
 
-		Iteración: 14725697
+		Iteración: 601814
 
-		Iteración: 16821992
+		Iteración: 660945
 
-		Iteración: 20870208
-
-		Tiempo total: 185196202
+		Tiempo total: 81075378
 
 --------------------------------------------------------
-		Iteración: 3189768
+		Iteración: 284249
 
-		Iteración: 7346940
+		Iteración: 404612
 
-		Iteración: 12854819
+		Iteración: 544184
 
-		Iteración: 13659540
+		Iteración: 561293
 
-		Iteración: 14943311
+		Iteración: 600614
 
-		Iteración: 17671737
+		Iteración: 677454
 
-		Iteración: 20315819
-
-		Tiempo total: 187033763
+		Tiempo total: 81379137
 
 --------------------------------------------------------
-	  Media: 186153290
+	  Media: 81626616
 
 	Division:
 
-		Iteración: 753394
+		Iteración: 836537
 
-		Iteración: 743189
+		Iteración: 795116
 
-		Iteración: 740787
+		Iteración: 823030
 
-		Iteración: 741088
+		Iteración: 823030
 
-		Iteración: 806522
+		Iteración: 804420
 
-		Iteración: 758496
+		Iteración: 815526
 
-		Tiempo total: 83255118
-
---------------------------------------------------------
-		Iteración: 759097
-
-		Iteración: 778307
-
-		Iteración: 773505
-
-		Iteración: 781009
-
-		Iteración: 746790
-
-		Iteración: 763599
-
-		Tiempo total: 84633138
+		Tiempo total: 84122271
 
 --------------------------------------------------------
-		Iteración: 739287
+		Iteración: 821229
 
-		Iteración: 779508
+		Iteración: 832935
 
-		Iteración: 741088
+		Iteración: 812224
 
-		Iteración: 731182
+		Iteración: 883362
 
-		Iteración: 749492
+		Iteración: 826032
 
-		Iteración: 748891
+		Iteración: 851245
 
-		Tiempo total: 83682241
-
---------------------------------------------------------
-		Iteración: 760297
-
-		Iteración: 797817
-
-		Iteración: 795715
-
-		Iteración: 778907
-
-		Iteración: 778907
-
-		Iteración: 745289
-
-		Tiempo total: 82802180
+		Tiempo total: 84836944
 
 --------------------------------------------------------
-		Iteración: 740487
+		Iteración: 853947
 
-		Iteración: 791814
+		Iteración: 877659
 
-		Iteración: 755795
+		Iteración: 831435
 
-		Iteración: 754894
+		Iteración: 835037
 
-		Iteración: 973108
+		Iteración: 810423
 
-		Iteración: 747091
+		Iteración: 811624
 
-		Tiempo total: 82828295
-
---------------------------------------------------------
-		Iteración: 744689
-
-		Iteración: 875858
-
-		Iteración: 795716
-
-		Iteración: 792714
-
-		Iteración: 791814
-
-		Iteración: 777407
-
-		Tiempo total: 83711656
+		Tiempo total: 83699950
 
 --------------------------------------------------------
-		Iteración: 753094
+		Iteración: 816727
 
-		Iteración: 756095
+		Iteración: 825732
 
-		Iteración: 744390
+		Iteración: 830534
 
-		Iteración: 779807
+		Iteración: 850044
 
-		Iteración: 738686
+		Iteración: 812524
 
-		Iteración: 956600
+		Iteración: 859049
 
-		Tiempo total: 83988401
-
---------------------------------------------------------
-		Iteración: 748892
-
-		Iteración: 744089
-
-		Iteración: 765100
-
-		Iteración: 958100
-
-		Iteración: 842541
-
-		Iteración: 732683
-
-		Tiempo total: 84121371
+		Tiempo total: 82945355
 
 --------------------------------------------------------
-		Iteración: 685558
+		Iteración: 832935
 
-		Iteración: 734184
+		Iteración: 850945
 
-		Iteración: 733883
+		Iteración: 856347
 
-		Iteración: 719175
+		Iteración: 871055
 
-		Iteración: 741988
+		Iteración: 834436
 
-		Iteración: 738987
+		Iteración: 833536
 
-		Tiempo total: 81884001
-
---------------------------------------------------------
-		Iteración: 735685
-
-		Iteración: 757896
-
-		Iteración: 799318
-
-		Iteración: 780108
-
-		Iteración: 771103
-
-		Iteración: 783709
-
-		Tiempo total: 82777268
+		Tiempo total: 84351290
 
 --------------------------------------------------------
-	  Media: 83627800
+		Iteración: 835037
+
+		Iteración: 903472
+
+		Iteración: 830234
+
+		Iteración: 846442
+
+		Iteración: 863551
+
+		Iteración: 858749
+
+		Tiempo total: 84419726
+
+--------------------------------------------------------
+		Iteración: 886363
+
+		Iteración: 914578
+
+		Iteración: 846742
+
+		Iteración: 873456
+
+		Iteración: 811924
+
+		Iteración: 811624
+
+		Tiempo total: 85144605
+
+--------------------------------------------------------
+		Iteración: 898670
+
+		Iteración: 818228
+
+		Iteración: 837438
+
+		Iteración: 828433
+
+		Iteración: 820930
+
+		Iteración: 808023
+
+		Tiempo total: 83734468
+
+--------------------------------------------------------
+		Iteración: 821530
+
+		Iteración: 862651
+
+		Iteración: 838638
+
+		Iteración: 864452
+
+		Iteración: 897169
+
+		Iteración: 866252
+
+		Tiempo total: 85324999
+
+--------------------------------------------------------
+		Iteración: 857849
+
+		Iteración: 866253
+
+		Iteración: 862951
+
+		Iteración: 849744
+
+		Iteración: 830534
+
+		Iteración: 824531
+
+		Tiempo total: 83486839
+
+--------------------------------------------------------
+	  Media: 84454281
 
 Datos: 80000
 
 	Nube:
 
-		Iteración: 3222184
+		Iteración: 325670
 
-		Iteración: 9032322
+		Iteración: 467644
 
-		Iteración: 12179166
+		Iteración: 571198
 
-		Iteración: 14119080
+		Iteración: 624326
 
-		Iteración: 16728044
+		Iteración: 695763
 
-		Iteración: 21385578
+		Iteración: 822430
 
-		Iteración: 21605293
+		Iteración: 853946
 
-		Tiempo total: 220928379
-
---------------------------------------------------------
-		Iteración: 2816072
-
-		Iteración: 8863333
-
-		Iteración: 11946845
-
-		Iteración: 13975005
-
-		Iteración: 17135057
-
-		Iteración: 21439606
-
-		Iteración: 21701644
-
-		Tiempo total: 219438101
+		Tiempo total: 125173828
 
 --------------------------------------------------------
-		Iteración: 2795061
+		Iteración: 322369
 
-		Iteración: 8662228
+		Iteración: 499761
 
-		Iteración: 12099324
+		Iteración: 563394
 
-		Iteración: 13943789
+		Iteración: 603616
 
-		Iteración: 16912040
+		Iteración: 838338
 
-		Iteración: 22356886
+		Iteración: 828133
 
-		Iteración: 21535657
+		Iteración: 836838
 
-		Tiempo total: 219913849
-
---------------------------------------------------------
-		Iteración: 2751839
-
-		Iteración: 8865434
-
-		Iteración: 12072611
-
-		Iteración: 14258953
-
-		Iteración: 16841503
-
-		Iteración: 21396084
-
-		Iteración: 21509543
-
-		Tiempo total: 219574672
+		Tiempo total: 126731643
 
 --------------------------------------------------------
-		Iteración: 2761143
+		Iteración: 313064
 
-		Iteración: 8903554
+		Iteración: 555890
 
-		Iteración: 11963053
+		Iteración: 599713
 
-		Iteración: 14067453
+		Iteración: 621025
 
-		Iteración: 16872419
+		Iteración: 716475
 
-		Iteración: 21589084
+		Iteración: 828433
 
-		Iteración: 21378074
+		Iteración: 813725
 
-		Tiempo total: 218252180
-
---------------------------------------------------------
-		Iteración: 2720622
-
-		Iteración: 8786493
-
-		Iteración: 12318439
-
-		Iteración: 13892461
-
-		Iteración: 16918644
-
-		Iteración: 21722654
-
-		Iteración: 21518248
-
-		Tiempo total: 219654214
+		Tiempo total: 126979572
 
 --------------------------------------------------------
-		Iteración: 2754539
+		Iteración: 194802
 
-		Iteración: 8726461
+		Iteración: 316366
 
-		Iteración: 12013780
+		Iteración: 448435
 
-		Iteración: 13983409
+		Iteración: 443932
 
-		Iteración: 16685121
+		Iteración: 495559
 
-		Iteración: 21445009
+		Iteración: 606317
 
-		Iteración: 21837915
+		Iteración: 623726
 
-		Tiempo total: 219009476
-
---------------------------------------------------------
-		Iteración: 2798362
-
-		Iteración: 8849525
-
-		Iteración: 12083116
-
-		Iteración: 14095068
-
-		Iteración: 17179779
-
-		Iteración: 21568674
-
-		Iteración: 21866730
-
-		Tiempo total: 219902143
+		Tiempo total: 125302295
 
 --------------------------------------------------------
-		Iteración: 2861096
+		Iteración: 188198
 
-		Iteración: 8837819
+		Iteración: 334375
 
-		Iteración: 12134443
+		Iteración: 384802
 
-		Iteración: 14026331
+		Iteración: 646238
 
-		Iteración: 17054914
+		Iteración: 526775
 
-		Iteración: 21704345
+		Iteración: 624927
 
-		Iteración: 21556367
+		Iteración: 625227
 
-		Tiempo total: 219801591
-
---------------------------------------------------------
-		Iteración: 2751839
-
-		Iteración: 8872938
-
-		Iteración: 12042895
-
-		Iteración: 14048543
-
-		Iteración: 17002988
-
-		Iteración: 21885640
-
-		Iteración: 21621802
-
-		Tiempo total: 219594182
+		Tiempo total: 126458500
 
 --------------------------------------------------------
-	  Media: 219850891
+		Iteración: 189999
+
+		Iteración: 317266
+
+		Iteración: 387203
+
+		Iteración: 464342
+
+		Iteración: 495258
+
+		Iteración: 621025
+
+		Iteración: 610519
+
+		Tiempo total: 124577416
+
+--------------------------------------------------------
+		Iteración: 184596
+
+		Iteración: 332874
+
+		Iteración: 695163
+
+		Iteración: 456839
+
+		Iteración: 497360
+
+		Iteración: 622225
+
+		Iteración: 631830
+
+		Tiempo total: 126054788
+
+--------------------------------------------------------
+		Iteración: 188499
+
+		Iteración: 337077
+
+		Iteración: 396807
+
+		Iteración: 438529
+
+		Iteración: 507265
+
+		Iteración: 622225
+
+		Iteración: 607818
+
+		Tiempo total: 123842633
+
+--------------------------------------------------------
+		Iteración: 188799
+
+		Iteración: 317266
+
+		Iteración: 419620
+
+		Iteración: 431926
+
+		Iteración: 496160
+
+		Iteración: 630329
+
+		Iteración: 610519
+
+		Tiempo total: 125000938
+
+--------------------------------------------------------
+		Iteración: 192100
+
+		Iteración: 316966
+
+		Iteración: 397108
+
+		Iteración: 431625
+
+		Iteración: 514769
+
+		Iteración: 606017
+
+		Iteración: 635432
+
+		Tiempo total: 124839754
+
+--------------------------------------------------------
+	  Media: 125817664
 
 	Division:
 
-		Iteración: 875558
+		Iteración: 719176
 
-		Iteración: 893266
+		Iteración: 724279
 
-		Iteración: 878259
+		Iteración: 715274
 
-		Iteración: 878259
+		Iteración: 697865
 
-		Iteración: 889364
+		Iteración: 719476
 
-		Iteración: 919380
+		Iteración: 739287
 
-		Iteración: 904673
+		Iteración: 749492
 
-		Tiempo total: 128672157
-
---------------------------------------------------------
-		Iteración: 882462
-
-		Iteración: 899570
-
-		Iteración: 911276
-
-		Iteración: 894768
-
-		Iteración: 878559
-
-		Iteración: 954499
-
-		Iteración: 913677
-
-		Tiempo total: 129332202
+		Tiempo total: 127038403
 
 --------------------------------------------------------
-		Iteración: 909176
+		Iteración: 734484
 
-		Iteración: 939491
+		Iteración: 835637
 
-		Iteración: 934989
+		Iteración: 704768
 
-		Iteración: 908275
+		Iteración: 715875
 
-		Iteración: 923283
+		Iteración: 750992
 
-		Iteración: 947295
+		Iteración: 760898
 
-		Iteración: 937990
+		Iteración: 879460
 
-		Tiempo total: 129297984
-
---------------------------------------------------------
-		Iteración: 936189
-
-		Iteración: 938891
-
-		Iteración: 915479
-
-		Iteración: 938890
-
-		Iteración: 914878
-
-		Iteración: 896269
-
-		Iteración: 921481
-
-		Tiempo total: 128051732
+		Tiempo total: 128805127
 
 --------------------------------------------------------
-		Iteración: 893567
+		Iteración: 763599
 
-		Iteración: 900171
+		Iteración: 765700
 
-		Iteración: 905273
+		Iteración: 754594
 
-		Iteración: 907074
+		Iteración: 736886
 
-		Iteración: 913378
+		Iteración: 747090
 
-		Iteración: 928386
+		Iteración: 751893
 
-		Iteración: 922382
+		Iteración: 749792
 
-		Tiempo total: 130201156
-
---------------------------------------------------------
-		Iteración: 883662
-
-		Iteración: 934988
-
-		Iteración: 891766
-
-		Iteración: 886063
-
-		Iteración: 887564
-
-		Iteración: 903172
-
-		Iteración: 923582
-
-		Tiempo total: 128811430
+		Tiempo total: 127161767
 
 --------------------------------------------------------
-		Iteración: 908275
+		Iteración: 714974
 
-		Iteración: 946094
+		Iteración: 729981
 
-		Iteración: 929286
+		Iteración: 746490
 
-		Iteración: 943694
+		Iteración: 736885
 
-		Iteración: 940692
+		Iteración: 755495
 
-		Iteración: 949096
+		Iteración: 821230
 
-		Iteración: 951197
+		Iteración: 746190
 
-		Tiempo total: 128770909
-
---------------------------------------------------------
-		Iteración: 957501
-
-		Iteración: 949997
-
-		Iteración: 1041245
-
-		Iteración: 909176
-
-		Iteración: 920581
-
-		Iteración: 892667
-
-		Iteración: 900471
-
-		Tiempo total: 130705720
+		Tiempo total: 126398168
 
 --------------------------------------------------------
-		Iteración: 909475
+		Iteración: 771703
 
-		Iteración: 855747
+		Iteración: 754895
 
-		Iteración: 902572
+		Iteración: 740487
 
-		Iteración: 897770
+		Iteración: 745890
 
-		Iteración: 891766
+		Iteración: 732983
 
-		Iteración: 921482
+		Iteración: 766300
 
-		Iteración: 940692
+		Iteración: 756395
 
-		Tiempo total: 129578330
-
---------------------------------------------------------
-		Iteración: 945794
-
-		Iteración: 935589
-
-		Iteración: 955099
-
-		Iteración: 917580
-
-		Iteración: 898070
-
-		Iteración: 900171
-
-		Iteración: 982714
-
-		Tiempo total: 128208714
+		Tiempo total: 127480234
 
 --------------------------------------------------------
-	  Media: 129421236
+		Iteración: 727880
+
+		Iteración: 746190
+
+		Iteración: 729682
+
+		Iteración: 754295
+
+		Iteración: 741387
+
+		Iteración: 796617
+
+		Iteración: 768101
+
+		Tiempo total: 126873016
+
+--------------------------------------------------------
+		Iteración: 764800
+
+		Iteración: 733283
+
+		Iteración: 742588
+
+		Iteración: 761198
+
+		Iteración: 800818
+
+		Iteración: 787012
+
+		Iteración: 761198
+
+		Tiempo total: 127328955
+
+--------------------------------------------------------
+		Iteración: 749792
+
+		Iteración: 752793
+
+		Iteración: 753694
+
+		Iteración: 745290
+
+		Iteración: 761198
+
+		Iteración: 813125
+
+		Iteración: 783410
+
+		Tiempo total: 128640341
+
+--------------------------------------------------------
+		Iteración: 804421
+
+		Iteración: 778007
+
+		Iteración: 774105
+
+		Iteración: 749491
+
+		Iteración: 747390
+
+		Iteración: 790313
+
+		Iteración: 771703
+
+		Tiempo total: 127159066
+
+--------------------------------------------------------
+		Iteración: 755795
+
+		Iteración: 754295
+
+		Iteración: 711372
+
+		Iteración: 730282
+
+		Iteración: 766601
+
+		Iteración: 822430
+
+		Iteración: 765100
+
+		Tiempo total: 127875241
+
+--------------------------------------------------------
+	  Media: 127686141
 
 Datos: 90000
 
 	Nube:
 
-		Iteración: 10389931
+		Iteración: 401310
 
-		Iteración: 12750365
+		Iteración: 636332
 
-		Iteración: 22209209
+		Iteración: 702367
 
-		Iteración: 22297755
+		Iteración: 688560
 
-		Iteración: 22680455
+		Iteración: 879760
 
-		Iteración: 25166354
+		Iteración: 783109
 
-		Iteración: 28278081
+		Iteración: 854547
 
-		Tiempo total: 293989569
-
---------------------------------------------------------
-		Iteración: 10029443
-
-		Iteración: 12939764
-
-		Iteración: 21922859
-
-		Iteración: 22563394
-
-		Iteración: 22538781
-
-		Iteración: 25008772
-
-		Iteración: 27654055
-
-		Tiempo total: 292559921
+		Tiempo total: 156371235
 
 --------------------------------------------------------
-		Iteración: 9914782
+		Iteración: 396207
 
-		Iteración: 13315560
+		Iteración: 831735
 
-		Iteración: 21834313
+		Iteración: 722478
 
-		Iteración: 22473647
+		Iteración: 703868
 
-		Iteración: 22518070
+		Iteración: 738687
 
-		Iteración: 25654410
+		Iteración: 775305
 
-		Iteración: 27931700
+		Iteración: 849444
 
-		Tiempo total: 293509617
-
---------------------------------------------------------
-		Iteración: 10267167
-
-		Iteración: 12738358
-
-		Iteración: 21981389
-
-		Iteración: 23213534
-
-		Iteración: 22676853
-
-		Iteración: 24969452
-
-		Iteración: 28063169
-
-		Tiempo total: 293899522
+		Tiempo total: 156175533
 
 --------------------------------------------------------
-		Iteración: 9967611
+		Iteración: 396508
 
-		Iteración: 12926557
+		Iteración: 461641
 
-		Iteración: 22146476
+		Iteración: 705069
 
-		Iteración: 22371594
+		Iteración: 814626
 
-		Iteración: 22827232
+		Iteración: 704469
 
-		Iteración: 25532546
+		Iteración: 748591
 
-		Iteración: 28109693
+		Iteración: 837437
 
-		Tiempo total: 294402885
-
---------------------------------------------------------
-		Iteración: 9889269
-
-		Iteración: 12885135
-
-		Iteración: 22372494
-
-		Iteración: 22396806
-
-		Iteración: 22943992
-
-		Iteración: 25123732
-
-		Iteración: 28076976
-
-		Tiempo total: 293822081
+		Tiempo total: 154612916
 
 --------------------------------------------------------
-		Iteración: 9894672
+		Iteración: 410915
 
-		Iteración: 12701138
+		Iteración: 485054
 
-		Iteración: 22471846
+		Iteración: 694863
 
-		Iteración: 23046647
+		Iteración: 694563
 
-		Iteración: 22383900
+		Iteración: 710472
 
-		Iteración: 25113227
+		Iteración: 778607
 
-		Iteración: 28093784
+		Iteración: 849144
 
-		Tiempo total: 294485127
-
---------------------------------------------------------
-		Iteración: 10376724
-
-		Iteración: 12707442
-
-		Iteración: 21893444
-
-		Iteración: 22106255
-
-		Iteración: 22760597
-
-		Iteración: 25551756
-
-		Iteración: 28179930
-
-		Tiempo total: 294135444
+		Tiempo total: 155159502
 
 --------------------------------------------------------
-		Iteración: 9915383
+		Iteración: 394707
 
-		Iteración: 12755167
+		Iteración: 474247
 
-		Iteración: 21965181
+		Iteración: 705969
 
-		Iteración: 22137471
+		Iteración: 693062
 
-		Iteración: 23463865
+		Iteración: 723678
 
-		Iteración: 24936434
+		Iteración: 902572
 
-		Iteración: 28279282
+		Iteración: 846443
 
-		Tiempo total: 292791342
-
---------------------------------------------------------
-		Iteración: 10177719
-
-		Iteración: 12556463
-
-		Iteración: 22458039
-
-		Iteración: 22360488
-
-		Iteración: 23063455
-
-		Iteración: 25392973
-
-		Iteración: 28179329
-
-		Tiempo total: 293250582
+		Tiempo total: 157116225
 
 --------------------------------------------------------
-	  Media: 293936853
+		Iteración: 393806
+
+		Iteración: 480551
+
+		Iteración: 692162
+
+		Iteración: 677454
+
+		Iteración: 857248
+
+		Iteración: 750392
+
+		Iteración: 848243
+
+		Tiempo total: 154202601
+
+--------------------------------------------------------
+		Iteración: 394707
+
+		Iteración: 460141
+
+		Iteración: 689461
+
+		Iteración: 694563
+
+		Iteración: 713473
+
+		Iteración: 768101
+
+		Iteración: 846142
+
+		Tiempo total: 154135067
+
+--------------------------------------------------------
+		Iteración: 406113
+
+		Iteración: 799918
+
+		Iteración: 700266
+
+		Iteración: 753394
+
+		Iteración: 688560
+
+		Iteración: 753093
+
+		Iteración: 849143
+
+		Tiempo total: 156715816
+
+--------------------------------------------------------
+		Iteración: 394706
+
+		Iteración: 460441
+
+		Iteración: 657944
+
+		Iteración: 692162
+
+		Iteración: 706269
+
+		Iteración: 783409
+
+		Iteración: 824230
+
+		Tiempo total: 153153853
+
+--------------------------------------------------------
+		Iteración: 395906
+
+		Iteración: 474248
+
+		Iteración: 695163
+
+		Iteración: 699366
+
+		Iteración: 782509
+
+		Iteración: 886063
+
+		Iteración: 848544
+
+		Tiempo total: 155091366
+
+--------------------------------------------------------
+	  Media: 155680649
 
 	Division:
 
-		Iteración: 1047247
+		Iteración: 892967
 
-		Iteración: 1024436
+		Iteración: 923583
 
-		Iteración: 1408336
+		Iteración: 889064
 
-		Iteración: 1035542
+		Iteración: 904373
 
-		Iteración: 1038243
+		Iteración: 877358
 
-		Iteración: 1020233
+		Iteración: 889065
 
-		Iteración: 1011829
+		Iteración: 863251
 
-		Tiempo total: 160948028
-
---------------------------------------------------------
-		Iteración: 1034941
-
-		Iteración: 1055051
-
-		Iteración: 1036742
-
-		Iteración: 1033740
-
-		Iteración: 1019934
-
-		Iteración: 1077864
-
-		Iteración: 1005825
-
-		Tiempo total: 159384210
+		Tiempo total: 157510331
 
 --------------------------------------------------------
-		Iteración: 1046647
+		Iteración: 902571
 
-		Iteración: 1032540
+		Iteración: 907674
 
-		Iteración: 1148701
+		Iteración: 938290
 
-		Iteración: 1159506
+		Iteración: 921481
 
-		Iteración: 1043646
+		Iteración: 923583
 
-		Iteración: 1076963
+		Iteración: 912777
 
-		Iteración: 1092271
+		Iteración: 914878
 
-		Tiempo total: 160099184
-
---------------------------------------------------------
-		Iteración: 1090770
-
-		Iteración: 1076663
-
-		Iteración: 1085968
-
-		Iteración: 1106079
-
-		Iteración: 1076363
-
-		Iteración: 1066457
-
-		Iteración: 1066758
-
-		Tiempo total: 160010637
+		Tiempo total: 157396271
 
 --------------------------------------------------------
-		Iteración: 1149301
+		Iteración: 934088
 
-		Iteración: 1277168
+		Iteración: 933188
 
-		Iteración: 1038843
+		Iteración: 962603
 
-		Iteración: 1034040
+		Iteración: 917580
 
-		Iteración: 1047848
+		Iteración: 912177
 
-		Iteración: 1035241
+		Iteración: 882461
 
-		Iteración: 1029838
+		Iteración: 886363
 
-		Tiempo total: 160361821
-
---------------------------------------------------------
-		Iteración: 1028638
-
-		Iteración: 1059554
-
-		Iteración: 1027137
-
-		Iteración: 1084767
-
-		Iteración: 1063456
-
-		Iteración: 1067959
-
-		Iteración: 1049648
-
-		Tiempo total: 158039207
+		Tiempo total: 156752734
 
 --------------------------------------------------------
-		Iteración: 1040944
+		Iteración: 899270
 
-		Iteración: 1069759
+		Iteración: 899570
 
-		Iteración: 1052350
+		Iteración: 915479
 
-		Iteración: 1058954
+		Iteración: 860249
 
-		Iteración: 1070360
+		Iteración: 880060
 
-		Iteración: 1094973
+		Iteración: 874657
 
-		Iteración: 1039443
+		Iteración: 860550
 
-		Tiempo total: 158344766
-
---------------------------------------------------------
-		Iteración: 1073361
-
-		Iteración: 1043645
-
-		Iteración: 1432349
-
-		Iteración: 1067958
-
-		Iteración: 1026236
-
-		Iteración: 1015731
-
-		Iteración: 1019333
-
-		Tiempo total: 160175424
+		Tiempo total: 156685199
 
 --------------------------------------------------------
-		Iteración: 1037042
+		Iteración: 913078
 
-		Iteración: 1079064
+		Iteración: 928085
 
-		Iteración: 1073961
+		Iteración: 925384
 
-		Iteración: 1084467
+		Iteración: 912777
 
-		Iteración: 1089569
+		Iteración: 902271
 
-		Iteración: 1069459
+		Iteración: 927184
 
-		Iteración: 1052050
+		Iteración: 913077
 
-		Tiempo total: 159169298
-
---------------------------------------------------------
-		Iteración: 1083266
-
-		Iteración: 1078463
-
-		Iteración: 1085667
-
-		Iteración: 1077563
-
-		Iteración: 1098874
-
-		Iteración: 1080265
-
-		Iteración: 1026536
-
-		Tiempo total: 158843327
+		Tiempo total: 156478091
 
 --------------------------------------------------------
-	  Media: 159873991
+		Iteración: 887564
+
+		Iteración: 883662
+
+		Iteración: 891766
+
+		Iteración: 895368
+
+		Iteración: 868954
+
+		Iteración: 869254
+
+		Iteración: 865653
+
+		Tiempo total: 155978930
+
+--------------------------------------------------------
+		Iteración: 847943
+
+		Iteración: 883661
+
+		Iteración: 879460
+
+		Iteración: 870155
+
+		Iteración: 865953
+
+		Iteración: 878859
+
+		Iteración: 877659
+
+		Tiempo total: 156547728
+
+--------------------------------------------------------
+		Iteración: 900471
+
+		Iteración: 903172
+
+		Iteración: 881561
+
+		Iteración: 845542
+
+		Iteración: 858149
+
+		Iteración: 904973
+
+		Iteración: 908575
+
+		Tiempo total: 157285513
+
+--------------------------------------------------------
+		Iteración: 918480
+
+		Iteración: 945795
+
+		Iteración: 922982
+
+		Iteración: 903773
+
+		Iteración: 903772
+
+		Iteración: 923583
+
+		Iteración: 899571
+
+		Tiempo total: 158611307
+
+--------------------------------------------------------
+		Iteración: 904673
+
+		Iteración: 911877
+
+		Iteración: 907675
+
+		Iteración: 917580
+
+		Iteración: 892666
+
+		Iteración: 885163
+
+		Iteración: 880060
+
+		Tiempo total: 157642699
+
+--------------------------------------------------------
+	  Media: 157303972
 
 Datos: 100000
 
 	Nube:
 
-		Iteración: 3337444
+		Iteración: 396807
 
-		Iteración: 10913405
+		Iteración: 581403
 
-		Iteración: 12337649
+		Iteración: 605417
 
-		Iteración: 21152657
+		Iteración: 847343
 
-		Iteración: 21213588
+		Iteración: 887864
 
-		Iteración: 22857548
+		Iteración: 898669
 
-		Iteración: 26932778
+		Iteración: 1005226
 
-		Iteración: 28346817
-
-		Tiempo total: 326953998
+		Tiempo total: 175886836
 
 --------------------------------------------------------
-		Iteración: 3097319
+		Iteración: 367392
 
-		Iteración: 11016958
+		Iteración: 591910
 
-		Iteración: 12357760
+		Iteración: 664247
 
-		Iteración: 20793069
+		Iteración: 839238
 
-		Iteración: 21035596
+		Iteración: 851546
 
-		Iteración: 22931986
+		Iteración: 896568
 
-		Iteración: 26898560
+		Iteración: 1016031
 
-		Iteración: 28441967
-
-		Tiempo total: 325669628
+		Tiempo total: 174398658
 
 --------------------------------------------------------
-		Iteración: 2973954
+		Iteración: 365591
 
-		Iteración: 10951524
+		Iteración: 627628
 
-		Iteración: 12231994
+		Iteración: 628228
 
-		Iteración: 21254410
+		Iteración: 815526
 
-		Iteración: 21336052
+		Iteración: 896568
 
-		Iteración: 22795415
+		Iteración: 895368
 
-		Iteración: 26733174
+		Iteración: 1009728
 
-		Iteración: 28162220
-
-		Tiempo total: 326305660
+		Tiempo total: 176087340
 
 --------------------------------------------------------
-		Iteración: 2940637
+		Iteración: 386001
 
-		Iteración: 10893294
+		Iteración: 594311
 
-		Iteración: 12323542
+		Iteración: 600014
 
-		Iteración: 20664601
+		Iteración: 865052
 
-		Iteración: 21307537
+		Iteración: 852445
 
-		Iteración: 23237547
+		Iteración: 911276
 
-		Iteración: 27038433
+		Iteración: 1019332
 
-		Iteración: 28722613
-
-		Tiempo total: 325462820
+		Tiempo total: 174592559
 
 --------------------------------------------------------
-		Iteración: 2983860
+		Iteración: 369793
 
-		Iteración: 10990845
+		Iteración: 581404
 
-		Iteración: 12323541
+		Iteración: 601214
 
-		Iteración: 20775960
+		Iteración: 840139
 
-		Iteración: 21455815
+		Iteración: 829033
 
-		Iteración: 23497482
+		Iteración: 888164
 
-		Iteración: 26991609
+		Iteración: 1004325
 
-		Iteración: 28593246
-
-		Tiempo total: 326525675
+		Tiempo total: 175350155
 
 --------------------------------------------------------
-		Iteración: 2996167
+		Iteración: 368593
 
-		Iteración: 11131619
+		Iteración: 1012429
 
-		Iteración: 12290824
+		Iteración: 710171
 
-		Iteración: 21217190
+		Iteración: 855747
 
-		Iteración: 22722177
+		Iteración: 828433
 
-		Iteración: 22930485
+		Iteración: 889064
 
-		Iteración: 27023725
+		Iteración: 997722
 
-		Iteración: 28420055
-
-		Tiempo total: 327856571
+		Tiempo total: 179144439
 
 --------------------------------------------------------
-		Iteración: 2950843
+		Iteración: 367092
 
-		Iteración: 10791241
+		Iteración: 585306
 
-		Iteración: 12137144
+		Iteración: 600314
 
-		Iteración: 20809277
+		Iteración: 826332
 
-		Iteración: 21229496
+		Iteración: 843141
 
-		Iteración: 22756695
+		Iteración: 895368
 
-		Iteración: 26957691
+		Iteración: 1069159
 
-		Iteración: 28423957
-
-		Tiempo total: 324806677
+		Tiempo total: 175311135
 
 --------------------------------------------------------
-		Iteración: 2957146
+		Iteración: 367092
 
-		Iteración: 10922409
+		Iteración: 589509
 
-		Iteración: 12488628
+		Iteración: 631230
 
-		Iteración: 21065611
+		Iteración: 803220
 
-		Iteración: 21245105
+		Iteración: 850344
 
-		Iteración: 22734183
+		Iteración: 889665
 
-		Iteración: 27008117
+		Iteración: 1010028
 
-		Iteración: 28290087
-
-		Tiempo total: 324743344
+		Tiempo total: 174232071
 
 --------------------------------------------------------
-		Iteración: 2994065
+		Iteración: 367392
 
-		Iteración: 10874384
+		Iteración: 566696
 
-		Iteración: 12668422
+		Iteración: 890265
 
-		Iteración: 20602469
+		Iteración: 916979
 
-		Iteración: 21424899
+		Iteración: 855748
 
-		Iteración: 22865952
+		Iteración: 899270
 
-		Iteración: 26959192
+		Iteración: 1019333
 
-		Iteración: 28520908
-
-		Tiempo total: 326750792
+		Tiempo total: 175980785
 
 --------------------------------------------------------
-		Iteración: 2930732
+		Iteración: 381199
 
-		Iteración: 10929613
+		Iteración: 585006
 
-		Iteración: 12213984
+		Iteración: 779207
 
-		Iteración: 21013984
+		Iteración: 847943
 
-		Iteración: 21277221
+		Iteración: 886363
 
-		Iteración: 22928685
+		Iteración: 898369
 
-		Iteración: 27072951
+		Iteración: 995921
 
-		Iteración: 28562930
-
-		Tiempo total: 326045424
+		Tiempo total: 174929936
 
 --------------------------------------------------------
-	  Media: 326446321
+	  Media: 175910398
 
 	Division:
 
-		Iteración: 1030739
+		Iteración: 1098574
 
-		Iteración: 1046046
+		Iteración: 1118085
 
-		Iteración: 1012730
+		Iteración: 1078164
 
-		Iteración: 1047848
+		Iteración: 1104877
 
-		Iteración: 1018133
+		Iteración: 1144198
 
-		Iteración: 1126489
+		Iteración: 1170311
 
-		Iteración: 1003725
+		Iteración: 1129190
 
-		Tiempo total: 178737126
-
---------------------------------------------------------
-		Iteración: 1019934
-
-		Iteración: 1043346
-
-		Iteración: 1045446
-
-		Iteración: 1036442
-
-		Iteración: 1167911
-
-		Iteración: 1130090
-
-		Iteración: 1034941
-
-		Tiempo total: 178578343
+		Tiempo total: 177619942
 
 --------------------------------------------------------
-		Iteración: 1036141
+		Iteración: 1095572
 
-		Iteración: 1242650
+		Iteración: 1078464
 
-		Iteración: 1076963
+		Iteración: 1094071
 
-		Iteración: 1051749
+		Iteración: 1090170
 
-		Iteración: 1114183
+		Iteración: 1107879
 
-		Iteración: 1098875
+		Iteración: 1140596
 
-		Iteración: 1106678
+		Iteración: 1086268
 
-		Tiempo total: 177638251
-
---------------------------------------------------------
-		Iteración: 1056252
-
-		Iteración: 1076062
-
-		Iteración: 1072461
-
-		Iteración: 1077863
-
-		Iteración: 1069459
-
-		Iteración: 1014831
-
-		Iteración: 1039744
-
-		Tiempo total: 177766719
+		Tiempo total: 177690478
 
 --------------------------------------------------------
-		Iteración: 1041544
+		Iteración: 1146899
 
-		Iteración: 1058053
+		Iteración: 1140596
 
-		Iteración: 1028338
+		Iteración: 1154404
 
-		Iteración: 1030139
+		Iteración: 1168511
 
-		Iteración: 1018133
+		Iteración: 1299079
 
-		Iteración: 1026537
+		Iteración: 1133993
 
-		Iteración: 1024435
+		Iteración: 1201228
 
-		Tiempo total: 177274761
-
---------------------------------------------------------
-		Iteración: 1023836
-
-		Iteración: 1035241
-
-		Iteración: 1026536
-
-		Iteración: 1044546
-
-		Iteración: 1017832
-
-		Iteración: 1023835
-
-		Iteración: 1043045
-
-		Tiempo total: 177863370
+		Tiempo total: 179873820
 
 --------------------------------------------------------
-		Iteración: 1028938
+		Iteración: 1149301
 
-		Iteración: 1035241
+		Iteración: 1165809
 
-		Iteración: 1028338
+		Iteración: 1207231
 
-		Iteración: 1084467
+		Iteración: 1276267
 
-		Iteración: 1062255
+		Iteración: 1112682
 
-		Iteración: 1100375
+		Iteración: 1160707
 
-		Iteración: 1064957
+		Iteración: 1125888
 
-		Tiempo total: 178586447
-
---------------------------------------------------------
-		Iteración: 1083266
-
-		Iteración: 1082065
-
-		Iteración: 1077263
-
-		Iteración: 1100675
-
-		Iteración: 1061054
-
-		Iteración: 1079064
-
-		Iteración: 1039143
-
-		Tiempo total: 178018550
+		Tiempo total: 178405453
 
 --------------------------------------------------------
-		Iteración: 1095272
+		Iteración: 1109080
 
-		Iteración: 1040944
+		Iteración: 1075162
 
-		Iteración: 1046647
+		Iteración: 1115984
 
-		Iteración: 1063756
+		Iteración: 1098574
 
-		Iteración: 1039143
+		Iteración: 1147800
 
-		Iteración: 1010328
+		Iteración: 1138795
 
-		Iteración: 1022934
+		Iteración: 1174514
 
-		Tiempo total: 177541000
-
---------------------------------------------------------
-		Iteración: 1029838
-
-		Iteración: 1067958
-
-		Iteración: 1072761
-
-		Iteración: 1077864
-
-		Iteración: 1052050
-
-		Iteración: 1062856
-
-		Iteración: 1047848
-
-		Tiempo total: 177809641
+		Tiempo total: 177921900
 
 --------------------------------------------------------
-	  Media: 178124805
+		Iteración: 1455761
+
+		Iteración: 1234845
+
+		Iteración: 1139996
+
+		Iteración: 1174514
+
+		Iteración: 1140596
+
+		Iteración: 1108179
+
+		Iteración: 1393028
+
+		Tiempo total: 181747099
+
+--------------------------------------------------------
+		Iteración: 1131892
+
+		Iteración: 1097973
+
+		Iteración: 1124988
+
+		Iteración: 1099775
+
+		Iteración: 1105478
+
+		Iteración: 1099175
+
+		Iteración: 1147199
+
+		Tiempo total: 178753935
+
+--------------------------------------------------------
+		Iteración: 1154103
+
+		Iteración: 1138795
+
+		Iteración: 1133693
+
+		Iteración: 1170011
+
+		Iteración: 1158005
+
+		Iteración: 1129491
+
+		Iteración: 1146900
+
+		Tiempo total: 177722296
+
+--------------------------------------------------------
+		Iteración: 1130390
+
+		Iteración: 1114783
+
+		Iteración: 1091971
+
+		Iteración: 1094072
+
+		Iteración: 1107279
+
+		Iteración: 1088068
+
+		Iteración: 1105778
+
+		Tiempo total: 177927902
+
+--------------------------------------------------------
+		Iteración: 1143898
+
+		Iteración: 1145098
+
+		Iteración: 1227342
+
+		Iteración: 1321891
+
+		Iteración: 1140296
+
+		Iteración: 1144198
+
+		Iteración: 1104277
+
+		Tiempo total: 178380840
+
+--------------------------------------------------------
+	  Media: 178841655
 
