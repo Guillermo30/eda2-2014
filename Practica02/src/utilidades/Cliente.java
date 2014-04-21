@@ -84,7 +84,9 @@ public class Cliente implements Comparable<Cliente>{
 	}
 	@Override
 	public int compareTo(Cliente arg0) {
-		return this.ce - arg0.ce;
+		int comp = this.ce - arg0.ce;
+		if(comp == 0) return this.ice - arg0.ice;
+		return comp;
 		
 	}
 	

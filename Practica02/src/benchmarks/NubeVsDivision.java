@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 
 import paretoDivision.ParetoDivision;
 import paretoNube.ParetoNube;
@@ -21,20 +22,20 @@ import utilidades.Pareto;
 public class NubeVsDivision {
 	
 	//Directorios de entrada y de salida de los ficheros.
-		public final static String ENTRADA = System.getProperty("user.dir")
-				+ File.separator + "src" + File.separator + "entradas"
-				+ File.separator;
+	public final static String ENTRADA = System.getProperty("user.dir")
+			+ File.separator + "src" + File.separator + "entradas"
+			+ File.separator;
 	public final static String SALIDA = System.getProperty("user.dir")
 			+ File.separator + "src" + File.separator + "salidas"
 			+ File.separator + "Benchmark_Pareto_Voraz";
 
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		int numDatos = 1000;
 		Pareto paretoNube;
 		Pareto paretoDivision;
 		File out = new File(SALIDA);
-		Collection<Cliente> resultadoParcial = new LinkedList<Cliente>();
-		LinkedList<Cliente> resultado = new LinkedList<Cliente>();
+		PriorityQueue<Long> times = new PriorityQueue<Long>();
 		try {
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(out)));
 			do{
@@ -47,46 +48,27 @@ public class NubeVsDivision {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				paretoNube = new ParetoNube(Programa.getClientes());
-				paretoDivision = new ParetoDivision(Programa.getClientes());
 				
-				resultado.clear();
+				ArrayList<Cliente> clientes = Programa.getClientes();
 				
-				long a = System.nanoTime();
-				long b, c;
-				resultadoParcial = paretoNube.paretoSolucion();
-				b = System.nanoTime();
-				resultado.addAll(resultadoParcial);
-				pw.println("\t\tIteración: " + (b - a) + "\n");
-				while (resultado.size() < Programa.getuPC()) {
-					paretoNube.removeAll(resultadoParcial);
-					b = System.nanoTime();
-					resultadoParcial = paretoNube.paretoSolucion();
-					c = System.nanoTime();
-					pw.println("\t\tIteración: " + (c - b) + "\n");
-					resultado.addAll(resultadoParcial);
+				
+				times.clear();
+				for(int i = 0; i < 10; i++){
+					paretoNube = new ParetoNube((ArrayList<Cliente>) clientes.clone());
+					times.add(iteracion(pw, paretoNube));
+					pw.println("--------------------------------------------------------");
 				}
-				b = System.nanoTime();
-				pw.println("\t\tTiempo total: " + (b - a) + "\n");
+				pw.println("\t  Media: " + media(times) + "\n");
 				
-				resultado.clear();
-				pw.println("\tDivisión:\n");
+				pw.println("\tDivision:\n");
 				
-				a = System.nanoTime();
-				resultadoParcial = paretoDivision.paretoSolucion();
-				b = System.nanoTime();
-				resultado.addAll(resultadoParcial);
-				pw.println("\t\tIteración: " + (b - a) + "\n");
-				while (resultado.size() < Programa.getuPC()) {
-					paretoDivision.removeAll(resultadoParcial);
-					b = System.nanoTime();
-					resultadoParcial = paretoDivision.paretoSolucion();
-					c = System.nanoTime();
-					pw.println("\t\tIteración: " + (c - b) + "\n");
-					resultado.addAll(resultadoParcial);
+				times.clear();
+				for(int i = 0; i < 10; i++){
+					paretoDivision = new ParetoDivision((ArrayList<Cliente>) clientes.clone());
+					times.add(iteracion(pw, paretoDivision));
+					pw.println("--------------------------------------------------------");
 				}
-				b = System.nanoTime();
-				pw.println("\t\tTiempo total: " + (b - a) + "\n");
+				pw.println("\t  Media: " + media(times) + "\n");
 				
 				numDatos += 1000;
 				
@@ -95,6 +77,45 @@ public class NubeVsDivision {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private static long media(PriorityQueue<Long> times) {
+		long media = 0;
+		
+		times.poll();
+		times.poll();
+		media += times.poll();
+		media += times.poll();
+		media += times.poll();
+		media += times.poll();
+		media += times.poll();
+		media += times.poll();
+		media += times.poll();
+		media += times.poll();
+		return media/8;
+	}
+
+	private static long iteracion(PrintWriter pw, Pareto pareto){
+		Collection<Cliente> resultadoParcial = new LinkedList<Cliente>();
+		LinkedList<Cliente> resultado = new LinkedList<Cliente>();
+		
+		long a = System.nanoTime();
+		long b, c;
+		resultadoParcial = pareto.paretoSolucion();
+		b = System.nanoTime();
+		resultado.addAll(resultadoParcial);
+		pw.println("\t\tIteración: " + (b - a) + "\n");
+		while (resultado.size() < Programa.getuPC()) {
+			pareto.removeAll(resultadoParcial);
+			b = System.nanoTime();
+			resultadoParcial = pareto.paretoSolucion();
+			c = System.nanoTime();
+			pw.println("\t\tIteración: " + (c - b) + "\n");
+			resultado.addAll(resultadoParcial);
+		}
+		b = System.nanoTime();
+		pw.println("\t\tTiempo total: " + (b - a) + "\n");
+		return (b - a);
 	}
 
 }
