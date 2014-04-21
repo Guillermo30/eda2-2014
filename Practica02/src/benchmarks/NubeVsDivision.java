@@ -51,11 +51,12 @@ public class NubeVsDivision {
 				
 				ArrayList<Cliente> clientes = Programa.getClientes();
 				
-				
 				times.clear();
 				for(int i = 0; i < 10; i++){
+					//long a, b = System.nanoTime();
 					paretoNube = new ParetoNube((ArrayList<Cliente>) clientes.clone());
-					times.add(iteracion(pw, paretoNube));
+					//a = System.nanoTime();
+					times.add(iteracion(pw, paretoNube) /*+ (a - b)*/);
 					pw.println("--------------------------------------------------------");
 				}
 				pw.println("\t  Media: " + media(times) + "\n");
@@ -64,8 +65,10 @@ public class NubeVsDivision {
 				
 				times.clear();
 				for(int i = 0; i < 10; i++){
+					//long a, b = System.nanoTime();
 					paretoDivision = new ParetoDivision((ArrayList<Cliente>) clientes.clone());
-					times.add(iteracion(pw, paretoDivision));
+					//a = System.nanoTime();
+					times.add(iteracion(pw, paretoDivision) /*+ (a - b)*/);
 					pw.println("--------------------------------------------------------");
 				}
 				pw.println("\t  Media: " + media(times) + "\n");

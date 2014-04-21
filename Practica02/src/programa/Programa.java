@@ -111,6 +111,7 @@ public class Programa {
 				candidatos.addAll(paretoTemp);
 			}
 			System.out.println("Tiempo total: " + (System.nanoTime() - a));
+			System.out.println(candidatos.size());
 			imprimirInforme();
 
 		} catch (FileNotFoundException e) {

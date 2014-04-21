@@ -2,6 +2,8 @@ package paretoNube;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 
@@ -14,29 +16,32 @@ import utilidades.Pareto;
 public class ParetoNube extends Pareto{
 	
 	/**
-	 * Nube ordenada por CE.
-	 */
-	private PriorityQueue<Cliente> eAuxiliar;
-	
-	/**
 	 * Método constructor.
 	 */
 	public ParetoNube(ArrayList<Cliente> nube){
 		super(nube);
+		Collections.sort(this.nube);
 	}
 	
 	@Override
 	public  Collection<Cliente> paretoSolucion(){	
 		
 		//Inicialización
-		eAuxiliar = new PriorityQueue<Cliente>(nube.size());
-		eAuxiliar.addAll(nube);
 		LinkedList<Cliente> toReturn = new LinkedList<Cliente>();
-		if(eAuxiliar.isEmpty()) return toReturn;
-		Cliente cur = eAuxiliar.poll();
-		Cliente anteriorAceptado = cur;
-		int iceIzLimit = nube.get(0).getIce();
-		int iceDerLimit = nube.get(nube.size() - 1).getIce();
+		if(nube.isEmpty()) return toReturn;
+		Iterator<Cliente> it = nube.iterator();
+		int iceIzLimit = Integer.MAX_VALUE;
+		int iceDerLimit = Integer.MIN_VALUE;
+		while(it.hasNext()){
+			int ice = it.next().getIce();
+			if(ice < iceIzLimit) iceIzLimit = ice;
+			if(ice > iceDerLimit) iceDerLimit = ice;
+		}
+		it = nube.iterator();
+		Cliente cur = it.next();
+		Cliente anteriorAceptadoI = cur;
+		Cliente anteriorAceptadoD = cur;
+		
 		int iceIzMin = cur.getIce();
 		int iceDerMin = cur.getIce();
 		int iceIgualCe = cur.getIce();
@@ -44,23 +49,21 @@ public class ParetoNube extends Pareto{
 		
 		//Selección
 		toReturn.add(cur);
-		while(!eAuxiliar.isEmpty() && (!(iceIzLimit == iceIzMin) || !(iceDerLimit == iceDerMin))){
-			cur = eAuxiliar.poll();
-			
-			if(cur.getIce() > iceDerMin){
+		while(it.hasNext() && (!(iceIzLimit == iceIzMin) || !(iceDerLimit == iceDerMin))){
+			cur = it.next();
+			if(cur.getIce() > iceDerMin || (cur.getIce() >= iceDerMin && cur.getCe() == anteriorAceptadoD.getCe())){
 				toReturn.add(cur);
 				iceDerMin = cur.getIce();
+				anteriorAceptadoD = cur;
 				continue;
 			}
-			if((cur.getIce() < iceIzMin) || (cur.getCe() == anteriorAceptado.getCe() && cur.getIce() < iceIgualCeAnterior)){
+			if(cur.getIce() < iceIzMin){
 				toReturn.add(cur);
-				if(cur.getCe() != anteriorAceptado.getCe()){
-					iceIgualCeAnterior = iceIgualCe;
-					iceIzMin = cur.getIce();
-					iceIgualCe = cur.getIce();
-				}
-				anteriorAceptado = cur;
-			}
+				iceIgualCeAnterior = iceIgualCe;
+				iceIzMin = cur.getIce();
+				iceIgualCe = cur.getIce();
+				anteriorAceptadoI = cur;
+			}else if(cur.getCe() == anteriorAceptadoI.getCe() && cur.getIce() < iceIgualCeAnterior) toReturn.add(cur);
 			
 		}
 		
