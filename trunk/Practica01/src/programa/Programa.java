@@ -286,4 +286,9 @@ public class Programa {
 		return datosCorruptos;
 	}
 
+
+	public static int getuPC() {
+		return uPC;
+	}
+
 }
