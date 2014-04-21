@@ -29,29 +29,39 @@ public class ParetoNube extends Pareto{
 	public  Collection<Cliente> paretoSolucion(){	
 		
 		//Inicialización
-		eAuxiliar = new PriorityQueue<Cliente>();
+		eAuxiliar = new PriorityQueue<Cliente>(nube.size());
 		eAuxiliar.addAll(nube);
 		LinkedList<Cliente> toReturn = new LinkedList<Cliente>();
 		if(eAuxiliar.isEmpty()) return toReturn;
 		Cliente cur = eAuxiliar.poll();
+		Cliente anteriorAceptado = cur;
 		int iceIzLimit = nube.get(0).getIce();
 		int iceDerLimit = nube.get(nube.size() - 1).getIce();
 		int iceIzMin = cur.getIce();
 		int iceDerMin = cur.getIce();
+		int iceIgualCe = cur.getIce();
+		int iceIgualCeAnterior = cur.getIce();
 		
 		//Selección
 		toReturn.add(cur);
 		while(!eAuxiliar.isEmpty() && (!(iceIzLimit == iceIzMin) || !(iceDerLimit == iceDerMin))){
 			cur = eAuxiliar.poll();
-			if(cur.getIce() < iceIzMin){
-				toReturn.add(cur);
-				iceIzMin = cur.getIce();
-				continue;
-			}
+			
 			if(cur.getIce() > iceDerMin){
 				toReturn.add(cur);
 				iceDerMin = cur.getIce();
+				continue;
 			}
+			if((cur.getIce() < iceIzMin) || (cur.getCe() == anteriorAceptado.getCe() && cur.getIce() < iceIgualCeAnterior)){
+				toReturn.add(cur);
+				if(cur.getCe() != anteriorAceptado.getCe()){
+					iceIgualCeAnterior = iceIgualCe;
+					iceIzMin = cur.getIce();
+					iceIgualCe = cur.getIce();
+				}
+				anteriorAceptado = cur;
+			}
+			
 		}
 		
 		return toReturn;
