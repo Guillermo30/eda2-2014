@@ -27,11 +27,11 @@ public class NubeVsDivision {
 			+ File.separator;
 	public final static String SALIDA = System.getProperty("user.dir")
 			+ File.separator + "src" + File.separator + "salidas"
-			+ File.separator + "Benchmark_Pareto_Voraz";
+			+ File.separator + "Benchmark_Pareto_Voraz.txt";
 
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
-		int numDatos = 1000;
+		int numDatos = 10000;
 		Pareto paretoNube;
 		Pareto paretoDivision;
 		File out = new File(SALIDA);
@@ -70,9 +70,9 @@ public class NubeVsDivision {
 				}
 				pw.println("\t  Media: " + media(times) + "\n");
 				
-				numDatos += 1000;
+				numDatos += 10000;
 				
-			}while(numDatos <= 10000);
+			}while(numDatos <= 100000);
 			pw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
