@@ -48,7 +48,7 @@ public class GenerarArchivo {
 			double ice = toAdd;
 			
 			for(int i = 0; i < tamano; i++){
-				pw.println((int)Math.floor(ice) + "," + generarCE());
+				pw.println(((ice >= 10000)?"10000":(int)Math.ceil(ice)) + "," + generarCE());
 				ice += toAdd;
 			}
 			
