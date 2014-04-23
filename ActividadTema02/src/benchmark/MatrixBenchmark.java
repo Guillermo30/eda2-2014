@@ -17,11 +17,6 @@ public class MatrixBenchmark {
 	
 	public static void main(String[] args){
 		SquareMatrix m, o;
-		m = SquareMatrix.generarMatrizAleatoria(2, 100);
-		o = SquareMatrix.generarMatrizAleatoria(2, 100);
-		SquareMatrix z = Multiplicacion.fBruta(m, o);
-		SquareMatrix x = Multiplicacion.dyV(m, o);
-		SquareMatrix c = Multiplicacion.strassen(m, o);
 		int exp = 1;
 		int n;
 		File out = new File(SALIDA);
@@ -57,8 +52,9 @@ public class MatrixBenchmark {
 					times.add(a - b);
 				}
 				pw.println("\tStrassen: " + media(times) + "\n\n---------------------------------------------------------------\n");
+				System.out.println("Done:" + exp);
 				exp += 1;
-			}while(exp <= 13);
+			}while(exp <= 9);
 			pw.close();
 		}catch(Exception e){
 			e.printStackTrace();
