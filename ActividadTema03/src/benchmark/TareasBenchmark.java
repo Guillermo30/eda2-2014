@@ -19,7 +19,7 @@ public class TareasBenchmark {
 	
 	public final static String SALIDA = System.getProperty("user.dir")
 			+ File.separator + "src" + File.separator + "benchmark"
-			+ File.separator + "Benchmark_Pareto_Voraz.txt";
+			+ File.separator + "Benchmark_Tareas.txt";
 	
 	public static void main(String[] args){
 		
