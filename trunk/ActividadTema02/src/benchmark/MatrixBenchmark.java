@@ -13,7 +13,7 @@ public class MatrixBenchmark {
 	
 	public final static String SALIDA = System.getProperty("user.dir")
 			+ File.separator + "src" + File.separator + "benchmark"
-			+ File.separator + "Benchmark_Pareto_Voraz.txt";
+			+ File.separator + "Benchmark_Matrix.txt";
 	
 	public static void main(String[] args){
 		SquareMatrix m, o;
