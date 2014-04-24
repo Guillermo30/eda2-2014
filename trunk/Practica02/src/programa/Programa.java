@@ -77,6 +77,7 @@ public class Programa {
 	 * Metodo de ejecución principal.
 	 * @param args
 	 */
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 
 		try {
@@ -93,8 +94,8 @@ public class Programa {
 			System.out.println("Version? ");
 			version = scanner.nextInt();
 			leerArchivo();
-			if(version == 1) pareto = new ParetoNube(clientes);
-			if(version == 2) pareto = new ParetoDivision(clientes);
+			if(version == 1) pareto = new ParetoNube((ArrayList<Cliente>) clientes.clone());
+			if(version == 2) pareto = new ParetoDivision((ArrayList<Cliente>) clientes.clone());
 			long a = System.nanoTime();
 			long b;
 			Collection<Cliente> paretoTemp = pareto.paretoSolucion();
@@ -184,10 +185,11 @@ public class Programa {
 		if (nClientes <= 0 || nClientes > 150000)
 			throw new HeaderOutOfRangeException(ERROR_CABECERA_FUERA_DE_RANGO);
 		
-		int i = 0;
+		int i = 0, j = 0;
 		int ice, prevIce = Integer.MIN_VALUE, ce;
 		Scanner sc;
 		linea = br.readLine();
+		Cliente toAdd;
 
 		while (linea != null) {
 			try {
@@ -207,7 +209,10 @@ public class Programa {
 				if(ice > 10000)
 					throw new IceOutOfRangeException(ERROR_ICE_FUERA_DE_RANGO);
 
-				clientes.add(new Cliente(i, ce, ice));
+				toAdd = new Cliente(i, ce, ice);
+				toAdd.setIndexOnNube(j);
+				clientes.add(toAdd);
+				j++;
 				i++;
 				prevIce = ice;
 				linea = br.readLine();
