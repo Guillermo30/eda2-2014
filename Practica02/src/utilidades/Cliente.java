@@ -20,6 +20,10 @@ public class Cliente implements Comparable<Cliente>{
 	 * ICE del cliente.
 	 */
 	private int ice;
+	/**
+	 * Marca su posicion en la nube original. 
+	 */
+	private int indexOnNube;
 	
 	/**
 	 * Crear un nuevo cliente dada su ID, su CE y su ICe
@@ -69,6 +73,21 @@ public class Cliente implements Comparable<Cliente>{
 	public void setIce(int ice) {
 		this.ice = ice;
 	}
+	
+	/**
+	 * @return the indexOnNube
+	 */
+	public int getIndexOnNube() {
+		return indexOnNube;
+	}
+
+	/**
+	 * @param indexOnNube the indexOnNube to set
+	 */
+	public void setIndexOnNube(int indexOnNube) {
+		this.indexOnNube = indexOnNube;
+	}
+
 	/**
 	 * Formatea un string que representa el cliente con sus tres atributos.
 	 */
