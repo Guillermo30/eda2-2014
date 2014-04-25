@@ -1,0 +1,20 @@
+Grafo de tamaño 20: 2509733ns
+
+Grafo de tamaño 40: 4135297ns
+
+Grafo de tamaño 60: 20140152ns
+
+Grafo de tamaño 80: 54911780ns
+
+Grafo de tamaño 100: 113840394ns
+
+Grafo de tamaño 120: 205111946ns
+
+Grafo de tamaño 140: 361468934ns
+
+Grafo de tamaño 160: 605133367ns
+
+Grafo de tamaño 180: 1053230636ns
+
+Grafo de tamaño 200: 1257278367ns
+
