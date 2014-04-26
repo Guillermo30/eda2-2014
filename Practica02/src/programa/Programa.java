@@ -115,7 +115,8 @@ public class Programa {
 			System.out.println("Tiempo total: " + (System.nanoTime() - a));
 			System.out.println(candidatos.size());
 			
-			PosSeleccionV1 ps = new PosSeleccionV1(clientes, candidatos, uPC );
+			int mitadUPC = uPC/2 + (uPC%2); 
+			PosSeleccionV1 ps = new PosSeleccionV1(clientes, candidatos, mitadUPC );
 			System.out.println(ps.seleccionar().size());
 			imprimirInforme();
 
