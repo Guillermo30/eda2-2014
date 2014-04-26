@@ -20,6 +20,14 @@ public class Cliente implements Comparable<Cliente>{
 	 * ICE del cliente.
 	 */
 	private int ice;
+	private int difMedia8;
+	public int getDifMedia8() {
+		return difMedia8;
+	}
+
+	public void setDifMedia8(int difMedia8) {
+		this.difMedia8 = difMedia8;
+	}
 	/**
 	 * Marca su posicion en la nube original. 
 	 */
@@ -107,6 +115,12 @@ public class Cliente implements Comparable<Cliente>{
 		if(comp == 0) return this.ice - arg0.ice;
 		return comp;
 		
+	}
+	@Override
+	public Cliente clone(){
+		Cliente sol = new Cliente(this.id, this.ce, this.ice);
+		sol.setDifMedia8(difMedia8);
+		return sol;
 	}
 	
 }

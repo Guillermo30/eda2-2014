@@ -8,15 +8,15 @@ public class PosSeleccion {
 	/**
 	 * Total de sospechosos a seleccionar.
 	 */
-	private int totalSospechosos;
+	protected int totalSospechosos;
 	/**
 	 * Nube total de clientes.
 	 */
-	private ArrayList<Cliente> nube;
+	protected ArrayList<Cliente> nube;
 	/**
 	 * Candidatos seleccionados con Pareto.
 	 */
-	private LinkedList<Cliente> candidatos;
+	protected LinkedList<Cliente> candidatos;
 	
 	/**
 	 * Método constructor.
