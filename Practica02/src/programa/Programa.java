@@ -17,6 +17,7 @@ import java.util.Scanner;
 import exceptions.*;
 import paretoDivision.ParetoDivision;
 import paretoNube.ParetoNube;
+import posSeleccion.PosSeleccionV1;
 import utilidades.Cliente;
 import utilidades.Pareto;
 
@@ -113,6 +114,9 @@ public class Programa {
 			}
 			System.out.println("Tiempo total: " + (System.nanoTime() - a));
 			System.out.println(candidatos.size());
+			
+			PosSeleccionV1 ps = new PosSeleccionV1(clientes, candidatos, uPC );
+			System.out.println(ps.seleccionar().size());
 			imprimirInforme();
 
 		} catch (FileNotFoundException e) {
