@@ -2,8 +2,10 @@ package posSeleccion;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 
 import utilidades.Cliente;
+import utilidades.ClienteMediaLocalComparador;
 import utilidades.PosSeleccion;
 
 public class PosSeleccionV1 extends PosSeleccion
@@ -19,66 +21,57 @@ public class PosSeleccionV1 extends PosSeleccion
 	
 	public  int  mediaOchoCercanos(int pos) {
 		int sum=0;
-		int izq = 1, der = 1;
+		int izq = pos - 1;
+		int der = pos + 1;
 		for (int i = 0; i < 8; i++) {
 			
-			if (pos - izq < 0) {
-				for(;i<8;i++){
+			if (izq < 0) {
+				for(; i < 8; i++){
 					sum +=nube.get(pos + der).getCe();
 					der++;
 				}
 				break;
 			}
 			
-			if (pos + der >= nube.size()) {
-				for(;i<8;i++){
+			if (der >= nube.size()) {
+				for(; i < 8; i++){
 					sum +=nube.get(pos - izq).getCe();
-					izq++;
+					izq--;
 				}
 				break;
 			}
 			
-			if (nube.get(pos + der).getIce() - nube.get(pos).getIce() <= nube.get(pos).getIce() - nube.get(pos - izq).getIce()) {
-				sum +=nube.get(pos + der).getCe();
+			if (nube.get(der).getIce() - nube.get(pos).getIce() <= nube.get(pos).getIce() - nube.get(izq).getIce()) {
+				sum += nube.get(der).getCe();
 				der++;
 			} else {
-				sum +=nube.get(pos - izq).getCe();
-				izq++;
+				sum += nube.get(izq).getCe();
+				izq--;
 			}
 		}
 		
 		return sum/8;
 	}
-	private ArrayList<Cliente> preSeleccionar(){
-		ArrayList<Cliente> solucion = new ArrayList();
-		int pos ;
+	
+	private PriorityQueue<Cliente> preSeleccionar(){
+		PriorityQueue<Cliente> preSol = new PriorityQueue<Cliente>(candidatos.size(), new ClienteMediaLocalComparador());
 		Cliente aux;
-		for(int i = 0; i< candidatos.size(); i++){
-			pos = nube.indexOf(candidatos.get(i));
-			aux = (Cliente) candidatos.get(i).clone();
-			aux.setDifMedia8(aux.getCe()-mediaOchoCercanos(pos));
-			solucion.add(aux);
+		for(int i = 0; i < candidatos.size(); i++){
+			aux = candidatos.get(i);
+			aux.setMediaLocal(aux.getCe() - mediaOchoCercanos(i));
+			preSol.add(aux);
 		}
-		
-		return solucion;
+		return preSol;
+
 	}
+	
 	@Override
 	public LinkedList<Cliente> seleccionar(){
 		LinkedList<Cliente> solucion = new LinkedList<Cliente>();
-		ArrayList<Cliente> preSol =  preSeleccionar();
-		Cliente sol;
-		for ( int i = 0; i<totalSospechosos/2;i++){
-			sol = preSol.get(0);
-			for(int j = 1; j<preSol.size();j++){
-				if(preSol.get(j).getDifMedia8()>sol.getDifMedia8()) sol = preSol.get(j);
-			}
-			solucion.add(sol);
-		}
+		PriorityQueue<Cliente> preSol = preSeleccionar();
+		for ( int i = 0; i < totalSospechosos; i++) solucion.add(preSol.poll());
 		return solucion;
 		
 	}
-	
-	
-	
 
 }

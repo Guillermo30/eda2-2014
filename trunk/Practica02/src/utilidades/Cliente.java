@@ -20,14 +20,9 @@ public class Cliente implements Comparable<Cliente>{
 	 * ICE del cliente.
 	 */
 	private int ice;
-	private int difMedia8;
-	public int getDifMedia8() {
-		return difMedia8;
-	}
-
-	public void setDifMedia8(int difMedia8) {
-		this.difMedia8 = difMedia8;
-	}
+	
+	private int mediaLocal;
+	
 	/**
 	 * Marca su posicion en la nube original. 
 	 */
@@ -95,6 +90,14 @@ public class Cliente implements Comparable<Cliente>{
 	public void setIndexOnNube(int indexOnNube) {
 		this.indexOnNube = indexOnNube;
 	}
+	
+	public int getMediaLocal() {
+		return mediaLocal;
+	}
+	
+	public void setMediaLocal(int mediaLocal) {
+		this.mediaLocal = mediaLocal;
+	}
 
 	/**
 	 * Formatea un string que representa el cliente con sus tres atributos.
@@ -109,6 +112,7 @@ public class Cliente implements Comparable<Cliente>{
 		if(((Cliente) o).getId()==this.getId()) return true;
 		return false;
 	}
+	
 	@Override
 	public int compareTo(Cliente arg0) {
 		int comp = this.ce - arg0.ce;
@@ -116,10 +120,11 @@ public class Cliente implements Comparable<Cliente>{
 		return comp;
 		
 	}
+	
 	@Override
 	public Cliente clone(){
 		Cliente sol = new Cliente(this.id, this.ce, this.ice);
-		sol.setDifMedia8(difMedia8);
+		sol.setMediaLocal(mediaLocal);
 		return sol;
 	}
 	
