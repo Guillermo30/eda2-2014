@@ -18,6 +18,7 @@ import exceptions.*;
 import paretoDivision.ParetoDivision;
 import paretoNube.ParetoNube;
 import posSeleccion.PosSeleccionV1;
+import posSeleccion.PosSeleccionV2;
 import utilidades.Cliente;
 import utilidades.Pareto;
 
@@ -42,6 +43,10 @@ public class Programa {
 	 * Estructura de datos con el informe de clientes sospechosos.
 	 */
 	private static LinkedList<Cliente> candidatos;
+	/**
+	 * Estructura de datos con el informe de clientes sospechosos tras la post-selección.
+	 */
+	private static LinkedList<Cliente> posCandidatos;
 	/**
 	 * Estructura de datos con el informe de clientes de entrada.
 	 */
@@ -116,8 +121,9 @@ public class Programa {
 			System.out.println(candidatos.size());
 			
 			int mitadUPC = uPC/2 + (uPC%2); 
-			PosSeleccionV1 ps = new PosSeleccionV1(clientes, candidatos, mitadUPC );
-			System.out.println(ps.seleccionar().size());
+			PosSeleccionV2 ps = new PosSeleccionV2(clientes, candidatos, mitadUPC );
+			posCandidatos = ps.seleccionar();
+			System.out.println(posCandidatos.toString());
 			imprimirInforme();
 
 		} catch (FileNotFoundException e) {
