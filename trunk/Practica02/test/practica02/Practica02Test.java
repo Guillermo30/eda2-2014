@@ -14,6 +14,8 @@ import java.util.LinkedList;
 
 import paretoDivision.ParetoDivision;
 import paretoNube.ParetoNube;
+import posSeleccion.PosSeleccionV1;
+import posSeleccion.PosSeleccionV2;
 import programa.Programa;
 import utilidades.Cliente;
 import utilidades.Pareto;
@@ -447,6 +449,7 @@ public class Practica02Test {
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void testParetoSimpleNube() {
 
@@ -480,6 +483,7 @@ public class Practica02Test {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@Test
 	public void testFronteraRectaNube() {
 
@@ -510,6 +514,7 @@ public class Practica02Test {
 
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void testTratamientoMismoIceNube(){
 		
@@ -543,6 +548,7 @@ public class Practica02Test {
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void testTratamientoMismoCeyMismoPuntoNube(){
 		
@@ -567,6 +573,144 @@ public class Practica02Test {
 		
 		assertEquals(12, resultados.size());
 		assertFalse(resultados.contains(clientes.get(3)));
+		
+	}
+	
+	@Test
+	public void testDiferenciaConMediaLocalV1(){
+		
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>(17);
+		clientes.add(new Cliente(0, 1, 1));
+		clientes.add(new Cliente(1, 2, 2));
+		clientes.add(new Cliente(2, 3, 3));
+		clientes.add(new Cliente(3, 4, 4));
+		clientes.add(new Cliente(4, 16, 16));
+		clientes.add(new Cliente(5, 17, 17));
+		clientes.add(new Cliente(6, 18, 18));
+		clientes.add(new Cliente(7, 19, 19));
+		clientes.add(new Cliente(8, 20, 20));
+		clientes.add(new Cliente(9, 21, 21));
+		clientes.add(new Cliente(10, 22, 22));
+		clientes.add(new Cliente(11, 23, 23));
+		clientes.add(new Cliente(12, 24, 24));
+		clientes.add(new Cliente(13, 54, 54));
+		clientes.add(new Cliente(14, 55, 55));
+		clientes.add(new Cliente(15, 56, 56));
+		clientes.add(new Cliente(16, 57, 57));
+		
+		
+		PosSeleccionV1 ps = new PosSeleccionV1(clientes, null, 1);
+		
+		assertEquals((ps.mediaOchoCercanos(8) - clientes.get(8).getCe()), 0);
+		
+	}
+	
+	@Test
+	public void testDiferenciaConMediaLocalV2(){
+		
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>(17);
+		clientes.add(new Cliente(0, 1, 1));
+		clientes.add(new Cliente(1, 2, 2));
+		clientes.add(new Cliente(2, 3, 3));
+		clientes.add(new Cliente(3, 4, 4));
+		clientes.add(new Cliente(4, 16, 16));
+		clientes.add(new Cliente(5, 17, 17));
+		clientes.add(new Cliente(6, 18, 18));
+		clientes.add(new Cliente(7, 19, 19));
+		clientes.add(new Cliente(8, 20, 20));
+		clientes.add(new Cliente(9, 21, 21));
+		clientes.add(new Cliente(10, 22, 22));
+		clientes.add(new Cliente(11, 23, 23));
+		clientes.add(new Cliente(12, 24, 24));
+		clientes.add(new Cliente(13, 54, 54));
+		clientes.add(new Cliente(14, 55, 55));
+		clientes.add(new Cliente(15, 56, 56));
+		clientes.add(new Cliente(16, 57, 57));
+		
+		
+		PosSeleccionV2 ps = new PosSeleccionV2(clientes, null, 1);
+		
+		assertEquals((ps.mediaOchoCercanos(8) - clientes.get(8).getCe()), 0);
+		
+	}
+	
+	@Test
+	public void testPosSeleccionV1(){
+		
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>(17);
+		LinkedList<Cliente> candidatos = new LinkedList<Cliente>();
+		LinkedList<Cliente> resultado;
+		
+		clientes.add(new Cliente(0, 101, 1));
+		clientes.add(new Cliente(1, 102, 2));
+		clientes.add(new Cliente(2, 3, 3));
+		clientes.add(new Cliente(3, 104, 4));
+		clientes.add(new Cliente(4, 5, 5));
+		clientes.add(new Cliente(5, 106, 6));
+		clientes.add(new Cliente(6, 7, 7));
+		clientes.add(new Cliente(7, 8, 8));
+		clientes.add(new Cliente(8, 109, 9));
+		clientes.add(new Cliente(9, 1, 10));
+		clientes.add(new Cliente(10, 11, 111));
+		clientes.add(new Cliente(11, 2, 12));
+		clientes.add(new Cliente(12, 3, 13));
+		clientes.add(new Cliente(13, 114, 14));
+		clientes.add(new Cliente(14, 5, 15));
+		clientes.add(new Cliente(15, 116, 16));
+		clientes.add(new Cliente(16, 117, 17));
+		candidatos.addAll(clientes);
+		
+		PosSeleccionV1 ps = new PosSeleccionV1(clientes, candidatos, 8);
+		resultado = ps.seleccionar();
+		
+		assertTrue(resultado.contains(clientes.get(2)));
+		assertTrue(resultado.contains(clientes.get(4)));
+		assertTrue(resultado.contains(clientes.get(6)));
+		assertTrue(resultado.contains(clientes.get(7)));
+		assertTrue(resultado.contains(clientes.get(9)));
+		assertTrue(resultado.contains(clientes.get(11)));
+		assertTrue(resultado.contains(clientes.get(12)));
+		assertTrue(resultado.contains(clientes.get(14)));
+		
+	}
+	
+	@Test
+	public void testPosSeleccionV2(){
+		
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>(17);
+		LinkedList<Cliente> candidatos = new LinkedList<Cliente>();
+		LinkedList<Cliente> resultado;
+		
+		clientes.add(new Cliente(0, 101, 1));
+		clientes.add(new Cliente(1, 102, 2));
+		clientes.add(new Cliente(2, 3, 3));
+		clientes.add(new Cliente(3, 104, 4));
+		clientes.add(new Cliente(4, 5, 5));
+		clientes.add(new Cliente(5, 106, 6));
+		clientes.add(new Cliente(6, 7, 7));
+		clientes.add(new Cliente(7, 8, 8));
+		clientes.add(new Cliente(8, 109, 9));
+		clientes.add(new Cliente(9, 1, 10));
+		clientes.add(new Cliente(10, 11, 111));
+		clientes.add(new Cliente(11, 2, 12));
+		clientes.add(new Cliente(12, 3, 13));
+		clientes.add(new Cliente(13, 114, 14));
+		clientes.add(new Cliente(14, 5, 15));
+		clientes.add(new Cliente(15, 116, 16));
+		clientes.add(new Cliente(16, 117, 17));
+		candidatos.addAll(clientes);
+		
+		PosSeleccionV2 ps = new PosSeleccionV2(clientes, candidatos, 8);
+		resultado = ps.seleccionar();
+		
+		assertTrue(resultado.contains(clientes.get(2)));
+		assertTrue(resultado.contains(clientes.get(4)));
+		assertTrue(resultado.contains(clientes.get(6)));
+		assertTrue(resultado.contains(clientes.get(7)));
+		assertTrue(resultado.contains(clientes.get(9)));
+		assertTrue(resultado.contains(clientes.get(11)));
+		assertTrue(resultado.contains(clientes.get(12)));
+		assertTrue(resultado.contains(clientes.get(14)));
 		
 	}
 

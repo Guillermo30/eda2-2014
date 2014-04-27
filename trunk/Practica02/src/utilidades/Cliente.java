@@ -20,7 +20,9 @@ public class Cliente implements Comparable<Cliente>{
 	 * ICE del cliente.
 	 */
 	private int ice;
-	
+	/**
+	 * Diferencia de su media de CE loca con su CE.
+	 */
 	private int difMediaLocal;
 	
 	/**
@@ -91,10 +93,16 @@ public class Cliente implements Comparable<Cliente>{
 		this.indexOnNube = indexOnNube;
 	}
 	
+	/**
+	 * @return the difMediaLocal
+	 */
 	public int getDifMediaLocal() {
 		return difMediaLocal;
 	}
 	
+	/**
+	 * @param difMediaLocal the difMediaLocal to set
+	 */
 	public void setDifMediaLocal(int difMediaLocal) {
 		this.difMediaLocal = difMediaLocal;
 	}

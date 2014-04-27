@@ -21,6 +21,7 @@ import posSeleccion.PosSeleccionV1;
 import posSeleccion.PosSeleccionV2;
 import utilidades.Cliente;
 import utilidades.Pareto;
+import utilidades.PosSeleccion;
 
 /**
  * Clase usada para cargar y leer los datos de un archivo y procesarlos mediante el algoritmo.
@@ -97,11 +98,15 @@ public class Programa {
 			candidatos = new LinkedList<Cliente>();
 			clientes = new ArrayList<Cliente>();
 			int version;
-			System.out.println("Version? ");
+			System.out.println("Version de pareto?(1 = nube, 2 = division)");
 			version = scanner.nextInt();
 			leerArchivo();
 			if(version == 1) pareto = new ParetoNube((ArrayList<Cliente>) clientes.clone());
 			if(version == 2) pareto = new ParetoDivision((ArrayList<Cliente>) clientes.clone());
+			if (version != 2) {
+				System.out.println("No existe esa version de algoritmo.");
+				System.exit(0);
+			}
 			long a = System.nanoTime();
 			long b;
 			Collection<Cliente> paretoTemp = pareto.paretoSolucion();
@@ -120,11 +125,20 @@ public class Programa {
 			System.out.println("Tiempo total: " + (System.nanoTime() - a));
 			System.out.println(candidatos.size());
 			
-			int mitadUPC = uPC/2 + (uPC%2); 
-			PosSeleccionV2 ps = new PosSeleccionV2(clientes, candidatos, mitadUPC );
-			ps.mediaOchoCercanos(1);
+			int mitadUPC = uPC/2 + (uPC%2);
+			PosSeleccion ps = null;
+			System.out.println("Version de la post-selección?");
+			version = scanner.nextInt();
+			
+			if(version == 1) ps = new PosSeleccionV1(clientes, candidatos, mitadUPC);
+			if(version == 2) ps = new PosSeleccionV2(clientes, candidatos, mitadUPC);
+			if (version != 2) {
+				System.out.println("No existe esa version de algoritmo.");
+				System.exit(0);
+			}
+			
 			posCandidatos = ps.seleccionar();
-			System.out.println(posCandidatos.toString());
+			System.out.println("El programa se ejecuto correctamente.");
 			imprimirInforme();
 
 		} catch (FileNotFoundException e) {
@@ -156,6 +170,10 @@ public class Programa {
 			Iterator<Cliente> it = candidatos.iterator();
 			while (it.hasNext())
 				pw.println(it.next().toString());
+			pw.println("\nClientes post-seleccionados:\n\n");
+			Iterator<Cliente> it3 = posCandidatos.iterator();
+			while (it3.hasNext())
+				pw.println(it3.next().toString());
 			pw.println("\nClientes con datos corruptos:\n\n");
 			Iterator<String> it2 = datosCorruptos.iterator();
 			while (it2.hasNext())
