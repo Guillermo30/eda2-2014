@@ -21,7 +21,7 @@ public class Cliente implements Comparable<Cliente>{
 	 */
 	private int ice;
 	
-	private int mediaLocal;
+	private int difMediaLocal;
 	
 	/**
 	 * Marca su posicion en la nube original. 
@@ -91,12 +91,12 @@ public class Cliente implements Comparable<Cliente>{
 		this.indexOnNube = indexOnNube;
 	}
 	
-	public int getMediaLocal() {
-		return mediaLocal;
+	public int getDifMediaLocal() {
+		return difMediaLocal;
 	}
 	
-	public void setMediaLocal(int mediaLocal) {
-		this.mediaLocal = mediaLocal;
+	public void setDifMediaLocal(int difMediaLocal) {
+		this.difMediaLocal = difMediaLocal;
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class Cliente implements Comparable<Cliente>{
 	@Override
 	public Cliente clone(){
 		Cliente sol = new Cliente(this.id, this.ce, this.ice);
-		sol.setMediaLocal(mediaLocal);
+		sol.setDifMediaLocal(difMediaLocal);
 		return sol;
 	}
 	

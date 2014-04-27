@@ -5,51 +5,25 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 
 import utilidades.Cliente;
+import utilidades.ClienteCercaniaComparador;
 import utilidades.ClienteMediaLocalComparador;
 import utilidades.PosSeleccion;
 
-public class PosSeleccionV1 extends PosSeleccion
-{
-	//private ArrayList<Cliente> nube;
-	//private LinkedList<Cliente> candidatos;
-	//private int totalSospechosos;
+public class PosSeleccionV1 extends PosSeleccion{
 	
 	public PosSeleccionV1(ArrayList<Cliente> nube,	LinkedList<Cliente> candidatos, int totalSospechosos) {
 		super(nube, candidatos, totalSospechosos);
 		
 	}
 	
-	public  int  mediaOchoCercanos(int pos) {
+	private  int  mediaOchoCercanos(int pos) {
 		int sum=0;
-		int izq = pos - 1;
-		int der = pos + 1;
-		for (int i = 0; i < 8; i++) {
-			
-			if (izq < 0) {
-				for(; i < 8; i++){
-					sum +=nube.get(pos + der).getCe();
-					der++;
-				}
-				break;
-			}
-			
-			if (der >= nube.size()) {
-				for(; i < 8; i++){
-					sum +=nube.get(pos - izq).getCe();
-					izq--;
-				}
-				break;
-			}
-			
-			if (nube.get(der).getIce() - nube.get(pos).getIce() <= nube.get(pos).getIce() - nube.get(izq).getIce()) {
-				sum += nube.get(der).getCe();
-				der++;
-			} else {
-				sum += nube.get(izq).getCe();
-				izq--;
-			}
+		PriorityQueue<Cliente> clientesCercanos = new PriorityQueue<Cliente>(16, new ClienteCercaniaComparador(nube.get(pos).getIce()));
+		for(int i = 1; i <= 8; i++){
+			if((pos - i) >= 0) clientesCercanos.add(nube.get(pos - i));
+			if((pos + i)  < nube.size()) clientesCercanos.add(nube.get(pos + i));
 		}
-		
+		for(int i = 0; i < 8; i++) sum += clientesCercanos.poll().getCe();
 		return sum/8;
 	}
 	
@@ -58,7 +32,7 @@ public class PosSeleccionV1 extends PosSeleccion
 		Cliente aux;
 		for(int i = 0; i < candidatos.size(); i++){
 			aux = candidatos.get(i);
-			aux.setMediaLocal(aux.getCe() - mediaOchoCercanos(i));
+			aux.setDifMediaLocal(aux.getCe() - mediaOchoCercanos(aux.getIndexOnNube()));
 			preSol.add(aux);
 		}
 		return preSol;
