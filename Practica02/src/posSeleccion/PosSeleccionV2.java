@@ -19,7 +19,7 @@ public class PosSeleccionV2 extends PosSeleccion
 		
 	}
 	
-	private  int  mediaOchoCercanos(int pos) {
+	public  int  mediaOchoCercanos(int pos) {
 		int sum=0;
 		int izq = pos - 1;
 		int der = pos + 1;
@@ -27,7 +27,7 @@ public class PosSeleccionV2 extends PosSeleccion
 			
 			if (izq < 0) {
 				for(; i < 8; i++){
-					sum +=nube.get(pos + der).getCe();
+					sum +=nube.get(der).getCe();
 					der++;
 				}
 				break;
@@ -35,7 +35,7 @@ public class PosSeleccionV2 extends PosSeleccion
 			
 			if (der >= nube.size()) {
 				for(; i < 8; i++){
-					sum +=nube.get(pos - izq).getCe();
+					sum +=nube.get(izq).getCe();
 					izq--;
 				}
 				break;

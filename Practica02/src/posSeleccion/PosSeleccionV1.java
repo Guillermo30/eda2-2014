@@ -16,7 +16,7 @@ public class PosSeleccionV1 extends PosSeleccion{
 		
 	}
 	
-	private  int  mediaOchoCercanos(int pos) {
+	public  int  mediaOchoCercanos(int pos) {
 		int sum=0;
 		PriorityQueue<Cliente> clientesCercanos = new PriorityQueue<Cliente>(16, new ClienteCercaniaComparador(nube.get(pos).getIce()));
 		for(int i = 1; i <= 8; i++){
