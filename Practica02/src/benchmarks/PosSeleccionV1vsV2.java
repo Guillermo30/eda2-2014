@@ -1,37 +1,28 @@
 package benchmarks;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-
 import exceptions.EmptyFileException;
 import exceptions.HeaderOutOfRangeException;
 import exceptions.LinesNotEqualsHeaderException;
-import paretoDivision.ParetoDivision;
-import paretoNube.ParetoNube;
 import posSeleccion.*;
 import programa.Programa;
 import utilidades.Cliente;
-import utilidades.Pareto;
 
+/**
+ * Clase para medir el rendimiento entre las 2 versiones de la post-Selección.
+ *
+ */
 public class PosSeleccionV1vsV2 {
 	public final static String ENTRADA = System.getProperty("user.dir")
 			+ File.separator + "src" + File.separator + "entradas"
 			+ File.separator;
-	public final static String SALIDA = System.getProperty("user.dir")
-			+ File.separator + "src" + File.separator + "salidas"
-			+ File.separator + "Benchmark_PosSeleccion.txt";
 
 	/**
 	 * Método que ejecuta este benchmark
 	 * @param args
 	 */
-	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		int numDatos = 10000;
 		Programa.setClientes(new ArrayList<Cliente>());
