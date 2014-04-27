@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * Superclase diseñada para implementar las distintas verciones del algoritmo.
+ * Superclase diseñada para implementar las distintas versiones del algoritmo.
  *
  */
 public class Pareto {
@@ -15,7 +15,7 @@ public class Pareto {
 	protected ArrayList<Cliente> nube;
 	
 	/**
-	 * Métos constructor.
+	 * Métodoo constructor.
 	 * @param nube
 	 */
 	public Pareto(ArrayList<Cliente> nube){
