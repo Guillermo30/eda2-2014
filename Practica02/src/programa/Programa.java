@@ -121,7 +121,7 @@ public class Programa {
 			System.out.println(candidatos.size());
 			
 			int mitadUPC = uPC/2 + (uPC%2); 
-			PosSeleccionV1 ps = new PosSeleccionV1(clientes, candidatos, mitadUPC );
+			PosSeleccionV2 ps = new PosSeleccionV2(clientes, candidatos, mitadUPC );
 			ps.mediaOchoCercanos(1);
 			posCandidatos = ps.seleccionar();
 			System.out.println(posCandidatos.toString());
