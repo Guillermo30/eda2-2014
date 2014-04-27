@@ -8,7 +8,7 @@ import utilidades.Cliente;
 import utilidades.Pareto;
 
 /**
- * Clase que saca la frontera inferior de la nube de forma boraz usando como entrada la nube ordenada por ICE.
+ * Clase que saca la frontera inferior de la nube de forma voraz usando como entrada la nube ordenada por ICE.
  */
 public class ParetoDivision extends Pareto{
 
@@ -57,7 +57,7 @@ public class ParetoDivision extends Pareto{
 	}
 
 	/**
-	 * Método boraz.
+	 * Método voraz.
 	 * @param in
 	 * @return
 	 */
