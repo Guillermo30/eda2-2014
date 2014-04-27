@@ -32,7 +32,7 @@ public class PosSeleccionV1 extends PosSeleccion{
 		Cliente aux;
 		for(int i = 0; i < candidatos.size(); i++){
 			aux = candidatos.get(i);
-			aux.setDifMediaLocal(aux.getCe() - mediaOchoCercanos(aux.getIndexOnNube()));
+			aux.setDifMediaLocal(mediaOchoCercanos(aux.getIndexOnNube()) - aux.getCe());
 			preSol.add(aux);
 		}
 		return preSol;
