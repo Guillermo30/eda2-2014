@@ -8,17 +8,27 @@ import utilidades.Cliente;
 import utilidades.ClienteMediaLocalComparador;
 import utilidades.PosSeleccion;
 
-public class PosSeleccionV2 extends PosSeleccion
-{
-	//private ArrayList<Cliente> nube;
-	//private LinkedList<Cliente> candidatos;
-	//private int totalSospechosos;
+/**
+ * Clase que se encarga de elegir los "totalSospechosos" clientes más sospechosos de "candidatos".
+ *
+ */
+public class PosSeleccionV2 extends PosSeleccion{
 	
+	/**
+	 * Método constructor.
+	 * @param nube
+	 * @param candidatos
+	 * @param totalSospechosos
+	 */
 	public PosSeleccionV2(ArrayList<Cliente> nube,	LinkedList<Cliente> candidatos, int totalSospechosos) {
-		super(nube, candidatos, totalSospechosos);
-		
+		super(nube, candidatos, totalSospechosos);	
 	}
 	
+	/**
+	 * Método que te devuelve la media de CE de los 8 clientes mas cercanos por ICE al elemento "pos" de "nube" indices.
+	 * @param pos
+	 * @return
+	 */
 	public  int  mediaOchoCercanos(int pos) {
 		int sum=0;
 		int izq = pos - 1;
@@ -53,6 +63,11 @@ public class PosSeleccionV2 extends PosSeleccion
 		return sum/8;
 	}
 	
+	/**
+	 * Método encargado de dar a todos los clientes de "nube" la diferencia de la media de CE de sus 8 clientes más cercanos por ICE y su CE, y 
+	 * meterlos en una cola de prioridad.
+	 * @return
+	 */
 	private PriorityQueue<Cliente> preSeleccionar(){
 		PriorityQueue<Cliente> preSol = new PriorityQueue<Cliente>(candidatos.size(), new ClienteMediaLocalComparador());
 		Cliente aux;

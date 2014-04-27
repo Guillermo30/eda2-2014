@@ -17,7 +17,7 @@ import utilidades.Cliente;
 import utilidades.Pareto;
 
 /**
- * Clase para el calculo del rendimiento de los algoritmos que resuelven pareto de forma voraz.
+ * Clase para el calculo del rendimiento de los algoritmos que resuelven pareto de forma boraz.
  */
 public class NubeVsDivision {
 	

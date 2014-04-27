@@ -57,7 +57,7 @@ public class ParetoDivision extends Pareto{
 	}
 
 	/**
-	 * Método voraz.
+	 * Método boraz.
 	 * @param in
 	 * @return
 	 */

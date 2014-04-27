@@ -3,6 +3,10 @@ package utilidades;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+/**
+ * Superclase para la post-selección.
+ *
+ */
 public class PosSeleccion {
 	
 	/**
