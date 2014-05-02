@@ -21,13 +21,9 @@ public class Cliente {
 	 */
 	private int difMediaLocal;
 	/**
-	 * Tiempoque se tarda en inspeccionar el cliente, incluyendo el desplazamiento.
+	 * Tiempo que se tarda en inspeccionar el cliente, incluyendo el desplazamiento.
 	 */
 	private int tiempo;
-	/**
-	 * Bloques que ocupa el tiempo. 
-	 */
-	private int bloques;
 	
 	/**
 	 * Marca su posicion en la nube original. 
@@ -41,14 +37,6 @@ public class Cliente {
 		tiempo += 15 - tiempo%15;
 		this.tiempo = (int)tiempo +15;
 		
-	}
-	
-	/**
-	 * Transforma el tiempo en bloques.
-	 * @param tamanoBloque
-	 */
-	public void tiempoABloques(int tamanoBloque){
-		this.bloques = tiempo/tamanoBloque;
 	}
 	
 	/**
@@ -89,10 +77,10 @@ public class Cliente {
 	}
 
 	/**
-	 * @return the bloques
+	 * @return the tiempo
 	 */
-	public int getBloques() {
-		return bloques;
+	public int getTiempo() {
+		return tiempo;
 	}
 
 	/**
