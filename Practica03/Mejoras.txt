@@ -1,0 +1,24 @@
+*Estructura de entrada*
+
+cabecera(nº clientes)
+
+id, ice, dif de la media local con su CE
+...
+
+Nota: hay que adaptar el generar archivo a este formato.
+
+
+*Mejoras*
+
+
+
+1- Teniendo en cuenta que el ICE máximo es 10000 y su tiempo incluyendo el relleno haste que sea múltiplo de 15 y los 15 min de transporte, 
+	el timepo máximo de una inspección sería 120 min no merece la pena hacer el algoritmo con menos de 82 clientes.
+1.2 -En el caso de clientes con ice 1 cabrian 330 de estos clientes, por lo tanto si hay menos de estos clientes, podemos sumar todos sus tiempos
+	(En el leerArchivo para evitar iteraciones inútiles) y si no se sobrepasan los 9900minutos no merece la pena hacer la mochila.
+2. Calcular el tamaño de bloque mas optimo a través de 10 posisbles MCD (Ya tengo en mente como hacerlo y segun mis cálculos puede optimizar)
+	
+*Mejoras a estudiar*
+	
+1 Empezar la tabla del algoritmo dinámico en el peso del primer elemento pra disminuir el tamaño de la tabla.
+2 Por cada objeto de la mochila acotar lo que se va a escribir en la tabla.

@@ -9,13 +9,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
 import exceptions.*;
 import utilidades.Cliente;
+import utilidades.Mochila;
 
 /**
  * Clase usada para cargar y leer los datos de un archivo y procesarlos mediante el algoritmo.
@@ -81,7 +81,6 @@ public class Programa {
 				throw new FileNotFoundException();
 			
 			datosCorruptos = new LinkedList<String>();
-			elegidos = new LinkedList<Cliente>();
 			fraudes = new ArrayList<Cliente>();
 			
 			leerArchivo();
@@ -90,8 +89,12 @@ public class Programa {
 			System.out.println("Version del algoritmo?");
 			version = scanner.nextInt();
 			
+			Mochila mochila;
+			
 			if(version == 1){
 				tamanoBloque = 15;
+				mochila = new Mochila(fraudes, tamanoBloque);
+				elegidos = mochila.maxBeneficio();
 			}
 			
 			System.out.println("El programa se ejecuto correctamente.");
@@ -164,11 +167,11 @@ public class Programa {
 		if (linea == null)
 			throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
 		int nClientes = Integer.parseInt(linea);
-		if (nClientes <= 0 || nClientes > 150000)
+		if (nClientes <= 0 || nClientes > 750)
 			throw new HeaderOutOfRangeException(ERROR_CABECERA_FUERA_DE_RANGO);
 		
-		int i = 0, j = 0;
-		int ice, prevIce = Integer.MIN_VALUE, beneficio;
+		int i = 0;
+		int ice, prevIce = Integer.MIN_VALUE, beneficio, id;
 		Scanner sc;
 		linea = br.readLine();
 		Cliente toAdd;
@@ -183,6 +186,7 @@ public class Programa {
 				sc = new Scanner(linea);
 				sc.useDelimiter(",");
 
+				id = sc.nextInt();
 				ice = sc.nextInt();
 				if(ice < prevIce) throw new NotSortException(ERROR_DATO_NO_ORDENADO);
 				beneficio = sc.nextInt();
@@ -191,16 +195,15 @@ public class Programa {
 				if(ice > 10000)
 					throw new IceOutOfRangeException(ERROR_ICE_FUERA_DE_RANGO);
 
-				toAdd = new Cliente(i, ice, beneficio);
+				toAdd = new Cliente(id, ice, beneficio);
 				fraudes.add(toAdd);
-				j++;
 				i++;
 				prevIce = ice;
 				linea = br.readLine();
 				
 			} catch (Exception e) {
 				if(e.getMessage() == null)
-					datosCorruptos.add("Id: " + i + " Datos: " + linea
+					datosCorruptos.add("Cliente en fichero nº: " + i + " Datos: " + linea
 							+ " (No ha sido posible parsear los datos a enteros.)");
 				else
 					datosCorruptos.add("Id: " + i + " Datos: " + linea
@@ -281,10 +284,11 @@ public class Programa {
 	}
 
 	/**
-	 * @param tamanobloque the tamanobloque to set
+	 * @param tamanobloque the tamanoBloque to set
 	 */
-	public void setTamanoBloque(int tamanobloque) {
-		this.tamanoBloque = tamanobloque;
+	@SuppressWarnings("static-access")
+	public void setTamanoBloque(int tamanoBloque) {
+		this.tamanoBloque = tamanoBloque;
 	}
 
 }
