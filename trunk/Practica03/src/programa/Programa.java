@@ -284,16 +284,12 @@ public class Programa {
 	/**
 	 * @return the tamanobloque
 	 */
-	public int getTamanoBloque() {
+	public static int getTamanoBloque() {
 		return tamanoBloque;
 	}
-
-	/**
-	 * @param tamanobloque the tamanoBloque to set
-	 */
-	@SuppressWarnings("static-access")
-	public void setTamanoBloque(int tamanoBloque) {
-		this.tamanoBloque = tamanoBloque;
+	
+	public static void setTamanoBolque(int tBloque){
+		tamanoBloque = tBloque;
 	}
 	
 	public static int bloqueOptimo(){
