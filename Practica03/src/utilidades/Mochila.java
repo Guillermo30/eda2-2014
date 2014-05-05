@@ -65,6 +65,7 @@ public class Mochila {
 	 * @param peso
 	 */
 	private void seleccionar(LinkedList<Cliente> toReturn, int elemento, int peso) {
+		if(elemento < 1) return;
 		Cliente cliente = fraudes.get(elemento - 1); 
 		int pesoElemento = cliente.getTiempo()/tamanoBloque;
 		int beneficio = cliente.getDifMediaLocal();
@@ -85,9 +86,9 @@ public class Mochila {
 		int peso, beneficio;
 		for(int i = 0; i < datos[0].length; i++) datos[0][i] = 0;
 		for(int i = 0; i < datos.length; i++) datos[i][0] = 0;
-		for(int k = 0; k < fraudes.size(); k++ ){
-			peso = fraudes.get(k).getTiempo()/tamanoBloque;
-			beneficio = fraudes.get(k).getDifMediaLocal();
+		for(int k = 1; k <= fraudes.size(); k++ ){
+			peso = fraudes.get(k - 1).getTiempo()/tamanoBloque;
+			beneficio = fraudes.get(k - 1).getDifMediaLocal();
 			for(int w = 1; w < peso - 1; w++) datos[k][w] = datos[k - 1][w];
 			for(int w = peso; w <= maxPeso; w++) datos[k][w] = max(datos[k-1][w - peso] + beneficio, datos[k - 1][w]);
 		}

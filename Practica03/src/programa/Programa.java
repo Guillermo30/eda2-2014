@@ -89,14 +89,19 @@ public class Programa {
 			System.out.println("Version del algoritmo?");
 			version = scanner.nextInt();
 			
-			Mochila mochila;
+			Mochila mochila = null;
 			
 			if(version == 1){
 				tamanoBloque = 15;
 				mochila = new Mochila(fraudes, tamanoBloque);
-				elegidos = mochila.maxBeneficio();
+			}
+			if(version == 2){
+				tamanoBloque = bloqueOptimo();
+				mochila = new Mochila(fraudes, tamanoBloque);
 			}
 			
+			elegidos = mochila.maxBeneficio();
+			System.out.println(elegidos.size());
 			System.out.println("El programa se ejecuto correctamente.");
 			imprimirInforme();
 
@@ -289,6 +294,27 @@ public class Programa {
 	@SuppressWarnings("static-access")
 	public void setTamanoBloque(int tamanoBloque) {
 		this.tamanoBloque = tamanoBloque;
+	}
+	
+	public static int bloqueOptimo(){
+		LinkedList<Integer> mcd = new LinkedList<Integer>();
+		mcd.add(18);
+		mcd.add(20);
+		mcd.add(25);
+		mcd.add(30);
+		mcd.add(45);
+		mcd.add(60);
+		mcd.add(75);
+		mcd.add(110);
+		Iterator<Integer> it;
+		Cliente cur;
+		for (int i = 0; i < fraudes.size(); i++){
+			cur = fraudes.get(i);
+			it = mcd.iterator();
+			while(it.hasNext()) if(cur.getTiempo()%it.next() != 0) it.remove();
+			if(mcd.isEmpty()) return 15;
+		}
+		return mcd.getLast();
 	}
 
 }

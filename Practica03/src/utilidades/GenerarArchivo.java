@@ -34,7 +34,7 @@ public class GenerarArchivo {
 				scanner = new Scanner(System.in);
 				System.out.println("Nº de usuarios: ");
 				tamano = scanner.nextInt();
-				if(tamano < 0 || tamano > 150000) System.out.println("Fallo");
+				if(tamano < 0 || tamano > 750) System.out.println("Fallo");
 				else correcto = true;
 			}
 			
@@ -48,7 +48,7 @@ public class GenerarArchivo {
 			double ice = toAdd;
 			
 			for(int i = 0; i < tamano; i++){
-				pw.println(((ice >= 10000)?"10000":(int)Math.ceil(ice)) + "," + generarCE());
+				pw.println(i + "," + ((ice >= 10000)?"10000":(int)Math.ceil(ice)) + "," + generarCE());
 				ice += toAdd;
 			}
 			
