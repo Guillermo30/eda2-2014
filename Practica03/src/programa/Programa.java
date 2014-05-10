@@ -83,8 +83,6 @@ public class Programa {
 			datosCorruptos = new LinkedList<String>();
 			fraudes = new ArrayList<Cliente>();
 			
-			leerArchivo();
-			
 			int version;
 			System.out.println("Version del algoritmo?");
 			version = scanner.nextInt();
@@ -92,10 +90,21 @@ public class Programa {
 			Mochila mochila = null;
 			
 			if(version == 1){
+				leerArchivo();
 				tamanoBloque = 15;
 				mochila = new Mochila(fraudes, tamanoBloque);
 			}
 			if(version == 2){
+				leerArchivo();
+				tamanoBloque = bloqueOptimo();
+				mochila = new Mochila(fraudes, tamanoBloque);
+			}
+			if(version == 3){
+				if(leerArchivo2()){
+					System.out.println("Dado el número de clientes o el tiempo total que implica la inspección de todos ellos,"
+							+ " se pueden inspeccionar todos los clientes sospechos.");
+					System.exit(0);
+				}
 				tamanoBloque = bloqueOptimo();
 				mochila = new Mochila(fraudes, tamanoBloque);
 			}
@@ -223,6 +232,95 @@ public class Programa {
 					ERROR_DATOS_NO_COINCIDEN_CON_CABECERA);
 		br.close();
 		fr.close();
+	}
+	
+	/**
+	 * Método encargado de leer los datos del archivo de entrada y devuelve true si no hace falta ejecutar la mochila o false si hace falta..
+	 * @throws EmptyFileException
+	 * @throws NumberFormatException
+	 * @throws IOException
+	 * @throws LinesNotEqualsHeaderException
+	 * @throws HeaderOutOfRangeException
+	 */
+	@SuppressWarnings({ "resource", "unused" })
+	public static boolean leerArchivo2() throws EmptyFileException,
+			NumberFormatException, IOException,
+			LinesNotEqualsHeaderException, HeaderOutOfRangeException {
+
+		FileReader fr = new FileReader(file);
+		BufferedReader br = new BufferedReader(fr);
+		String linea = br.readLine();
+		if (linea == null)
+			throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
+		linea = linea.replaceAll(" ", "");
+		while (linea.equals("")) {
+			linea = linea.replaceAll(" ", "");
+			linea = br.readLine();
+		}
+		if (linea == null)
+			throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
+		int nClientes = Integer.parseInt(linea);
+		if (nClientes <= 0 || nClientes > 750)
+			throw new HeaderOutOfRangeException(ERROR_CABECERA_FUERA_DE_RANGO);
+		
+		if(nClientes <= 82){
+			br.close();
+			fr.close();
+			return true;
+		}
+		
+		int tiempoTotal = 0;
+		int i = 0;
+		int ice, prevIce = Integer.MIN_VALUE, beneficio, id;
+		Scanner sc;
+		linea = br.readLine();
+		Cliente toAdd;
+
+		while (linea != null) {
+			try {
+				linea = linea.replaceAll(" ", "");
+				if (linea.equals("")) {
+					linea = br.readLine();
+					continue;
+				}
+				sc = new Scanner(linea);
+				sc.useDelimiter(",");
+
+				id = sc.nextInt();
+				ice = sc.nextInt();
+				if(ice < prevIce) throw new NotSortException(ERROR_DATO_NO_ORDENADO);
+				beneficio = sc.nextInt();
+				if (ice <= 0 || beneficio <= 0)
+					throw new NegativeNumberException(ERROR_DATO_NEGATIVO);
+				if(ice > 10000)
+					throw new IceOutOfRangeException(ERROR_ICE_FUERA_DE_RANGO);
+
+				toAdd = new Cliente(id, ice, beneficio);
+				fraudes.add(toAdd);
+				tiempoTotal += toAdd.getTiempo();
+				i++;
+				prevIce = ice;
+				linea = br.readLine();
+				
+			} catch (Exception e) {
+				if(e.getMessage() == null)
+					datosCorruptos.add("Cliente en fichero nº: " + i + " Datos: " + linea
+							+ " (No ha sido posible parsear los datos a enteros.)");
+				else
+					datosCorruptos.add("Id: " + i + " Datos: " + linea
+						+ " (" + e.getMessage() + ")");
+				i++;
+				linea = br.readLine();
+				continue;
+			}
+		}
+		if (i != nClientes)
+			throw new LinesNotEqualsHeaderException(
+					ERROR_DATOS_NO_COINCIDEN_CON_CABECERA);
+		br.close();
+		fr.close();
+		if(tiempoTotal <= 9900) return true;
+		return false;
 	}
 
 	/**
