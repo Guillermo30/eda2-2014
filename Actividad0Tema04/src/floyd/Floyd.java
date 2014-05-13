@@ -8,6 +8,7 @@ import java.util.TreeMap;
 public class Floyd {
 
 	private static int[][] lastFloydMidNodesResult;
+	private static int[][] lastFloydSizeResult;
 
 	private static final int INFINITE = Integer.MAX_VALUE;
 
@@ -33,6 +34,7 @@ public class Floyd {
 			int k = (int) Math.floor(Math.random() * (tamano - adyacentes + 1)
 					+ adyacentes);
 			for (int j = 1; j <= adyacentes; j++) {
+				if(i == k) continue;
 				toReturn.get(i).put(k, (int) Math.floor(Math.random() * 100));
 				k--;
 			}
@@ -44,14 +46,16 @@ public class Floyd {
 	public static TreeMap<Integer, TreeMap<Integer, LinkedList<Integer>>> fBruta() {
 		caminos = new TreeMap<Integer, TreeMap<Integer, LinkedList<Integer>>>();
 		Iterator<Integer> it, it2;
-		int origen;
+		int origen, destino;
 		it = grafo.keySet().iterator();
 		while (it.hasNext()) {
 			origen = it.next();
 			caminos.put(origen, new TreeMap<Integer, LinkedList<Integer>>());
 			it2 = grafo.get(origen).keySet().iterator();
 			while (it2.hasNext()) {
-				obtenerCaminoMin(origen, it.next());
+				destino = it2.next();
+				if(origen == destino) continue;
+				obtenerCaminoMin(origen, destino);
 			}
 		}
 		return caminos;
@@ -71,15 +75,16 @@ public class Floyd {
 		if (cur == destino && pesoAux < peso) {
 			LinkedList<Integer> resultAux = new LinkedList<Integer>();
 			resultAux.addAll(result);
+			peso = pesoAux;
 			caminos.get(result.getFirst()).put(cur, resultAux);
-
 		} else {
 			TreeMap<Integer, Integer> adyacentes = grafo.get(cur);
 			for (Map.Entry<Integer, Integer> entry : adyacentes.entrySet()) {
 				int proximo = entry.getKey();
-				if (!result.contains(proximo))
+				if (!result.contains(proximo)){
 					pesoAux += grafo.get(cur).get(proximo);
-				obtenerCaminoMinAux(proximo, destino);
+					obtenerCaminoMinAux(proximo, destino);
+				}
 			}
 		}
 		result.removeLast();
@@ -91,14 +96,16 @@ public class Floyd {
 		floyd();
 		caminos = new TreeMap<Integer, TreeMap<Integer, LinkedList<Integer>>>();
 		Iterator<Integer> it, it2;
-		int origen;
+		int origen, destino;
 		it = grafo.keySet().iterator();
 		while (it.hasNext()) {
 			origen = it.next();
 			caminos.put(origen, new TreeMap<Integer, LinkedList<Integer>>());
 			it2 = grafo.get(origen).keySet().iterator();
 			while (it2.hasNext()) {
-				camino(origen, it.next());
+				destino = it2.next();
+				if(origen == destino) continue;
+				if(lastFloydSizeResult[origen][destino] != INFINITE) camino(origen, destino);
 			}
 		}
 		return caminos;
@@ -128,8 +135,8 @@ public class Floyd {
 		for (int k = 0; k < size; k++) {
 			for (int i = 0; i < size; i++) {
 				for (int j = 0; j < size; j++) {
-					if (d[i][k] + +d[k][j] < d[i][j]) {
-						d[i][j] = d[i][k] + +d[k][j];
+					if (sumar(d[i][k], d[k][j]) < d[i][j]) {
+						d[i][j] = d[i][k] + d[k][j];
 						p[i][j] = k;
 					}
 				}
@@ -137,7 +144,13 @@ public class Floyd {
 		}
 
 		lastFloydMidNodesResult = p;
+		lastFloydSizeResult = d;
 
+	}
+
+	private static int sumar(int i, int j) {
+		if(i == INFINITE || j == INFINITE) return INFINITE;
+		return i + j;
 	}
 
 	private static LinkedList<Integer> camino(int origen, int destino) {
