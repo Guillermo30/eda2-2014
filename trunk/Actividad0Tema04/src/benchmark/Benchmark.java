@@ -17,7 +17,7 @@ public class Benchmark {
 	
 	public static void main(String[] args){
 		
-		int tamano = 20;
+		int tamano = 5;
 		File out = new File(SALIDA);
 		PriorityQueue<Long> times = new PriorityQueue<Long>();
 		TreeMap<Integer, TreeMap<Integer, Integer>> grafo;
@@ -45,8 +45,8 @@ public class Benchmark {
 				System.out.println("Done");
 				pw.println("Floyd: " + media(times) + "ns\n");
 				pw.println("----------------------------------------------------------------------------\n");
-				tamano += 20;
-			}while(tamano <=200);
+				tamano += 5;
+			}while(tamano <= 15);
 			pw.close();
 		}catch(Exception e){
 			e.printStackTrace();
