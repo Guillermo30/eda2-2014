@@ -1,0 +1,80 @@
+Tamaño 100
+
+Algoritmo dinámico: 1037385ns
+
+Recuperación del árbol: 293951ns
+
+-------------------------------------------------------------
+
+Tamaño 200
+
+Algoritmo dinámico: 3377845ns
+
+Recuperación del árbol: 237722ns
+
+-------------------------------------------------------------
+
+Tamaño 300
+
+Algoritmo dinámico: 12616519ns
+
+Recuperación del árbol: 82242ns
+
+-------------------------------------------------------------
+
+Tamaño 400
+
+Algoritmo dinámico: 30079241ns
+
+Recuperación del árbol: 72837ns
+
+-------------------------------------------------------------
+
+Tamaño 500
+
+Algoritmo dinámico: 61548852ns
+
+Recuperación del árbol: 97750ns
+
+-------------------------------------------------------------
+
+Tamaño 600
+
+Algoritmo dinámico: 122179980ns
+
+Recuperación del árbol: 118561ns
+
+-------------------------------------------------------------
+
+Tamaño 700
+
+Algoritmo dinámico: 259799938ns
+
+Recuperación del árbol: 141473ns
+
+-------------------------------------------------------------
+
+Tamaño 800
+
+Algoritmo dinámico: 498812836ns
+
+Recuperación del árbol: 165836ns
+
+-------------------------------------------------------------
+
+Tamaño 900
+
+Algoritmo dinámico: 892254428ns
+
+Recuperación del árbol: 184295ns
+
+-------------------------------------------------------------
+
+Tamaño 1000
+
+Algoritmo dinámico: 1388174769ns
+
+Recuperación del árbol: 241174ns
+
+-------------------------------------------------------------
+
