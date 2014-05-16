@@ -84,6 +84,13 @@ public class Cliente {
 	}
 
 	/**
+	 * @param tiempo the tiempo to set
+	 */
+	public void setTiempo(int tiempo) {
+		this.tiempo = tiempo;
+	}
+
+	/**
 	 * Formatea un string que representa el cliente con sus tres atributos.
 	 */
 	public String toString(){
