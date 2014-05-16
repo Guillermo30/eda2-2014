@@ -489,4 +489,23 @@ public class Practica03Test {
 		
 	}
 	
+	@Test
+	public void tiempocorrecto(){
+		
+		Cliente c = new Cliente(1, 1, 1);
+		assertEquals(c.getTiempo(), 30);
+		
+		c = new Cliente(1, 2500, 1);
+		assertEquals(c.getTiempo(), 60);
+		
+		c = new Cliente(1, 7500, 1);
+		assertEquals(c.getTiempo(), 105);
+		
+		c = new Cliente(1, 5028, 1);
+		assertEquals(c.getTiempo(), 90);
+		
+		c = new Cliente(1, 10000, 1);
+		assertEquals(c.getTiempo(), 120);
+	}
+	
 }
