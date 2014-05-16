@@ -220,7 +220,7 @@ public class Programa {
 					datosCorruptos.add("Cliente en fichero nº: " + i + " Datos: " + linea
 							+ " (No ha sido posible parsear los datos a enteros.)");
 				else
-					datosCorruptos.add("Id: " + i + " Datos: " + linea
+					datosCorruptos.add("Cliente en fichero nº: " + i + " Datos: " + linea
 						+ " (" + e.getMessage() + ")");
 				i++;
 				linea = br.readLine();
@@ -307,7 +307,7 @@ public class Programa {
 					datosCorruptos.add("Cliente en fichero nº: " + i + " Datos: " + linea
 							+ " (No ha sido posible parsear los datos a enteros.)");
 				else
-					datosCorruptos.add("Id: " + i + " Datos: " + linea
+					datosCorruptos.add("Cliente en fichero nº: " + i + " Datos: " + linea
 						+ " (" + e.getMessage() + ")");
 				i++;
 				linea = br.readLine();
