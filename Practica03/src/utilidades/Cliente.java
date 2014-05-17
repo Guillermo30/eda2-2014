@@ -34,8 +34,8 @@ public class Cliente {
 		this.ice=ice;
 		
 		double tiempo = 30 *(Math.log10(ice/1500 + 1)/Math.log10(2)) + 9;
-		tiempo += 15 - tiempo%15;
-		this.tiempo = (int)tiempo +15;
+		if(tiempo%15 != 0)tiempo += 15 - tiempo%15;
+		this.tiempo = (int)tiempo + 15;
 		
 	}
 	
@@ -94,7 +94,7 @@ public class Cliente {
 	 * Formatea un string que representa el cliente con sus tres atributos.
 	 */
 	public String toString(){
-		return "["+id+" "+ice+" "+difMediaLocal+"]";
+		return id+", "+ice+", "+difMediaLocal;
 		
 	}
 	
