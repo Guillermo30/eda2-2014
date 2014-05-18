@@ -45,6 +45,27 @@ public class Mochila {
 		rellenarDatos();
 		return obtenerSeleccion();
 	}
+	
+	/**
+	 * Devuelve los elementos que se deben inspeccionar para obtener el máximo beneficio con un metodo de obtencion iterativo.
+	 * @return
+	 */
+	public LinkedList<Cliente> maxBeneficioIt() {
+		rellenarDatos();
+		return obtenerSeleccionIt();
+	}
+
+	/**
+	 * Utiliza un método iterativo para sacar los clientes a inspeccionar a través de la tabla "datos".
+	 * @return
+	 */
+	private LinkedList<Cliente> obtenerSeleccionIt() {
+		LinkedList<Cliente> toReturn = new LinkedList<Cliente>();
+		int elemento;
+		elemento = fraudes.size();
+		seleccionarIt(toReturn, elemento, maxPeso);
+		return toReturn;
+	}
 
 	/**
 	 * Utiliza un método recursivo para sacar los clientes a inspeccionar a través de la tabla "datos".
@@ -79,15 +100,22 @@ public class Mochila {
 		}
 
 	}
+	
+	/**
+	 * Método iterativo utilizado para sacar los clientes a inspeccionar a través de la tabla "datos".
+	 * @param toReturn
+	 * @param elemento
+	 * @param peso
+	 */
 	private void seleccionarIt(LinkedList<Cliente> toReturn, int elemento, int peso) {
 		int i, j;
 		i = fraudes.size();
 		j = 9900/tamanoBloque;
-		while(j!=0){
-			if(datos[i][j]==datos[i-1][j]){
+		while(j != 0){
+			if(datos[i][j] == datos[i-1][j]){
 				i--;
 				continue;
-			{ else{
+			} else{
 				toReturn.add(fraudes.get(i-1));
 				j = j - fraudes.get(i-1).getTiempo()/tamanoBloque;
 				i--;
