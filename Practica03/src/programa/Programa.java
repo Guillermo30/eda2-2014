@@ -93,11 +93,13 @@ public class Programa {
 				leerArchivo();
 				tamanoBloque = 15;
 				mochila = new Mochila(fraudes, tamanoBloque);
+				elegidos = mochila.maxBeneficio();
 			}
 			if(version == 2){
 				leerArchivo();
 				tamanoBloque = bloqueOptimo();
 				mochila = new Mochila(fraudes, tamanoBloque);
+				elegidos = mochila.maxBeneficio();
 			}
 			if(version == 3){
 				if(leerArchivo2()){
@@ -107,9 +109,20 @@ public class Programa {
 				}
 				tamanoBloque = bloqueOptimo();
 				mochila = new Mochila(fraudes, tamanoBloque);
+				elegidos = mochila.maxBeneficio();
+			}
+			if(version == 4){
+				if(leerArchivo2()){
+					System.out.println("Dado el número de clientes o el tiempo total que implica la inspección de todos ellos,"
+							+ " se pueden inspeccionar todos los clientes sospechos.");
+					System.exit(0);
+				}
+				tamanoBloque = bloqueOptimo();
+				mochila = new Mochila(fraudes, tamanoBloque);
+				elegidos = mochila.maxBeneficioIt();
 			}
 			
-			elegidos = mochila.maxBeneficio();
+			
 			System.out.println(elegidos.size());
 			System.out.println("El programa se ejecuto correctamente.");
 			imprimirInforme();
