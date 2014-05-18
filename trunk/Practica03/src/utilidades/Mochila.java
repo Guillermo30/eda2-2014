@@ -70,15 +70,31 @@ public class Mochila {
 		int pesoElemento = cliente.getTiempo()/tamanoBloque;
 		int beneficio = cliente.getDifMediaLocal();
 		if(peso < pesoElemento) seleccionar(toReturn, elemento - 1, peso);
+		
 		else{
 			if(datos[elemento - 1][peso - pesoElemento] + beneficio > datos[elemento -1][peso]){
 				seleccionar(toReturn, elemento - 1, peso - pesoElemento);
 				toReturn.add(cliente);
 			}else seleccionar(toReturn, elemento - 1, peso);
 		}
-		
-	}
 
+	}
+	private void seleccionarIt(LinkedList<Cliente> toReturn, int elemento, int peso) {
+		int i, j;
+		i = fraudes.size();
+		j = 9900/tamanoBloque;
+		while(j!=0){
+			if(datos[i][j]==datos[i-1][j]){
+				i--;
+				continue;
+			{ else{
+				toReturn.add(fraudes.get(i-1));
+				j = j - fraudes.get(i-1).getTiempo()/tamanoBloque;
+				i--;
+			}
+		}	
+	}
+	
 	/**
 	 * Rellena la tabla "datos".
 	 */
