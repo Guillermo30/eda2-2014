@@ -337,6 +337,32 @@ public class Practica03Test {
 	}
 	
 	@Test
+	public void testMochilaSimpleIt(){
+		
+		ArrayList<Cliente> fraudes = new ArrayList<Cliente>();
+		Cliente toAdd = new Cliente(1, 1, 50);
+		toAdd.setTiempo(1980*2);
+		fraudes.add(toAdd);
+		toAdd = new Cliente(2, 1, 70);
+		toAdd.setTiempo(1980*4);
+		fraudes.add(toAdd);
+		toAdd = new Cliente(3, 1, 10);
+		toAdd.setTiempo(1980);
+		fraudes.add(toAdd);
+		toAdd = new Cliente(4, 1, 80);
+		toAdd.setTiempo(1980*2);
+		fraudes.add(toAdd);
+		toAdd = new Cliente(5, 1, 100);
+		toAdd.setTiempo(1980*3);
+		fraudes.add(toAdd);
+		
+		Mochila m = new Mochila(fraudes, 1980);
+		LinkedList<Cliente> r = m.maxBeneficioIt();
+		assertTrue(r.contains(fraudes.get(3)));
+		assertTrue(r.contains(fraudes.get(4)));
+	}
+	
+	@Test
 	public void testMochilaElementosEquivalesntes(){
 		
 		ArrayList<Cliente> fraudes = new ArrayList<Cliente>();
@@ -361,6 +387,64 @@ public class Practica03Test {
 		assertTrue(r.contains(fraudes.get(0)));
 		assertTrue(r.contains(fraudes.get(1)));
 		assertTrue(r.contains(fraudes.get(4)));
+	}
+	
+	@Test
+	public void testMochilaElementosEquivalesntesIt(){
+		
+		ArrayList<Cliente> fraudes = new ArrayList<Cliente>();
+		Cliente toAdd = new Cliente(1, 1, 10);
+		toAdd.setTiempo(1980);
+		fraudes.add(toAdd);
+		toAdd = new Cliente(2, 1, 10);
+		toAdd.setTiempo(1980);
+		fraudes.add(toAdd);
+		toAdd = new Cliente(3, 1, 10);
+		toAdd.setTiempo(1980*4);
+		fraudes.add(toAdd);
+		toAdd = new Cliente(4, 1, 10);
+		toAdd.setTiempo(1980*4);
+		fraudes.add(toAdd);
+		toAdd = new Cliente(5, 1, 20);
+		toAdd.setTiempo(1980*3);
+		fraudes.add(toAdd);
+		
+		Mochila m = new Mochila(fraudes, 1980);
+		LinkedList<Cliente> r = m.maxBeneficioIt();
+		assertTrue(r.contains(fraudes.get(0)));
+		assertTrue(r.contains(fraudes.get(1)));
+		assertTrue(r.contains(fraudes.get(4)));
+	}
+	
+	@Test
+	public void testMochilaRcIgualMochilaIt(){
+		ArrayList<Cliente> fraudes = new ArrayList<Cliente>();
+		Cliente toAdd = new Cliente(1, 1, 50);
+		toAdd.setTiempo(1980*2);
+		fraudes.add(toAdd);
+		toAdd = new Cliente(2, 1, 150);
+		toAdd.setTiempo(1980*4);
+		fraudes.add(toAdd);
+		toAdd = new Cliente(3, 1, 30);
+		toAdd.setTiempo(1980);
+		fraudes.add(toAdd);
+		toAdd = new Cliente(4, 1, 80);
+		toAdd.setTiempo(1980*2);
+		fraudes.add(toAdd);
+		toAdd = new Cliente(5, 1, 70);
+		toAdd.setTiempo(1980*3);
+		fraudes.add(toAdd);
+		toAdd = new Cliente(6, 1, 110);
+		toAdd.setTiempo(1980*4);
+		fraudes.add(toAdd);
+		
+		Mochila m = new Mochila(fraudes, 1980);
+		LinkedList<Cliente> r = m.maxBeneficioIt();
+		LinkedList<Cliente> r2 = m.maxBeneficio();
+		Iterator<Cliente> it = r.iterator();
+		while(it.hasNext()){
+			assertTrue(r2.contains(it.next()));
+		}
 	}
 	
 	@Test
