@@ -1,0 +1,40 @@
+Datos: 165
+
+	  Media: 344729
+
+Datos: 230
+
+	  Media: 209959
+
+Datos: 295
+
+	  Media: 264887
+
+Datos: 360
+
+	  Media: 324268
+
+Datos: 425
+
+	  Media: 293802
+
+Datos: 490
+
+	  Media: 352433
+
+Datos: 555
+
+	  Media: 427222
+
+Datos: 620
+
+	  Media: 449933
+
+Datos: 685
+
+	  Media: 520470
+
+Datos: 750
+
+	  Media: 574798
+
