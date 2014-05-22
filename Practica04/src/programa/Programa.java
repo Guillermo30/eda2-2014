@@ -40,12 +40,12 @@ public class Programa {
 		/**
 		 * Estructura de datos con el informe de clientes de entrada.
 		 */
-		private static ArrayList<Cliente> entrada;
+		private static ArrayList<Cliente> entry;
 		
 		/**
 		 * Estructura de datos de salida.
 		 */
-		private static ArrayList<Ruta> salida;
+		private static ArrayList<Ruta> out;
 		
 		/**
 		 * Scanner para leer entradas por teclado.
@@ -87,15 +87,15 @@ public class Programa {
 					throw new FileNotFoundException();
 				
 				datosCorruptos = new LinkedList<String>();
-				entrada = new ArrayList<Cliente>();
-				salida = new ArrayList<Ruta>();
+				entry = new ArrayList<Cliente>();
+				out = new ArrayList<Ruta>();
 				leerArchivo();
 				
 				int version;
 				System.out.println("Version del algoritmo?");
 				version = scanner.nextInt();
 				
-				salida = null;
+				out = null;
 				
 				imprimirInforme();
 				
@@ -127,7 +127,7 @@ public class Programa {
 				PrintWriter pw = new PrintWriter(fw);
 
 				pw.println("Rutas:\n\n");
-				Iterator<Ruta> it = salida.iterator();
+				Iterator<Ruta> it = out.iterator();
 				int i = 1;
 				while (it.hasNext())
 					pw.println(i +": " + it.next().toString());
@@ -202,7 +202,7 @@ public class Programa {
 						taller = new Cliente(id, tiempo, a, b);
 					}
 					else toAdd = new Cliente(id, tiempo, a, b);
-					entrada.add(toAdd);
+					entry.add(toAdd);
 					i++;
 					linea = br.readLine();
 				} catch(TallerAlredyIncludeException e){
@@ -224,6 +224,76 @@ public class Programa {
 						ERROR_DATOS_NO_COINCIDEN_CON_CABECERA);
 			br.close();
 			fr.close();
+		}
+
+		/**
+		 * @return the datosCorruptos
+		 */
+		public static LinkedList<String> getDatosCorruptos() {
+			return datosCorruptos;
+		}
+
+		/**
+		 * @param datosCorruptos the datosCorruptos to set
+		 */
+		public static void setDatosCorruptos(LinkedList<String> datosCorruptos) {
+			Programa.datosCorruptos = datosCorruptos;
+		}
+
+		/**
+		 * @return the entry
+		 */
+		public static ArrayList<Cliente> getEntry() {
+			return entry;
+		}
+
+		/**
+		 * @param entry the entry to set
+		 */
+		public static void setEntry(ArrayList<Cliente> entry) {
+			Programa.entry = entry;
+		}
+
+		/**
+		 * @return the out
+		 */
+		public static ArrayList<Ruta> getOut() {
+			return out;
+		}
+
+		/**
+		 * @param out the out to set
+		 */
+		public static void setOut(ArrayList<Ruta> out) {
+			Programa.out = out;
+		}
+
+		/**
+		 * @return the file
+		 */
+		public static File getFile() {
+			return file;
+		}
+
+		/**
+		 * @param file the file to set
+		 */
+		public static void setFile(File file) {
+			Programa.file = file;
+		}
+
+		/**
+		 * @return the taller
+		 */
+		public static Cliente getTaller() {
+			return taller;
+		}
+
+		/**
+		 * @param taller the taller to set
+		 */
+		public static void setTaller(Cliente taller) {
+			Programa.taller = taller;
 		}
 		
 }
