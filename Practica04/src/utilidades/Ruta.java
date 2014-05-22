@@ -57,8 +57,8 @@ public class Ruta {
 	@Override
 	public String toString(){
 		String toReturn = "(Taller --> ";
-		for(int i = 1; i < ruta.length; i++)
-			toReturn += ruta[i].getId() + " --> ";
+		for(int i = 1; i < ruta.size(); i++)
+			toReturn += ruta.get(i).getId() + " --> ";
 		return toReturn + "Taller)";
 	}
 	
