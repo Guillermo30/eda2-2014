@@ -17,7 +17,7 @@ public class Ruta {
 		tiempo = 15;
 	}
 	
-	public boolean addClient ( Cliente x){
+	public boolean addClient (Cliente x){
 		if(tiempo+x.getTiempo() > jornada) return false;
 		ruta[++numClientes] =  x;
 		tiempo += x.getTiempo();
@@ -52,7 +52,12 @@ public class Ruta {
 		return tiempo;
 	}
 	
-	
-	
+	@Override
+	public String toString(){
+		String toReturn = "(Taller --> ";
+		for(int i = 1; i < ruta.length; i++)
+			toReturn += ruta[i].getId() + " --> ";
+		return toReturn + "Taller)";
+	}
 	
 }
