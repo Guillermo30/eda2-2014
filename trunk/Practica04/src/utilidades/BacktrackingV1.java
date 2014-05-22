@@ -24,14 +24,22 @@ public class BacktrackingV1 {
 		int solDist=Integer.MAX_VALUE;
 		ArrayList<Ruta> solParcial = new ArrayList<Ruta>();
 		Stack<Cliente> pila = new Stack<Cliente>();
+		Ruta aux = new Ruta(jornada, aTaller, cTaller);
 		
 		while(nivel!=0){
-			
+			generarNivel(pila,solParcial);
 			if(nivel == clientes.size() &&  dist(solParcial)<solDist){
 				sol = solParcial;
 				solDist = dist(solParcial);
 				solParcial = new ArrayList<Ruta>();
 			}
+			if(!aux.addClient(pila.pop())){
+				solParcial.add(aux);
+				aux = new Ruta(jornada, aTaller, cTaller);
+				
+			}
+			
+			nivel++;
 		}
 		
 		
@@ -49,10 +57,15 @@ public class BacktrackingV1 {
 		for(int i =0; i<clientes.size();i++){
 			if(sol.size()==0){
 				pila.add(clientes.get(i));
+				continue;
 			} 
 			for (int j = 0; j<sol.size();j++){
-				sol.get(j).getRuta().contais()
+				if(sol.get(j).getRuta().contains(clientes.get(i))){
+					break;
+				}
+				if(j==sol.size()-1) pila.add(clientes.get(i));
 			}
+			
 			
 		}
 		
