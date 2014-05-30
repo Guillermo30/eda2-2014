@@ -36,16 +36,19 @@ public class BacktrackingV1 {
 				aux = new Ruta(jornada, aTaller, cTaller);
 				aux.addClient(pila.pop());
 				
+			} else if(nivel==clientes.size()){
+				solParcial.add(aux);
 			}
 			if(nivel == clientes.size() &&  dist(solParcial)<solDist){
 				sol = solParcial;
 				solDist = dist(solParcial);
 			}
 			prevLvl = nivel;
-			if(nivel!= clientes.size()){
+			if(nivel!= clientes.size() || (auxi.getId() >= pila.peek().getId())){
 				nivel++;
-			} else if(pila.isEmpty() || (auxi.getId() <= pila.peek().getId() && nivel > 0)){
+			} else if(pila.isEmpty() || (auxi.getId() >= pila.peek().getId() && nivel > 0)){
 				retroceder(nivel,solParcial);
+				nivel--;
 			}
 		}
 		
@@ -81,6 +84,5 @@ public class BacktrackingV1 {
 	private void retroceder (int nivel, ArrayList<Ruta> sol){
 		sol.get(sol.size()-1).deleteLast();
 		if(nivel != 1) sol.get(sol.size()-1).deleteLast();
-		nivel--;
 	}
 }
