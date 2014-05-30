@@ -19,6 +19,7 @@ import exceptions.TallerAlredyIncludeException;
 import exceptions.TimeOutOfRangeException;
 import exceptions.LinesNotEqualsHeaderException;
 import exceptions.NegativeNumberException;
+import utilidades.BacktrackingV1;
 import utilidades.Cliente;
 import utilidades.Ruta;
 
@@ -95,7 +96,10 @@ public class Programa {
 				System.out.println("Version del algoritmo?");
 				version = scanner.nextInt();
 				
-				out = null;
+				if(version == 1 ){
+					BacktrackingV1 bc = new BacktrackingV1(entry, 405, 0,0);
+					out = bc.solucion();
+				}
 				
 				imprimirInforme();
 				
@@ -201,8 +205,10 @@ public class Programa {
 						if(taller != null) throw new TallerAlredyIncludeException(ERROR_TALLER);
 						taller = new Cliente(id, tiempo, a, b);
 					}
-					else toAdd = new Cliente(id, tiempo, a, b);
-					entry.add(toAdd);
+					else{
+					      toAdd = new Cliente(id, tiempo, a, b);
+					      entry.add(toAdd);
+					     }
 					i++;
 					linea = br.readLine();
 				} catch(TallerAlredyIncludeException e){
