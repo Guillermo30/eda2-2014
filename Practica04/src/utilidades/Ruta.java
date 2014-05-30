@@ -12,7 +12,7 @@ public class Ruta {
 	
 	public Ruta(int jornada, int a, int c){
 		ruta = new ArrayList<Cliente>(14);
-		ruta.set(0,  new Cliente(-1, 0, a ,c));
+		ruta.add(new Cliente(-1, 0, a ,c));
 		this.jornada=jornada;
 		numClientes = 0;
 		distancia =  0;
@@ -21,7 +21,8 @@ public class Ruta {
 	
 	public boolean addClient (Cliente x){
 		if(tiempo+x.getTiempo() > jornada) return false;
-		ruta.set(++numClientes, x);
+		ruta.add( x);
+		++numClientes;
 		tiempo += x.getTiempo();
 		calcularDistancia();
 		return true;
@@ -37,7 +38,10 @@ public class Ruta {
 			}
 		}
 	}
-
+	public void deleteLast(){
+		ruta.remove(ruta.size()-1);
+		numClientes--;
+	}
 	public ArrayList<Cliente> getRuta() {
 		return ruta;
 	}
