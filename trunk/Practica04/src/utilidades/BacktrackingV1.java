@@ -57,11 +57,12 @@ public class BacktrackingV1 {
 				sumaDist += solParcial.getLast().distanciaHasta(taller);
 				sumaT +=15;
 				
-				if(solT > sumaT){
+				if(solT/420 > sumaT/420){
 					solT = sumaT;
+					solDist = sumaDist;
 					solActual.clear();
 					solActual.addAll(solParcial);
-				}else if(solT == sumaT && sumaDist < solDist){
+				}else if(solT/420 == sumaT/420 && sumaDist < solDist){
 					solDist = sumaDist;
 					solActual.clear();
 					solActual.addAll(solParcial);
