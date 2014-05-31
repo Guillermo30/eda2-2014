@@ -53,7 +53,7 @@ public class BacktrackingV1 {
 			solParcial.add(auxC);
 			
 			//Si hemos llegado a una hoja.
-			if(nivel == 5){
+			if(nivel == clientes.size()){
 				sumaDist += solParcial.getLast().distanciaHasta(taller);
 				sumaT +=15;
 				
