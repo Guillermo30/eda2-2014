@@ -98,7 +98,7 @@ public class Programa {
 				
 				if(version == 1 ){
 					BacktrackingV1 bc = new BacktrackingV1(entry, 405, taller.getVivienda().x, taller.getVivienda().y);
-					out = bc.solucion();
+					out = bc.solucionBuena();
 				}
 				
 				imprimirInforme();

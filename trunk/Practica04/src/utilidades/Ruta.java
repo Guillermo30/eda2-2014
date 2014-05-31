@@ -20,7 +20,7 @@ public class Ruta {
 	}
 	
 	public boolean addClient (Cliente x){
-		if(tiempo+x.getTiempo() > jornada) return false;
+		if(tiempo+x.getTiempo() > (jornada + 15)) return false;
 		ruta.add( x);
 		++numClientes;
 		tiempo += x.getTiempo();
@@ -38,10 +38,17 @@ public class Ruta {
 			}
 		}
 	}
-	public void deleteLast(){
+	public boolean deleteLast(){
+		if(ruta.size() == 1) return false;
 		ruta.remove(ruta.size()-1);
 		numClientes--;
+		return true;
 	}
+	
+	public Cliente getLastCliente(){
+		return ruta.get(ruta.size() - 1);
+	}
+	
 	public ArrayList<Cliente> getRuta() {
 		return ruta;
 	}
@@ -56,6 +63,11 @@ public class Ruta {
 
 	public int getTiempo() {
 		return tiempo;
+	}
+	
+	@Override
+	public boolean equals(Object r){
+		return ruta.equals(((Ruta)r).ruta);
 	}
 	
 	@Override

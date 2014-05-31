@@ -52,7 +52,7 @@ public class Cliente {
 	 * Formatea un string que representa el cliente con sus tres atributos.
 	 */
 	public String toString(){
-		return id+", "+ tiempo +", (" + vivienda.x +"," + vivienda.y + ")";
+		return "[" + id+", "+ tiempo +", (" + vivienda.x +"," + vivienda.y + ")]";
 		
 	}
 	

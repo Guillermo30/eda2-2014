@@ -1,0 +1,8 @@
+Rutas:
+
+
+1: (Taller --> 0 --> 2 --> 4 --> 1 --> 3 --> Taller)
+
+Clientes con datos corruptos:
+
+
