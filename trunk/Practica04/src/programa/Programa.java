@@ -97,7 +97,7 @@ public class Programa {
 				version = scanner.nextInt();
 				
 				if(version == 1 ){
-					BacktrackingV1 bc = new BacktrackingV1(entry, 405, 0,0);
+					BacktrackingV1 bc = new BacktrackingV1(entry, 405, taller.getVivienda().x, taller.getVivienda().y);
 					out = bc.solucion();
 				}
 				
