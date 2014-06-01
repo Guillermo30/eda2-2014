@@ -134,9 +134,15 @@ public class Programa {
 				Iterator<Ruta> it = out.iterator();
 				Ruta aux = null;
 				int i = 1;
-				while (it.hasNext())
+				int rutasTotales = 0;
+				int distanciaTotal=0;
+				while (it.hasNext()){
 					aux = it.next();
 					pw.println(i +": " + aux.toString() + " Distancia: " + aux.getDistancia() + " Tiempo: " + aux.getTiempo() + " minutos.");
+					rutasTotales++;
+					distanciaTotal += aux.getDistancia();
+				}
+				pw.println("\nRutas totales: " + rutasTotales + " Distancia total: " + distanciaTotal);
 				pw.println("\nClientes con datos corruptos:\n\n");
 				Iterator<String> it2 = datosCorruptos.iterator();
 				while (it2.hasNext())

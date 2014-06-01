@@ -44,9 +44,10 @@ public class BacktrackingV1 {
 			sumaT += auxC.getTiempo();
 		
 			if(((sumaT-1)/405) - numTalleres > 0){
-				solParcial.add(taller);
+				int tiempoRelleno = 420 - (sumaT - auxC.getTiempo());
+				solParcial.add(new Cliente(-1, tiempoRelleno, aTaller, cTaller));
 				numTalleres++;
-				sumaT += taller.getTiempo();
+				sumaT += tiempoRelleno;
 				sumaDist += solParcial.getLast().distanciaHasta(taller);
 			}
 			if(solParcial.size() != 0) sumaDist += solParcial.getLast().distanciaHasta(auxC);
@@ -79,13 +80,6 @@ public class BacktrackingV1 {
 				sumaT -= auxC2.getTiempo();
 				sumaDist -= solParcial.getLast().distanciaHasta(auxC2);
 				do{
-					if(solParcial.getLast().equals(taller)){
-						numTalleres--;
-						solParcial.removeLast();
-						sumaT -= 15;
-						sumaDist -= solParcial.getLast().distanciaHasta(taller);
-					}
-					
 					pila.pop();
 					auxC2 = solParcial.removeLast();
 					
@@ -94,15 +88,16 @@ public class BacktrackingV1 {
 					else sumaDist -= taller.distanciaHasta(auxC2);
 					
 					nivel--;
+					
+					if(!solParcial.isEmpty() && solParcial.getLast().equals(taller)){
+						numTalleres--;
+						auxC2 = solParcial.removeLast();
+						sumaT -= auxC2.getTiempo();
+						sumaDist -= solParcial.getLast().distanciaHasta(taller);
+					}
 				}while(!solParcial.isEmpty() && pila.peek() == solParcial.getLast());
 			}else if(sumaT > solT || (sumaT == solT && sumaDist > solDist)){
 				//Poda
-				if(solParcial.getLast().equals(taller)){
-					numTalleres--;
-					solParcial.removeLast();
-					sumaT -= 15;
-					sumaDist -= solParcial.getLast().distanciaHasta(taller);
-				}
 				
 				pila.pop();
 				auxC2 = solParcial.removeLast();
@@ -110,6 +105,13 @@ public class BacktrackingV1 {
 				sumaT -= auxC2.getTiempo();
 				if(!solParcial.isEmpty())sumaDist -= solParcial.getLast().distanciaHasta(auxC2);
 				else sumaDist -= taller.distanciaHasta(auxC2);
+				
+				if(!solParcial.isEmpty() && solParcial.getLast().equals(taller)){
+					numTalleres--;
+					auxC2 = solParcial.removeLast();
+					sumaT -= auxC2.getTiempo();
+					sumaDist -= solParcial.getLast().distanciaHasta(taller);
+				}
 				
 				if(solParcial.isEmpty() && pila.peek() == solParcial.getLast()) nivel--;
 			}else{
@@ -128,6 +130,11 @@ public class BacktrackingV1 {
 			auxR.addClient(c);
 		}
 		solucion.add(auxR);
+		Ruta r = new Ruta(jornada, aTaller, cTaller);
+		r.addClient(clientes.get(2));
+		r.addClient(clientes.get(3));
+		r.addClient(clientes.get(1));
+		r.addClient(clientes.get(0));
 		return solucion;
 	}
 	
