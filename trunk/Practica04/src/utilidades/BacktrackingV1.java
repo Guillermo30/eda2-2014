@@ -50,6 +50,7 @@ public class BacktrackingV1 {
 				sumaDist += solParcial.getLast().distanciaHasta(taller);
 			}
 			if(solParcial.size() != 0) sumaDist += solParcial.getLast().distanciaHasta(auxC);
+			else sumaDist += taller.distanciaHasta(auxC);
 			solParcial.add(auxC);
 			
 			//Si hemos llegado a una hoja.
@@ -90,6 +91,7 @@ public class BacktrackingV1 {
 					
 					sumaT -= auxC2.getTiempo();
 					if(!solParcial.isEmpty())sumaDist -= solParcial.getLast().distanciaHasta(auxC2);
+					else sumaDist -= taller.distanciaHasta(auxC2);
 					
 					nivel--;
 				}while(!solParcial.isEmpty() && pila.peek() == solParcial.getLast());
@@ -107,6 +109,7 @@ public class BacktrackingV1 {
 				
 				sumaT -= auxC2.getTiempo();
 				if(!solParcial.isEmpty())sumaDist -= solParcial.getLast().distanciaHasta(auxC2);
+				else sumaDist -= taller.distanciaHasta(auxC2);
 				
 				if(solParcial.isEmpty() && pila.peek() == solParcial.getLast()) nivel--;
 			}else{
