@@ -1,0 +1,20 @@
+Tamaño del grafo: 5 Tiempo: 8504ns
+
+Tamaño del grafo: 10 Tiempo: 224368ns
+
+Tamaño del grafo: 15 Tiempo: 46820890ns
+
+Tamaño del grafo: 20 Tiempo: 42472ns
+
+Tamaño del grafo: 25 Tiempo: 901ns
+
+Tamaño del grafo: 30 Tiempo: 950ns
+
+Tamaño del grafo: 35 Tiempo: 1675335ns
+
+Tamaño del grafo: 40 Tiempo: 1155692418ns
+
+Tamaño del grafo: 45 Tiempo: 1151ns
+
+Tamaño del grafo: 50 Tiempo: 1200ns
+
