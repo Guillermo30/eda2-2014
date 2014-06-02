@@ -44,10 +44,10 @@ public class BacktrackingV1 {
 				
 					if(((sumaT-1)/405) - numTalleres > 0){
 						int tiempoRelleno = 420 - ((sumaT - auxC.getTiempo()) % 420);
+						sumaDist += solParcial.getLast().distanciaHasta(taller);
 						solParcial.add(new Cliente(-1, tiempoRelleno, aTaller, cTaller));
 						numTalleres++;
 						sumaT += tiempoRelleno;
-						sumaDist += solParcial.getLast().distanciaHasta(taller);
 					}
 					if(solParcial.size() != 0) sumaDist += solParcial.getLast().distanciaHasta(auxC);
 					else sumaDist += taller.distanciaHasta(auxC);
@@ -130,11 +130,11 @@ public class BacktrackingV1 {
 					auxR.addClient(c);
 				}
 				solucion.add(auxR);
-				Ruta r = new Ruta(jornada, aTaller, cTaller);
+				/*Ruta r = new Ruta(jornada, aTaller, cTaller);
 				r.addClient(clientes.get(2));
 				r.addClient(clientes.get(3));
 				r.addClient(clientes.get(1));
-				r.addClient(clientes.get(0));
+				r.addClient(clientes.get(0));*/
 				return solucion;
 	}
 	
