@@ -1,0 +1,10 @@
+Rutas:
+
+
+1: (Taller --> 2 --> 0 --> 1 --> Taller) Distancia: 21 Tiempo: 180 minutos.
+
+Rutas totales: 1 Distancia total: 21
+
+Clientes con datos corruptos:
+
+
