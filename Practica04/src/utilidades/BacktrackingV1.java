@@ -19,7 +19,7 @@ public class BacktrackingV1 {
 		 taller = new Cliente(-1, 15, aTaller, cTaller);
 	}
 	
-	public ArrayList<Ruta> solucionMasBuena(){
+	public ArrayList<Ruta> solucion(){
 		//Inicialización
 				Stack<Cliente> pila = new Stack<Cliente>();
 				LinkedList<Cliente> solActual = new LinkedList<Cliente>();
@@ -138,7 +138,7 @@ public class BacktrackingV1 {
 				return solucion;
 	}
 	
-	public ArrayList<Ruta> solucionBuena(){
+	public ArrayList<Ruta> solucionIntento3(){
 		
 		//Inicialización
 		Stack<Cliente> pila = new Stack<Cliente>();
@@ -257,7 +257,7 @@ public class BacktrackingV1 {
 		return solucion;
 	}
 	
-	public ArrayList<Ruta> solucionDep(){
+	public ArrayList<Ruta> solucionIntento2(){
 		
 		//Inicialización
 		Stack<Cliente> pila = new Stack<Cliente>();
@@ -345,7 +345,7 @@ public class BacktrackingV1 {
 		
 	}
 	
-	public ArrayList<Ruta> solucion(){
+	public ArrayList<Ruta> solucionIntento1(){
 		int nivel=1;
 		int prevLvl=0;
 		ArrayList<Ruta> sol = new ArrayList<Ruta>();
