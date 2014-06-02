@@ -98,7 +98,7 @@ public class Programa {
 				
 				if(version == 1 ){
 					BacktrackingV1 bc = new BacktrackingV1(entry, 405, taller.getVivienda().x, taller.getVivienda().y);
-					out = bc.solucionMasBuena();
+					out = bc.solucion();
 				}
 				
 				imprimirInforme();
@@ -183,7 +183,7 @@ public class Programa {
 			if (linea == null)
 				throw new EmptyFileException(ERROR_ARCHIVO_VACIO);
 			int nClientes = Integer.parseInt(linea);
-			if (nClientes <= 0 || nClientes > 330)
+			if (nClientes <= 0 || nClientes > 750)
 				throw new HeaderOutOfRangeException(ERROR_CABECERA_FUERA_DE_RANGO);
 			
 			int i = 0;
@@ -217,8 +217,8 @@ public class Programa {
 					else{
 					      toAdd = new Cliente(id, tiempo, a, b);
 					      entry.add(toAdd);
+					      i++;
 					     }
-					i++;
 					linea = br.readLine();
 				} catch(TallerAlredyIncludeException e){
 					throw e;
@@ -234,7 +234,7 @@ public class Programa {
 					continue;
 				}
 			}
-			if (i != nClientes + 1)
+			if (i != nClientes)
 				throw new LinesNotEqualsHeaderException(
 						ERROR_DATOS_NO_COINCIDEN_CON_CABECERA);
 			br.close();
