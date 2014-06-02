@@ -98,7 +98,7 @@ public class Programa {
 				
 				if(version == 1 ){
 					BacktrackingV1 bc = new BacktrackingV1(entry, 405, taller.getVivienda().x, taller.getVivienda().y);
-					out = bc.solucionBuena();
+					out = bc.solucionMasBuena();
 				}
 				
 				imprimirInforme();
@@ -141,6 +141,7 @@ public class Programa {
 					pw.println(i +": " + aux.toString() + " Distancia: " + aux.getDistancia() + " Tiempo: " + aux.getTiempo() + " minutos.");
 					rutasTotales++;
 					distanciaTotal += aux.getDistancia();
+					i++;
 				}
 				pw.println("\nRutas totales: " + rutasTotales + " Distancia total: " + distanciaTotal);
 				pw.println("\nClientes con datos corruptos:\n\n");
