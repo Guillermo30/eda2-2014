@@ -4,13 +4,43 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
 
+/**
+ *	Clase donde se encuentra el algoritmo de Backtracking.
+ */
 public class BacktrackingV1 {
+	
+	/**
+	 * Entrada de datos del algoritmo.
+	 */
 	private ArrayList<Cliente> clientes;
+	
+	/**
+	 * Duración de cada jornada en minutos sin contar los 15 min de regreso al taller.
+	 */
 	private int jornada;
+	
+	/**
+	 * Avenida del taller.
+	 */
 	private int aTaller;
+	
+	/**
+	 * Calle del taller.
+	 */
 	private int cTaller;
+	
+	/**
+	 * Cliente falso usado para guardar los datos del taller.
+	 */
 	private Cliente taller;
 	
+	/**
+	 * Método constructor.
+	 * @param clientes
+	 * @param jornada
+	 * @param aTaller
+	 * @param cTaller
+	 */
 	public BacktrackingV1(ArrayList<Cliente> clientes, int jornada, int aTaller, int cTaller){
 		 this.clientes = clientes;
 		 this.jornada = jornada;
@@ -19,6 +49,10 @@ public class BacktrackingV1 {
 		 taller = new Cliente(-1, 15, aTaller, cTaller);
 	}
 	
+	/**
+	 * Algoritmo que devuelve el minimo número de rutas con minima distancia.
+	 * @return
+	 */
 	public ArrayList<Ruta> solucion(){
 		//Inicialización
 				Stack<Cliente> pila = new Stack<Cliente>();
@@ -43,7 +77,7 @@ public class BacktrackingV1 {
 					sumaT += auxC.getTiempo();
 				
 					if(((sumaT-1)/405) - numTalleres > 0){
-						int tiempoRelleno = 420 - ((sumaT - auxC.getTiempo()) % 420);
+						int tiempoRelleno = (jornada + 15) - ((sumaT - auxC.getTiempo()) % (jornada + 15));
 						sumaDist += solParcial.getLast().distanciaHasta(taller);
 						solParcial.add(new Cliente(-1, tiempoRelleno, aTaller, cTaller));
 						numTalleres++;
@@ -56,7 +90,7 @@ public class BacktrackingV1 {
 					//Si hemos llegado a una hoja.
 					if(nivel == clientes.size()){
 						sumaDist += solParcial.getLast().distanciaHasta(taller);
-						int relleno =  420 - (sumaT % 420);
+						int relleno =  (jornada + 15) - (sumaT % (jornada + 15));
 						sumaT += relleno;
 						
 						if(solT > sumaT/420){

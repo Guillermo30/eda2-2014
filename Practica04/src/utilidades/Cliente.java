@@ -63,6 +63,11 @@ public class Cliente {
 		return vivienda;
 	}
 	
+	/**
+	 * Calcula la distancia hasta el cliente c.
+	 * @param c
+	 * @return
+	 */
 	public int distanciaHasta(Cliente c){
 		return (int)(Math.abs(vivienda.x - c.getVivienda().x) + Math.abs(vivienda.y - c.getVivienda().y)); 
 	}

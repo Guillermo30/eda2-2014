@@ -1,9 +1,9 @@
 Rutas:
 
 
-1: (Taller --> 3 --> 1 --> 4 --> 2 --> 0 --> Taller) Distancia: 34 Tiempo: 420 minutos.
+1: (Taller --> 3 --> 1 --> 4 --> 2 --> 0 --> Taller) Distancia: 42 Tiempo: 420 minutos.
 
-Rutas totales: 1 Distancia total: 34
+Rutas totales: 1 Distancia total: 42
 
 Clientes con datos corruptos:
 

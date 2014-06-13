@@ -300,7 +300,66 @@ public class Practica03Test {
 		ArrayList<Ruta> sol = bt.solucion();
 		
 		Ruta ruta = sol.get(0);
-		assertEquals(21, ruta.getDistancia());
+		assertEquals(28, ruta.getDistancia());
+	}
+	
+	@Test
+	public void testRutaDistanciaCorrecta(){
+		Ruta r = new Ruta(405, 0, 0);
+		r.addClient(new Cliente(1, 30, 2, 3));
+		r.addClient(new Cliente(1, 30, 0, 1));
+		r.addClient(new Cliente(1, 30, 3, 2));
+		assertEquals(18, r.getDistancia());
+	}
+	
+	@Test
+	public void testRutaTiempoCorrecta(){
+		Ruta r = new Ruta(405, 0, 0);
+		r.addClient(new Cliente(1, 30, 2, 3));
+		r.addClient(new Cliente(1, 120, 0, 1));
+		r.addClient(new Cliente(1, 60, 3, 2));
+		assertEquals(225, r.getTiempo());
+	}
+	
+	@Test
+	public void testRutaAddCliente(){
+		Ruta r = new Ruta(405, 0, 0);
+		r.addClient(new Cliente(1, 120, 2, 3));
+		r.addClient(new Cliente(1, 120, 0, 1));
+		r.addClient(new Cliente(1, 120, 3, 2));
+		assertEquals(false, r.addClient(new Cliente(1, 120, 3, 2)));
+		assertEquals(true, r.addClient(new Cliente(1, 30, 3, 2)));
+	}
+	
+	@Test
+	public void testRutaDeleteLast(){
+		Ruta r = new Ruta(405, 0, 0);
+		r.addClient(new Cliente(1, 120, 2, 3));
+		assertEquals(true, r.deleteLast());
+		assertEquals(false, r.deleteLast());
+	}
+	
+	@Test
+	public void testBackTrackingSimpleMasDeUnaRuta(){
+		
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		clientes.add(new Cliente(0,45,3,1));
+		clientes.add(new Cliente(1,60,6,5));
+		clientes.add(new Cliente(2,120,17,2));
+		clientes.add(new Cliente(3,105,15,10));
+		clientes.add(new Cliente(4,120,18,19));
+		clientes.add(new Cliente(5,90,15,18));
+		
+		BacktrackingV1 bt = new BacktrackingV1(clientes, 405, 14, 17);
+		
+		ArrayList<Ruta> sol = bt.solucion();
+		
+		Ruta ruta = sol.get(0);
+		assertEquals(60, ruta.getDistancia());
+		assertEquals(345, ruta.getTiempo());
+		ruta = sol.get(1);
+		assertEquals(12, ruta.getDistancia());
+		assertEquals(225, ruta.getTiempo());
 	}
 	
 }
