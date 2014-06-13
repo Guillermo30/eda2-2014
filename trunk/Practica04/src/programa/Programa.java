@@ -58,7 +58,7 @@ public class Programa {
 		private static File file;
 		
 		/**
-		 * Cliente dummie que indica el taller.
+		 * Cliente falso que indica el taller.
 		 */
 		private static Cliente taller;
 		
