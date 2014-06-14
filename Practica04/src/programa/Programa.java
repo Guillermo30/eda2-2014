@@ -96,11 +96,11 @@ public class Programa {
 				System.out.println("Version del algoritmo?");
 				version = scanner.nextInt();
 				
-				if(version == 1 ){
-					BacktrackingV1 bc = new BacktrackingV1(entry, 405, taller.getVivienda().x, taller.getVivienda().y);
-					out = bc.solucionBasica();
-				}
+				BacktrackingV1 bc = new BacktrackingV1(entry, 405, taller.getVivienda().x, taller.getVivienda().y);
 				
+				if(version == 1) out = bc.solucionBasica();							
+				if(version == 2) out = bc.solucionMejorada();
+						
 				imprimirInforme();
 				
 			} catch (FileNotFoundException e) {

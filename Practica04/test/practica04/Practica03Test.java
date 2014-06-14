@@ -297,7 +297,7 @@ public class Practica03Test {
 		
 		BacktrackingV1 bt = new BacktrackingV1(clientes, 405, 8, 4);
 		
-		ArrayList<Ruta> sol = bt.solucion();
+		ArrayList<Ruta> sol = bt.solucionBasica();
 		
 		Ruta ruta = sol.get(0);
 		assertEquals(28, ruta.getDistancia());
@@ -352,7 +352,7 @@ public class Practica03Test {
 		
 		BacktrackingV1 bt = new BacktrackingV1(clientes, 405, 14, 17);
 		
-		ArrayList<Ruta> sol = bt.solucion();
+		ArrayList<Ruta> sol = bt.solucionBasica();
 		
 		Ruta ruta = sol.get(0);
 		assertEquals(60, ruta.getDistancia());

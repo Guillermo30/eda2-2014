@@ -1,9 +1,9 @@
 Rutas:
 
 
-1: (Taller --> 9 --> 5 --> 0 --> 4 --> Taller) Distancia: 70 Tiempo: 360 minutos.
-2: (Taller --> 6 --> 7 --> 2 --> 3 --> Taller) Distancia: 62 Tiempo: 405 minutos.
-3: (Taller --> 8 --> 1 --> Taller) Distancia: 8 Tiempo: 165 minutos.
+1: (Taller --> 1 --> 9 --> 4 --> 0 --> 5 --> Taller) Distancia: 72 Tiempo: 405 minutos.
+2: (Taller --> 3 --> 2 --> 7 --> 6 --> Taller) Distancia: 62 Tiempo: 405 minutos.
+3: (Taller --> 8 --> Taller) Distancia: 6 Tiempo: 120 minutos.
 
 Rutas totales: 3 Distancia total: 140
 

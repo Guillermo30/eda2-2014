@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
+
 import programa.Programa;
 import utilidades.BacktrackingV1;
 import utilidades.Cliente;
@@ -14,14 +15,14 @@ import utilidades.Cliente;
  * Clase para medir el rendimiento
  *
  */
-public class BenchMark_BT {
-
+public class BenchMark_BT_Mejorado {
+	
 	/**
 	 * Archivo de salida.
 	 */
 	public final static String SALIDA = System.getProperty("user.dir")
 			+ File.separator + "src" + File.separator + "benchmarks"
-			+ File.separator + "Benchmark_BT.txt";
+			+ File.separator + "Benchmark_BT_Mejorado.txt";
 	
 	/**
 	 * Metodo principal de la prueba de rendimiento
@@ -42,7 +43,7 @@ public class BenchMark_BT {
 				times.clear();
 				for(int i = 0; i < 10; i++){
 					long a, b = System.nanoTime();
-					bt.solucionBasica();
+					bt.solucionMejorada();
 					a = System.nanoTime();
 					times.add(a - b);
 				}
