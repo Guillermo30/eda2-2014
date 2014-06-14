@@ -1,0 +1,12 @@
+Nº de clientes: 5 Tiempo: 934290ns
+
+Nº de clientes: 6 Tiempo: 1847620ns
+
+Nº de clientes: 7 Tiempo: 1845919ns
+
+Nº de clientes: 8 Tiempo: 6612474ns
+
+Nº de clientes: 9 Tiempo: 69760952ns
+
+Nº de clientes: 10 Tiempo: 625497736ns
+
