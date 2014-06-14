@@ -34,6 +34,14 @@ public class BacktrackingV1 {
 	 */
 	private Cliente taller;
 	
+	private int solDist, solT, sumaDist, sumaT, numTalleres;
+	
+	private boolean[] cogido;
+	
+	private int[] siguienteHermano;
+	
+	private int relleno;
+	
 	/**
 	 * Método constructor.
 	 * @param clientes
@@ -49,6 +57,179 @@ public class BacktrackingV1 {
 		 taller = new Cliente(-1, 15, aTaller, cTaller);
 	}
 	
+	public ArrayList<Ruta> solucionPuta(){
+		LinkedList<Cliente> solActual = new LinkedList<Cliente>();
+		LinkedList<Cliente> solParcial = new LinkedList<Cliente>();
+		ArrayList<Ruta> solucion = new ArrayList<Ruta>();
+		cogido = new boolean[clientes.size()];
+		siguienteHermano = new int[clientes.size()];
+		for(int i = 0; i < cogido.length; i++) cogido[i] = false;
+		for(int i = 0; i < siguienteHermano.length; i++) siguienteHermano[i] = 0;
+		Ruta auxR = new Ruta(jornada, aTaller, cTaller);
+		Cliente auxC = null, auxC2 = null;
+		int nivel=1;
+		solDist = Integer.MAX_VALUE;
+		solT = Integer.MAX_VALUE;
+		sumaDist = 0;
+		sumaT = 0;
+		numTalleres = 0;
+		int jornadaC = jornada + 15;
+		do{
+			generar(nivel, solParcial);
+			if(solucion(nivel, solParcial) && (((sumaT/jornadaC) < solT) || (((sumaT/jornadaC) == solT) && sumaDist < solDist))){
+								
+				solT = sumaT/jornadaC;
+				solDist = sumaDist;
+				solActual.clear();
+				solActual.addAll(solParcial);
+				
+				sumaT -= relleno;
+				sumaDist -= solParcial.getLast().distanciaHasta(taller);
+			}
+			if (criterio(nivel, solParcial)) nivel++;
+			else while(nivel > 0 && !masHermanos(nivel, solParcial)){
+				retroceder(nivel, solParcial);
+				nivel--;
+			}
+		}while(nivel != 0);
+		for(Cliente c: solActual){
+			if(c.equals(taller)){
+				solucion.add(auxR);
+				auxR = new Ruta(jornada, aTaller, cTaller);
+				continue;
+			}
+			auxR.addClient(c);
+		}
+		solucion.add(auxR);
+		return solucion;
+	}
+
+	private void retroceder(int nivel, LinkedList<Cliente> solParcial) {
+		Cliente aux = solParcial.removeLast();
+		
+		sumaT -= aux.getTiempo();
+		if(!solParcial.isEmpty())sumaDist -= solParcial.getLast().distanciaHasta(aux);
+		else sumaDist -= taller.distanciaHasta(aux);
+		
+		cogido[aux.getIndex()] = false;
+		
+		if(!solParcial.isEmpty() && solParcial.getLast().equals(taller)){
+			numTalleres--;
+			aux = solParcial.removeLast();
+			sumaT -= aux.getTiempo();
+			sumaDist -= solParcial.getLast().distanciaHasta(taller);
+		}
+		
+		siguienteHermano[nivel - 1] = 0;
+		
+	}
+
+	private boolean masHermanos(int nivel, LinkedList<Cliente> solParcial) {
+		if(siguienteHermano[nivel - 1] < clientes.size()){
+			Cliente aux = solParcial.removeLast();
+			sumaT -= aux.getTiempo();
+			if(!solParcial.isEmpty())sumaDist -= solParcial.getLast().distanciaHasta(aux);
+			else sumaDist -= taller.distanciaHasta(aux);
+			cogido[aux.getIndex()] = false;
+			return true;
+		}
+		return false;
+	}
+
+	private boolean criterio(int nivel, LinkedList<Cliente> solParcial) {
+		if(nivel == clientes.size()) return false;
+		if(((sumaT/(jornada + 15)) + ((sumaT%(jornada + 15) == 0)?0:1)) > solT || (sumaT == solT && sumaDist > solDist)) return false;
+		return true;
+	}
+
+	private boolean solucion(int nivel, LinkedList<Cliente> solParcial) {
+		if(nivel == clientes.size()){
+			sumaDist += solParcial.getLast().distanciaHasta(taller);
+			relleno =  (jornada + 15) - (sumaT % (jornada + 15));
+			sumaT += relleno;
+			return true;
+		}
+		return false;
+	}
+
+	private void generar(int nivel, LinkedList<Cliente> solParcial) {
+		while(cogido[siguienteHermano[nivel - 1]]) siguienteHermano[nivel - 1]++;
+		Cliente c = clientes.get(siguienteHermano[nivel - 1]);
+		
+		sumaT += c.getTiempo();
+		
+		if(((sumaT-1)/jornada) - numTalleres > 0){
+			int tiempoRelleno = (jornada + 15) - ((sumaT - c.getTiempo()) % (jornada + 15));
+			sumaDist += solParcial.getLast().distanciaHasta(taller);
+			solParcial.add(new Cliente(-1, tiempoRelleno, aTaller, cTaller));
+			numTalleres++;
+			sumaT += tiempoRelleno;
+		}
+		if(solParcial.size() != 0) sumaDist += solParcial.getLast().distanciaHasta(c);
+		else sumaDist += taller.distanciaHasta(c);
+		solParcial.add(c);
+		cogido[siguienteHermano[nivel - 1]] = true;
+		while(siguienteHermano[nivel - 1] < cogido.length && cogido[siguienteHermano[nivel - 1]]) siguienteHermano[nivel - 1]++;
+	}
+	
+	public ArrayList<Ruta> solucionBasica(){
+		//Inicialización
+				Stack<Cliente> pila = new Stack<Cliente>();
+				LinkedList<Cliente> solParcial = new LinkedList<Cliente>();
+				ArrayList<Ruta> solucion = new ArrayList<Ruta>();
+				ArrayList<Ruta> solucionFinal = new ArrayList<Ruta>();
+				Ruta auxR = new Ruta(jornada, aTaller, cTaller);
+				int solDist = Integer.MAX_VALUE;
+				int sumaDist = 0;
+				
+				//Inicializar pila con el primer nivel
+				for(Cliente c : clientes) pila.push(c);
+				
+				//Exploración del arbol
+				while(!pila.isEmpty()){
+					
+					solParcial.add(pila.peek());
+					
+					//Si hemos llegado a una hoja.
+					if(solParcial.size() == clientes.size()){
+						
+						solucion.clear();
+						auxR = new Ruta(jornada, aTaller, cTaller);
+						for(Cliente c: solParcial){
+							if(!auxR.addClient(c)){
+								solucion.add(auxR);
+								auxR = new Ruta(jornada, aTaller, cTaller);
+								auxR.addClient(c);
+							}
+						}
+						solucion.add(auxR);
+						sumaDist = 0;
+						for(Ruta r: solucion) sumaDist += r.getDistancia(); 
+						if(solucionFinal.isEmpty() || solucion.size() < solucionFinal.size() || (solucion.size() == solucionFinal.size() && sumaDist < solDist)){
+							solucionFinal.clear();
+							solucionFinal.addAll(solucion);
+							solDist = sumaDist;
+						}
+						
+						//Retroceder
+						
+						pila.pop();
+						solParcial.removeLast();
+						
+						do{
+							pila.pop();
+							solParcial.removeLast();
+
+						}while(!solParcial.isEmpty() && pila.peek() == solParcial.getLast());
+					}else{
+						//Generar Nivel
+						for(Cliente c : clientes) if(!solParcial.contains(c)) pila.push(c);
+					}
+					
+				}
+				return solucionFinal;
+	}
+
 	/**
 	 * Algoritmo que devuelve el minimo número de rutas con minima distancia.
 	 * @return
@@ -76,7 +257,7 @@ public class BacktrackingV1 {
 					
 					sumaT += auxC.getTiempo();
 				
-					if(((sumaT-1)/405) - numTalleres > 0){
+					if(((sumaT-1)/jornada) - numTalleres > 0){
 						int tiempoRelleno = (jornada + 15) - ((sumaT - auxC.getTiempo()) % (jornada + 15));
 						sumaDist += solParcial.getLast().distanciaHasta(taller);
 						solParcial.add(new Cliente(-1, tiempoRelleno, aTaller, cTaller));
@@ -93,12 +274,12 @@ public class BacktrackingV1 {
 						int relleno =  (jornada + 15) - (sumaT % (jornada + 15));
 						sumaT += relleno;
 						
-						if(solT > sumaT/420){
-							solT = sumaT/420;
+						if(solT > sumaT/(jornada +15)){
+							solT = sumaT/(jornada +15);
 							solDist = sumaDist;
 							solActual.clear();
 							solActual.addAll(solParcial);
-						}else if(solT == sumaT/420 && sumaDist < solDist){
+						}else if(solT == sumaT/(jornada +15) && sumaDist < solDist){
 							solDist = sumaDist;
 							solActual.clear();
 							solActual.addAll(solParcial);
@@ -113,6 +294,7 @@ public class BacktrackingV1 {
 						
 						sumaT -= auxC2.getTiempo();
 						sumaDist -= solParcial.getLast().distanciaHasta(auxC2);
+						
 						do{
 							pila.pop();
 							auxC2 = solParcial.removeLast();

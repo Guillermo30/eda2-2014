@@ -1,0 +1,14 @@
+Rutas:
+
+
+1: (Taller --> 19 --> 18 --> 17 --> 16 --> Taller) Distancia: 98 Tiempo: 360 minutos.
+2: (Taller --> 15 --> 14 --> 13 --> 12 --> 11 --> Taller) Distancia: 132 Tiempo: 360 minutos.
+3: (Taller --> 10 --> 9 --> 8 --> 7 --> Taller) Distancia: 118 Tiempo: 300 minutos.
+4: (Taller --> 5 --> 6 --> 4 --> Taller) Distancia: 60 Tiempo: 315 minutos.
+5: (Taller --> 2 --> 3 --> 0 --> 11 --> 1 --> Taller) Distancia: 82 Tiempo: 420 minutos.
+
+Rutas totales: 5 Distancia total: 490
+
+Clientes con datos corruptos:
+
+

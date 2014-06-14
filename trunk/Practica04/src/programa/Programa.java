@@ -98,7 +98,7 @@ public class Programa {
 				
 				if(version == 1 ){
 					BacktrackingV1 bc = new BacktrackingV1(entry, 405, taller.getVivienda().x, taller.getVivienda().y);
-					out = bc.solucion();
+					out = bc.solucionBasica();
 				}
 				
 				imprimirInforme();
@@ -186,7 +186,7 @@ public class Programa {
 			if (nClientes <= 0 || nClientes > 750)
 				throw new HeaderOutOfRangeException(ERROR_CABECERA_FUERA_DE_RANGO);
 			
-			int i = 0;
+			int i = 0, j = 0;
 			int id, tiempo, a, b;
 			Scanner sc;
 			linea = br.readLine();
@@ -216,8 +216,10 @@ public class Programa {
 					}
 					else{
 					      toAdd = new Cliente(id, tiempo, a, b);
+					      toAdd.setIndex(j);
 					      entry.add(toAdd);
 					      i++;
+					      j++;
 					     }
 					linea = br.readLine();
 				} catch(TallerAlredyIncludeException e){
