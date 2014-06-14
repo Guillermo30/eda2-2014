@@ -20,7 +20,9 @@ public class Cliente {
 	 * Coordenadas de vivienda.
 	 */
 	private Point vivienda;
-	
+	/**
+	 * Posición en la entrada.
+	 */
 	private int index;
 	
 	/**
