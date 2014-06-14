@@ -21,6 +21,8 @@ public class Cliente {
 	 */
 	private Point vivienda;
 	
+	private int index;
+	
 	/**
 	 * Método constructor.
 	 * @param id
@@ -76,6 +78,20 @@ public class Cliente {
 	public boolean equals(Object o){
 		if(((Cliente) o).getId()==this.getId()) return true;
 		return false;
+	}
+
+	/**
+	 * @return the index
+	 */
+	public int getIndex() {
+		return index;
+	}
+
+	/**
+	 * @param index the index to set
+	 */
+	public void setIndex(int index) {
+		this.index = index;
 	}
 	
 }
