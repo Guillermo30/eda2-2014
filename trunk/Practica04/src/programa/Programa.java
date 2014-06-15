@@ -100,6 +100,10 @@ public class Programa {
 				
 				if(version == 1) out = bc.solucionBasica();							
 				if(version == 2) out = bc.solucionMejorada();
+				if(version > 2 || version < 1){
+					System.out.println("La versión escogida no existe.");
+					System.exit(0);
+				}
 						
 				imprimirInforme();
 				
